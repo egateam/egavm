@@ -25,7 +25,7 @@ git clone https://github.com/boxcutter/ubuntu
 cd $VG_DIR/ubuntu
 echo "ISO_PATH := file://$VG_DIR" > Makefile.local
 echo "CM := nocm" >> Makefile.local
-rm box/virtualbox/ubuntu1404-nocm-*.box
+#rm box/virtualbox/ubuntu1404-nocm-*.box
 make virtualbox/ubuntu1404
 vagrant box add ub1404-v box/virtualbox/ubuntu1404-nocm-*.box
 
