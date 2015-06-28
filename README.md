@@ -1,4 +1,4 @@
-# Vagrant box for EGA.
+# Vagrant boxes for EGA.
 
 * `prepare/`
     + Scirpts to build VMs.
