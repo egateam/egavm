@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 # very basic
-cpanm App::Ack Carp Cwd Config::Tiny DBI DB_File File::Find::Rule GD MCE Moose JSON JSON::XS Text::CSV_XS YAML
+cpanm App::Ack Carp Cwd Config::Tiny DBI DB_File File::Copy::Recursive File::Find::Rule GD Moose JSON JSON::XS Text::CSV_XS YAML
+cpanm MCE POE Template WWW::Mechanize
 
 # bioperl
 cpanm Data::Stag Test::Most URI::Escape

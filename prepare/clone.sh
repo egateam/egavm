@@ -29,4 +29,4 @@ git clone https://github.com/wang-q/ega.git tmp && mv tmp/.git . && rm -rf tmp &
 
 npm --verbose install
 bower --verbose install
-
+cp settings.js.example settings.js
