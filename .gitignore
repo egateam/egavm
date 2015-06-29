@@ -1,5 +1,8 @@
 # uploaded files
-upload
+upload/*
+
+# keep directory structure
+!upload/PLACE.HOLDER
 
 # webstorm project files
 .idea
