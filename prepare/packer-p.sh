@@ -16,12 +16,12 @@ exit 1
 # Install packer via brew cask
 brew cask install packer
 
+# install Parallels provider for vagrant
+vagrant plugin install vagrant-parallels
+
 #
 cd $VG_DIR
 wget http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.2/ubuntu-14.04.2-server-amd64.iso
-
-# install Parallels provider for vagrant
-vagrant plugin install vagrant-parallels
 
 # Ubuntu template
 git clone https://github.com/boxcutter/ubuntu
