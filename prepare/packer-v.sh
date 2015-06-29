@@ -36,14 +36,16 @@ vagrant ssh
 
 ### STEPS inside ubuntu 14.04 VM
 
-cd ~
-sh /vagrant/software.sh
-sh /vagrant/plenv.sh
-sh /vagrant/clone.sh
+sh /prepare/software.sh
+sh /prepare/brew.sh
+sh /prepare/plenv.sh
+sh /prepare/clone.sh
+
+# config repeatmasker
 
 # leave VM
 exit
 
-###
-cd ~/vagrant
+### pack the vm
+cd $VG_DIR/../virtualbox
 vagrant package --output egavm-v.box
