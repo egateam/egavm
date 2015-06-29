@@ -20,9 +20,9 @@ To use them, following the steps below.
     + `vagrant box add egavm-v egavm-v.box` for VirtualBox
     + `vagrant box add egavm-p egavm-p.box` for Parallels
 6. Start EGA service.
-    + `vagrant up # start VM`
+    + `vagrant up --provider=virtualbox # start VM, change virtualbox to parallels if needed`
     + `vagrant ssh # log into VM`
-    + `node ega/app.js # now you're in the VM`
+    + `node ega/app.js # now your terminal is in the VM`
 7. Open your favorite browser and visit `http://localhost:30080`.
 
 ## Directory structure

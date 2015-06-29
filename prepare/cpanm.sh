@@ -24,7 +24,7 @@ cpanm Params::Validate Readonly Regexp::Common Set::IntSpan Statistics::Basic Te
 cpanm XML::XML2JSON PDF::API2 Math::CDF Math::Random
 cpanm --notest Bio::Phylo
 
-# AlignDB::
+# AlignDB::*
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::IntSpan
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Util
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Stopwatch
