@@ -11,10 +11,10 @@ cpanm HTML::Entities HTML::HeadParser HTML::TableExtract HTTP::Request::Common L
 cpanm XML::DOM XML::DOM::XPath XML::LibXML XML::SAX::Writer XML::Simple XML::Twig XML::Writer GraphViz SVG SVG::Graph GD::SVG
 cpanm --notest Convert::Binary::C YAML::Syck
 
-cpanm Bio::Perl
+cpanm --notest Bio::Perl # BioPerl
 cpanm Bio::ASN1::EntrezGene Bio::Graphics
 cpanm Bio::DB::EUtilities
-cpanm --notest Bio::Tools::Run::Alignment::Clustalw
+cpanm --notest Bio::Tools::Run::Alignment::Clustalw # BioPerl-Run
 
 # circos
 cpanm Config::General Data::Dumper Digest::MD5 Font::TTF::Font GD::Polyline Math::Bezier Math::BigFloat Math::Round Math::VecStat 

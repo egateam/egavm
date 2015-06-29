@@ -1,10 +1,10 @@
-# Vagrant boxes (virtual machines) for [EGA](http://ega.nju.edu.cn).
+# Virtual machines (Vagrant boxes) for [EGA](http://ega.nju.edu.cn).
 
 ## Setting up
 
 Normal users should not build EGA VMs themselves. We provide full functional boxes [here](http://ega.nju.edu.cn/download). If you insist to DIY, check scripts in `prepare/`.
 
-To use them, following the steps below.
+To use your local EGA service, following the steps below.
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html);
 2. Pick a virtualization platform [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or [Parallels](http://www.parallels.com/products/desktop/) and install it;
