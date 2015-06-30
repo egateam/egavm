@@ -27,6 +27,10 @@ sudo chown vagrant:vagrant $BASE_DIR/ega -R
 cd $BASE_DIR/ega
 git clone https://github.com/wang-q/ega.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
 
+npm --verbose -g install nodemon
+npm --verbose -g install bower
+npm --verbose -g install express-generator
+
 npm --verbose install
 bower --verbose install
 cp settings.js.example settings.js

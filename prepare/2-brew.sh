@@ -27,9 +27,6 @@ brew tap homebrew/science
 
 echo " + Install nodejs"
 brew install node
-npm --verbose -g install nodemon
-npm --verbose -g install bower
-npm --verbose -g install express-generator
 
 #berkeley-db   bzip2	  freetype  hmmer  libmpc   mpfr	  pcre	      rmblast
 #berkeley-db4  cloog	  gcc	    isl    libpng   newick-utils  pkg-config  sqlite

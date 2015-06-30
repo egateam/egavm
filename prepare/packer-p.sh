@@ -37,12 +37,13 @@ cd $VG_DIR/../parallels
 vagrant up --provider=parallels
 vagrant ssh
 
-### STEPS inside ubuntu 14.04 VM
+### STEPS inside VM
 
-sh /prepare/software.sh
-sh /prepare/brew.sh
-sh /prepare/plenv.sh
-sh /prepare/clone.sh
+sh /prepare/1-apt.sh
+sh /prepare/2-brew.sh
+sh /prepare/3-plenv.sh
+sh /prepare/4-cpanm.sh
+sh /prepare/5-clone.sh
 
 # config repeatmasker
 
