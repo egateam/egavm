@@ -10,16 +10,20 @@ echo " - Building perl environment -"
 echo " + Cloning latest plenv..."
 git clone git://github.com/tokuhirom/plenv.git ~/.plenv
 
-echo " + Updating .bashrc with plenv bin and perl binary shims..."
-PLENV_PATH='export PATH="$HOME/.plenv/bin:$PATH"'
-PLENV_INIT='eval "$(plenv init -)"'
-echo '# plenv' >> ~/.bashrc
-echo $PLENV_PATH >> ~/.bashrc  # add plenv to path
-echo $PLENV_INIT >> ~/.bashrc  # shims and autocomplete
+if grep -q -i plenv ~/.bashrc; then
+    echo " + .bashrc already contains plenv"
+else
+    echo " + Updating .bashrc with plenv bin and perl binary shims..."
+    PLENV_PATH='export PATH="$HOME/.plenv/bin:$PATH"'
+    PLENV_INIT='eval "$(plenv init -)"'
+    echo '# plenv' >> ~/.bashrc
+    echo $PLENV_PATH >> ~/.bashrc  # add plenv to path
+    echo $PLENV_INIT >> ~/.bashrc  # shims and autocomplete
 
-# make the above available for the rest of this script
-eval $PLENV_PATH
-eval $PLENV_INIT
+    # make the above available for the rest of this script
+    eval $PLENV_PATH
+    eval $PLENV_INIT
+fi
 
 echo " + Cloning perl-build..."
 git clone git://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/

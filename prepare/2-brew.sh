@@ -5,19 +5,23 @@ echo " - Linuxbrew environment -"
 echo " + Clone latest linuxbrew"
 git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
 
-echo " + Update .bashrc"
+if grep -q -i linuxbrew ~/.bashrc; then
+    echo " + .bashrc already contains linuxbrew"
+else
+    echo " + Update .bashrc"
 
-LB_PATH='export PATH="$HOME/.linuxbrew/bin:$PATH"'
-LB_MAN='export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"'
-LB_INFO='export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"'
-echo '# Linuxbrew' >> ~/.bashrc
-echo $LB_PATH >> ~/.bashrc
-echo $LB_MAN  >> ~/.bashrc
-echo $LB_INFO >> ~/.bashrc
+    LB_PATH='export PATH="$HOME/.linuxbrew/bin:$PATH"'
+    LB_MAN='export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"'
+    LB_INFO='export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"'
+    echo '# Linuxbrew' >> ~/.bashrc
+    echo $LB_PATH >> ~/.bashrc
+    echo $LB_MAN  >> ~/.bashrc
+    echo $LB_INFO >> ~/.bashrc
 
-eval $LB_PATH
-eval $LB_MAN
-eval $LB_INFO
+    eval $LB_PATH
+    eval $LB_MAN
+    eval $LB_INFO
+fi
 
 echo " + Check brew with doctor"
 brew doctor
