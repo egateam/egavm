@@ -18,6 +18,17 @@ do
 done
 
 # make sure ~/bin in your $PATH
+if grep -q -i homebin ~/.bashrc; then
+    echo " + .bashrc already contains homebin"
+else
+    echo " + Update .bashrc"
+
+    HOME_PATH='export PATH="$HOME/bin:$PATH"'
+    echo '# Homebin' >> ~/.bashrc
+    echo $HOME_PATH >> ~/.bashrc
+
+    eval $HOME_PATH
+fi
 mkdir -p ~/bin
 cd $BASE_DIR/faops && make && cp faops ~/bin
 
