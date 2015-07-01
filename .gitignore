@@ -1,8 +1,5 @@
 # uploaded files
-upload/*
-
-# keep directory structure
-!upload/PLACE.HOLDER
+upload
 
 # webstorm project files
 .idea
@@ -22,3 +19,7 @@ ubuntu
 # iso images and vagrant boxes
 *.iso
 *.box
+
+#
+*.gz
+*.bz2
