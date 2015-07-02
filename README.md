@@ -22,7 +22,8 @@ To use your local EGA service, following the steps below.
 6. Start EGA service.
     + `vagrant up --provider=virtualbox # start VM, change virtualbox to parallels if needed`
     + `vagrant ssh # log into VM`
-    + `node ega/app.js # now your terminal is in the VM`
+    + `cd ~/ega # now your terminal is in the VM`
+    + `node app.js`
 7. Open your favorite browser and visit `http://localhost:30080`.
 
 ## Directory structure

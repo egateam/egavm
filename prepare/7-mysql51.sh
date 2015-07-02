@@ -24,8 +24,6 @@
 #        --enable-thread-safe-client \
 #        --enable-local-infile
 #
-#
-#
 #mkdir -p $HOME/share/mysql/log
 
 brew tap homebrew/versions
