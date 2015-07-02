@@ -1,6 +1,9 @@
 # uploaded files
 upload
 
+# resource files
+prepare/resource
+
 # webstorm project files
 .idea
 
