@@ -13,6 +13,9 @@ ln -s $HOME/.linuxbrew//Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl $H
 # config withncbi
 sed -i 's/\~\/Scripts/\~/' $HOME/withncbi/config.ini
 
+# .screenrc
+cp /prepare/resource/.screenrc $HOME
+
 # jvarkit
 mkdir -p $HOME/share/jvarkit
 cp /prepare/resource/biostar94573.jar $HOME/share/jvarkit
@@ -26,3 +29,4 @@ rm -fr $HOME/.cpan/
 rm -fr $HOME/.cpanm/
 rm -fr $HOME/.plenv/cache/
 
+rm -fr /prepare/resource/kent

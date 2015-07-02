@@ -31,7 +31,6 @@
 brew tap homebrew/versions
 brew install mysql51
 
-
 if grep -q -i mysqlbin ~/.bashrc; then
     echo " + .bashrc already contains mysqlbin"
 else
@@ -48,6 +47,7 @@ fi
 unset TMPDIR
 mysql_install_db
 mysqld_safe &
+sleep 5
 mysql_secure_installation
 
 # copy & paste to command line; then type password of mysql root
