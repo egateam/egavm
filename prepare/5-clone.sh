@@ -26,6 +26,7 @@ else
     HOME_PATH='export PATH="$HOME/bin:$PATH"'
     echo '# Homebin' >> ~/.bashrc
     echo $HOME_PATH >> ~/.bashrc
+    echo >> ~/.bashrc
 
     eval $HOME_PATH
 fi

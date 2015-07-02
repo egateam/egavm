@@ -19,6 +19,7 @@ else
     echo '# plenv' >> ~/.bashrc
     echo $PLENV_PATH >> ~/.bashrc  # add plenv to path
     echo $PLENV_INIT >> ~/.bashrc  # shims and autocomplete
+    echo >> ~/.bashrc
 
     # make the above available for the rest of this script
     eval $PLENV_PATH

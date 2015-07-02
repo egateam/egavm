@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # very basic
-cpanm App::Ack Carp Cwd Config::Tiny DBI DB_File File::Copy::Recursive File::Find::Rule GD JSON JSON::XS Text::CSV_XS YAML
-cpanm MCE Moose POE Template WWW::Mechanize
+cpanm App::Ack Carp Cwd Config::Tiny DB_File File::Find::Rule GD JSON JSON::XS Text::CSV_XS YAML
+cpanm DBI MCE Moose POE Template WWW::Mechanize
 
 # bioperl
 cpanm Data::Stag Test::Most URI::Escape
@@ -29,3 +29,9 @@ cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB:
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Util
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Stopwatch
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Codon
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Run
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::Window
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master App::Fasops
+
+# others
+cpanm DateTime::Format::Natural File::HomeDir DBD::CSV Path::Class File::Remove File::Copy::Recursive String::Compare

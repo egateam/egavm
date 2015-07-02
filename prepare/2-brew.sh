@@ -17,6 +17,7 @@ else
     echo $LB_PATH >> ~/.bashrc
     echo $LB_MAN  >> ~/.bashrc
     echo $LB_INFO >> ~/.bashrc
+    echo >> ~/.bashrc
 
     eval $LB_PATH
     eval $LB_MAN
