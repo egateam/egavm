@@ -1,7 +1,5 @@
-!upload/PLACEHOLDER.txt
-
 # uploaded files
-upload/*
+upload
 
 # resource files
 prepare/resource
