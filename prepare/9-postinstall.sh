@@ -21,6 +21,7 @@ mkdir -p $HOME/share/jvarkit
 cp /prepare/resource/biostar94573.jar $HOME/share/jvarkit
 
 # clean cache before release
+sudo apt-get clean
 brew cleanup
 rm -fr $HOME/.cache/
 rm -fr $HOME/.npm/

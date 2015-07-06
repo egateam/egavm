@@ -5,9 +5,11 @@ echo " - Install softwares via apt-get -"
 
 echo " + Change mirror source"
 sudo sed -i 's/us.archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
 
 echo " + Install linuxbrew dependences"
 sudo apt-get -y update
+sudo apt-get -y upgrade
 sudo apt-get -y install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
 echo " + Install java (jre)"
