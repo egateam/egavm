@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # very basic
-cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ App::Ack Carp Cwd Config::Tiny DB_File File::Find::Rule GD JSON JSON::XS Text::CSV_XS YAML
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ App::Ack Carp Cwd Config::Tiny DB_File File::Find::Rule GD JSON JSON::XS Text::CSV Text::CSV_XS YAML
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ DBI MCE Moose POE Template WWW::Mechanize
 
 # bioperl
@@ -33,4 +33,4 @@ cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB:
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master App::Fasops
 
 # others
-cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ DateTime::Format::Natural File::HomeDir DBD::CSV Path::Class File::Remove File::Copy::Recursive String::Compare
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ DateTime::Format::Natural File::HomeDir DBD::CSV Path::Class File::Listing File::Remove File::Rename File::Copy::Recursive String::Compare
