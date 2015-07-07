@@ -34,7 +34,6 @@ echo " + Install nodejs"
 brew install node
 
 echo " + Install other softwares"
-brew install parallel gd libxml2
 brew install clustal-w hmmer lastz mafft newick-utils raxml
 brew install blast --without-check # this will not install boost
 brew install rmblast --without-blast
