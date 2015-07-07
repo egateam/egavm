@@ -16,7 +16,7 @@ echo " + Install java (jre)"
 sudo apt-get -y install openjdk-7-jre
 
 echo " + Install other softwares"
-sudo apt-get -y install vim graphviz screen unzip libdb-dev libedit-dev libreadline-dev libpng-dev
+sudo apt-get -y install vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev
 
 # http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 echo " + Install mongodb"
