@@ -31,3 +31,11 @@ rm -fr $HOME/.cpanm/
 rm -fr $HOME/.plenv/cache/
 
 rm -fr /prepare/resource/kent
+
+# Clean the drive (this is for Ubuntu):
+# https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one
+sudo dd if=/dev/zero of=/EMPTY bs=1M
+sudo rm -f /EMPTY
+
+# clear the Bash History
+cat /dev/null > ~/.bash_history && history -c
