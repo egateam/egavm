@@ -7,9 +7,10 @@ echo "Open it in a text editor then execute line by line."
 echo
 exit 1
 
-### STEPS on my Mac host machine
+### VirtualBox
 
-# Install Vagrant and Parallels manually
+# Install Vagrant and VirtualBox manually.
+# Don't forget install VirtualBox Extension Pack.
 # https://www.vagrantup.com/downloads.html
 # https://www.virtualbox.org/wiki/Downloads
 
@@ -27,26 +28,15 @@ echo "ISO_PATH := file://$VG_DIR" > Makefile.local
 echo "CM := nocm" >> Makefile.local
 #rm box/virtualbox/ubuntu1404-nocm-*.box
 make virtualbox/ubuntu1404
-vagrant box add ub1404-v box/virtualbox/ubuntu1404-nocm-*.box
 
-cd $VG_DIR/../virtualbox
+### VirtualBox
 
-vagrant up --provider=virtualbox
-vagrant ssh
+# Install Parallels manually
+# http://www.parallels.com/products/desktop/
 
-### STEPS inside VM
+# install Parallels provider for vagrant
+vagrant plugin install vagrant-parallels
 
-sh /prepare/1-apt.sh
-sh /prepare/2-brew.sh
-sh /prepare/3-plenv.sh
-sh /prepare/4-cpanm.sh
-sh /prepare/5-clone.sh
-
-# config repeatmasker
-
-# leave VM
-exit
-
-### pack the VM
-cd $VG_DIR/../virtualbox
-vagrant package --output egavm-v.box
+cd $VG_DIR/ubuntu
+#rm box/parallels/ubuntu1404-nocm-*.box
+make parallels/ubuntu1404
