@@ -25,6 +25,9 @@ vagrant ssh
 
 ### STEPS inside VM
 
+# Disable auto updates
+# System Settings -> Software and updates -> updates -> Automatically check for updates: Never
+
 sh /prepare/1-apt.sh
 sh /prepare/2-brew.sh
 sh /prepare/3-plenv.sh

@@ -18,8 +18,9 @@ echo " + Install nautilus plugins"
 sudo apt-get -y install nautilus-open-terminal nautilus-actions
 
 # These two lines should be execute inside a GUI
+## gsettings get com.canonical.Unity.Launcher favorites
 # Set Unity launcher items
-#gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'unity://running-apps', 'unity://expo-icon', 'unity://devices']"
+#gsettings set com.canonical.Unity.Launcher favorites "['application://nautilus.desktop', 'application://gnome-terminal.desktop', 'application://firefox.desktop', 'unity://running-apps', 'application://gnome-system-monitor.desktop', 'unity://expo-icon', 'unity://devices']"
 
 # Disable unity lock screen
 # http://askubuntu.com/questions/177348/how-do-i-disable-the-screensaver-lock

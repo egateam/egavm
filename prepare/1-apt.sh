@@ -9,7 +9,7 @@ sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
 
 echo " + Install linuxbrew dependences"
 sudo apt-get -y update
-#sudo apt-get -y upgrade # avoid grub updates
+#sudo apt-get -y upgrade # Avoid grub updates. Leave linux-base updates to GUI.
 sudo apt-get -y install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
 echo " + Install java (jre)"
