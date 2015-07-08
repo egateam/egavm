@@ -2,23 +2,22 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-
   config.vm.provider "virtualbox"
 
-  config.vm.box = "ub1404-v"
+  config.vm.box = "box-cutter/ubuntu1404"
 
-  config.vm.define "egavm-v" do |v|
+  config.vm.define "ega-v" do |v|
   end
 
   config.vm.network "forwarded_port", guest: 3000, host: 30080
 
-  config.vm.synced_folder "upload", "/home/vagrant/ega/upload"
-  config.vm.synced_folder "../prepare", "/prepare"
+  config.vm.synced_folder "upload", "/home/vagrant/ega/upload", owner: "vagrant", group: "vagrant", create: true
+  config.vm.synced_folder "../prepare", "/prepare", owner: "vagrant", group: "vagrant"
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # VirtualBox
   config.vm.provider "virtualbox" do |v|
-    v.name = "egavm-v"
+    v.name = "ega-v"
     v.memory = 4096
     v.cpus = 4
   end
