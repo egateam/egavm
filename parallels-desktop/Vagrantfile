@@ -5,20 +5,15 @@ Vagrant.configure(2) do |config|
 
   config.vm.provider "parallels"
 
-  config.vm.box = "ub1404-p"
-
-  config.vm.define "egavm-p" do |v|
-  end
+  config.vm.box = "box-cutter/ubuntu1404-desktop"
 
   config.vm.network "forwarded_port", guest: 3000, host: 30080
 
-  config.vm.synced_folder "upload", "/home/vagrant/ega/upload"
-  config.vm.synced_folder "../prepare", "/prepare"
+  config.vm.synced_folder "../prepare", "/prepare", owner: "vagrant", group: "vagrant"
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Parallels 
   config.vm.provider "parallels" do |v|
-    v.name = "egavm-p"
     v.memory = 4096
     v.cpus = 4
   end
