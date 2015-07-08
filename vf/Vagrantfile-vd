@@ -3,17 +3,21 @@
 
 Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox"
-  
-  config.vm.box = "box-cutter/ubuntu1404-desktop"
+
+  config.vm.box = "ega-vd"
+
+  config.vm.define "ega-vd" do |v|
+  end
 
   config.vm.network "forwarded_port", guest: 3000, host: 30080
 
-  config.vm.synced_folder "../prepare", "/prepare", owner: "vagrant", group: "vagrant"
+  config.vm.synced_folder "upload", "/home/vagrant/ega/upload", owner: "vagrant", group: "vagrant", create: true
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # VirtualBox
   config.vm.provider "virtualbox" do |v|
     v.gui = true
+    v.name = "ega-vd"
     v.memory = 4096
     v.cpus = 4
   end
