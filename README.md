@@ -15,10 +15,10 @@ To use your local EGA service, following the steps below.
     + cloning this repository
         - `git clone https://github.com/wang-q/egavm.git`
     + or downloading corresponding Vagrantfile for your virtualization platform and putting it in a clean directory;
-4. Download `egavm-v.box` for VirtualBox or `egavm-p.box` for Parallels; Put it in the same directory of the configuration file;
+4. Download `ega-vd.box` for VirtualBox or `ega-pd.box` for Parallels; Put it in the same directory of the configuration file;
 5. `cd` into your project directory and run
-    + `vagrant box add egavm-v egavm-v.box` for VirtualBox
-    + `vagrant box add egavm-p egavm-p.box` for Parallels
+    + `vagrant box add ega-vd ega-vd.box` for VirtualBox
+    + `vagrant box add ega-pd ega-pd.box` for Parallels
 6. Start EGA service.
     + `vagrant up --provider=virtualbox # start VM, change virtualbox to parallels if needed`
     + `vagrant ssh # log into VM`
@@ -28,11 +28,16 @@ To use your local EGA service, following the steps below.
 
 ## Directory structure
 
+* `vf/`
+    + Vagrantfile for users.
+    + `Vagrantfile-vd`: VirtualBox with GUI on Linux, Mac and Windows.
+    + `Vagrantfile-pd`: Parallels with GUI on Mac.
+    + `Vagrantfile-v`: VirtualBox without GUI on Linux, Mac and Windows.  For experienced users only.
+
 * `prepare/`
     + Scirpts to build VMs.
 
-* `virtualbox/`
-    + VirtualBox on Linux, Mac and Windows.
-
-* `parallels/`
-    + Parallels on Mac.
+* Vagrantfiles for building VM.
+    + `virtualbox-desktop/`
+    + `parallels-desktop/`
+    + `virtualbox/`
