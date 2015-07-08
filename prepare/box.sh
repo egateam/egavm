@@ -19,7 +19,7 @@ fi
 
 ### STEPS on host machine
 
-cd $BASE_DIR/virtualbox
+cd $BASE_DIR/virtualbox-desktop
 vagrant up --provider=virtualbox
 vagrant ssh
 
@@ -35,4 +35,4 @@ sh /prepare/5-clone.sh
 exit
 
 ### pack the VM
-vagrant package --output ega-v.box
+vagrant package --output ega-vd.box
