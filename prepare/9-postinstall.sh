@@ -22,13 +22,15 @@ cp /prepare/resource/biostar94573.jar $HOME/share/jvarkit
 
 # clean cache before release
 sudo apt-get clean
-brew cleanup
 rm -fr $HOME/.cache/
 rm -fr $HOME/.npm/
 rm -fr $HOME/.node-gyp/
 rm -fr $HOME/.cpan/
 rm -fr $HOME/.cpanm/
 rm -fr $HOME/.plenv/cache/
+
+source ~/.bashrc
+brew cleanup
 
 rm -fr /prepare/resource/kent
 

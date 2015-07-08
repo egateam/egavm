@@ -38,9 +38,7 @@ vagrant ssh
 
 sh /prepare/1-apt.sh
 sh /prepare/2-brew.sh
-source ~/.bashrc
 sh /prepare/3-plenv.sh
-source ~/.bashrc
 sh /prepare/4-cpanm.sh
 sh /prepare/5-clone.sh
 

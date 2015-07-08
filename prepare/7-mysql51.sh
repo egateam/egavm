@@ -26,6 +26,7 @@
 #
 #mkdir -p $HOME/share/mysql/log
 
+source ~/.bashrc
 brew tap homebrew/versions
 brew install mysql51
 

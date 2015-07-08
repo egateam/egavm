@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source ~/.bashrc
+
 # very basic
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Carp Cwd Config::Tiny DB_File File::Find::Rule GD JSON JSON::XS Text::CSV Text::CSV_XS YAML
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ DBI MCE Moose Template
