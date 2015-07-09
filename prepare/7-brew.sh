@@ -30,9 +30,6 @@ brew doctor
 echo " + Add tap science"
 brew tap homebrew/science
 
-echo " + Install nodejs"
-brew install node
-
 echo " + Install other softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml
 brew install blast --without-check # this will not install boost

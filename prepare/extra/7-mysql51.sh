@@ -13,8 +13,6 @@
 #        --without-readline \
 #        --enable-assembler \
 #        --with-plugins=myisam \
-#        --with-mysqld-ldflags=-all-static \
-#        --with-client-ldflags=-all-static \
 #        --with-mysqld-user=vagrant \
 #        --with-unix-socket-path=$HOME/share/mysql/tmp/mysql.sock \
 #        --without-docs \
@@ -26,7 +24,13 @@
 #
 #mkdir -p $HOME/share/mysql/log
 
-source ~/.bashrc
+#sudo mv /etc/mysql/my.cnf /etc/mysql/my.cnf.back
+
+sudo apt-get -y purge mysql-common
+
+# rm ~/.cache/Homebrew/mysql51-5.1.73.tar.gz.incomplete
+# cp /prepare/resource/mysql-5.1.73.tar.gz ~/.cache/Homebrew/mysql51-5.1.73.tar.gz
+
 brew tap homebrew/versions
 brew install mysql51
 
@@ -43,10 +47,16 @@ else
     eval $LB_PATH
 fi
 
+echo " + Fill mysql system tables"
 unset TMPDIR
 mysql_install_db
-mysqld_safe &
+
+echo " + Start mysql service"
+cd /home/vagrant/.linuxbrew/Cellar/mysql51/5.1.73_1
+/home/vagrant/.linuxbrew/Cellar/mysql51/5.1.73_1/bin/mysqld_safe &
 sleep 5
+
+echo " + Securing mysql service"
 mysql_secure_installation
 
 # copy & paste to command line; then type password of mysql root

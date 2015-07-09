@@ -2,6 +2,9 @@
 
 BASE_DIR=/home/vagrant
 
+echo " + Install nodejs"
+brew install node
+
 echo " + Node modules"
 cd $BASE_DIR/ega
 

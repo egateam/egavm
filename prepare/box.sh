@@ -29,10 +29,21 @@ vagrant ssh
 # System Settings -> Software and updates -> updates -> Automatically check for updates: Never
 
 sh /prepare/1-apt.sh
-sh /prepare/2-brew.sh
+# In GUI terminal
+# sh /prepare/2-unity.sh
 sh /prepare/3-plenv.sh
+source $HOME/.bashrc
 sh /prepare/4-cpanm.sh
 sh /prepare/5-clone.sh
+sh /prepare/6-download.sh
+# sh /prepare/extra/1-apt.sh
+# sh /prepare/extra/4-cpanm.sh
+sh /prepare/7-brew.sh
+source $HOME/.bashrc
+sh /prepare/8-node.sh
+# sh /prepare/extra/7-mysql51.sh
+# sh /prepare/extra/8-jksrc.sh
+sh /prepare/9-postinstall.sh
 
 # leave VM
 exit

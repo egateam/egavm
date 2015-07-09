@@ -12,3 +12,6 @@ export MYSQLLIBS="-L/home/vagrant/.linuxbrew/opt/mysql51/lib/mysql -lmysqlclient
 export MYSQLINC="/home/vagrant/.linuxbrew/opt/mysql51/include/mysql"
 make
 
+cd $HOME/bin
+tar cvfz jkbin-ubuntu-1404-2011.tar.gz x86_64
+mv jkbin-ubuntu-1404-2011.tar.gz /prepare/resource/
