@@ -21,10 +21,11 @@ To use your local EGA service, following the steps below.
     + `vagrant box add ega-pd ega-pd.box` for Parallels
 6. Start EGA service.
     + `vagrant up --provider=virtualbox # start VM, change virtualbox to parallels if needed`
-    + `vagrant ssh # log into VM`
-    + `cd ~/ega # now your terminal is in the VM`
-    + `node app.js`
-7. Open your favorite browser and visit `http://localhost:30080`.
+    + You can either 
+        - `vagrant ssh # log into VM via ssh`
+        - or open a terminal window in the VM GUI.
+    + `cd ~/ega && node app.js` IMPORTANT! Be sure your cwd is ~/ega
+7. Open your favorite browser and visit `http://localhost:30080`. Or in VM GUI, open firefox and visit `http://localhost:3000`.
 
 ## Directory structure
 
