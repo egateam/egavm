@@ -18,8 +18,8 @@ sudo apt-get -y update
 #sudo apt-get -y upgrade # Avoid grub updates. Leave linux-base updates to GUI.
 sudo apt-get -y install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
-echo " + Install java (jre)"
-sudo apt-get -y install openjdk-7-jre
+echo " + Install java"
+sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
 
 echo " + Install other softwares"
 sudo apt-get -y install parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev
@@ -33,5 +33,8 @@ sudo apt-get install -y mongodb-org
 
 echo " + Install redis"
 sudo apt-get -y install redis-server
+
+echo " + Remove system provided mysql"
+sudo apt-get -y purge mysql-common
 
 echo "Basic software installation complete!"

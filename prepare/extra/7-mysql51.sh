@@ -26,8 +26,6 @@
 
 #sudo mv /etc/mysql/my.cnf /etc/mysql/my.cnf.back
 
-sudo apt-get -y purge mysql-common
-
 # rm ~/.cache/Homebrew/mysql51-5.1.73.tar.gz.incomplete
 # cp /prepare/resource/mysql-5.1.73.tar.gz ~/.cache/Homebrew/mysql51-5.1.73.tar.gz
 
