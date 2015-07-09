@@ -4,7 +4,7 @@ mkdir -p $HOME/share/
 
 # blast
 cd /prepare/resource/
-curl http://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/blast-2.2.26-x64-linux.tar.gz -O
+wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/blast-2.2.26-x64-linux.tar.gz
 cd $HOME/share/
 tar xvfz /prepare/resource/blast-2.2.26-x64-linux.tar.gz
 mv blast-2.2.26 blast
@@ -12,14 +12,14 @@ mv blast-2.2.26 blast
 # circos
 cd /prepare/resource/
 #curl http://circos.ca/distribution/circos-0.67-7.tgz -O
-curl http://science-annex.org/pub/circos/circos-0.67-7.tgz -O
+wget -N http://science-annex.org/pub/circos/circos-0.67-7.tgz
 cd $HOME/share/
 tar xvfz /prepare/resource/circos-0.67-7.tgz
 mv circos-0.67-7 circos
 
 # multiz
 cd /prepare/resource/
-curl http://www.bx.psu.edu/miller_lab/dist/multiz-tba.012109.tar.gz -O
+wget -N http://www.bx.psu.edu/miller_lab/dist/multiz-tba.012109.tar.gz -O
 cd $HOME/share/
 tar xvfz /prepare/resource/multiz-tba.012109.tar.gz
 cd multiz-tba*
