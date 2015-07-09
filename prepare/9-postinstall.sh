@@ -16,10 +16,6 @@ sed -i 's/\~\/Scripts/\~/' $HOME/withncbi/config.ini
 echo " + Copy .screenrc"
 cp /prepare/resource/.screenrc $HOME
 
-echo " + Copy jvarkit"
-mkdir -p $HOME/share/jvarkit
-cp /prepare/resource/biostar94573.jar $HOME/share/jvarkit
-
 echo " + clean caches before release"
 sudo apt-get clean
 rm -fr $HOME/.cache/
@@ -30,8 +26,6 @@ rm -fr $HOME/.cpanm/
 rm -fr $HOME/.plenv/cache/
 
 brew cleanup
-
-rm -fr /prepare/resource/kent
 
 # This is for Ubuntu:
 # https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one

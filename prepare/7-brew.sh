@@ -30,8 +30,14 @@ brew doctor
 echo " + Add tap science"
 brew tap homebrew/science
 
-echo " + Install other softwares"
+echo " + Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml
 brew install blast --without-check # this will not install boost
 brew install rmblast --without-blast
 brew install repeatmasker --without-configure # run config later
+
+echo " + Install vcftools"
+brew install vcftools --with-zlib
+cp $HOME/.linuxbrew/lib/perl5/site_perl/FaSlice.pm  `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
+cp $HOME/.linuxbrew/lib/perl5/site_perl/Vcf.pm      `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
+cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
