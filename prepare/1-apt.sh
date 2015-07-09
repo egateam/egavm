@@ -7,6 +7,12 @@ echo " + Change mirror source"
 sudo sed -i 's/us.archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
 
+# I want life easier.
+# https://help.ubuntu.com/lts/serverguide/apparmor.html
+echo " + Disable AppArmor"
+sudo service apparmor stop
+sudo update-rc.d -f apparmor remove
+
 echo " + Install linuxbrew dependences"
 sudo apt-get -y update
 #sudo apt-get -y upgrade # Avoid grub updates. Leave linux-base updates to GUI.
