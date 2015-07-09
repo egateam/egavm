@@ -7,7 +7,8 @@ Normal users should not build EGA VMs themselves. We provide full functional box
 To use your local EGA service, following the steps below.
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html);
-2. Pick a virtualization platform [VirtualBox](https://www.virtualbox.org/wiki/Downloads) or [Parallels](http://www.parallels.com/products/desktop/) and install it;
+2. Pick a virtualization platform [VirtualBox](https://www.virtualbox.org/wiki/Download_Old_Builds_4_3) or [Parallels](http://www.parallels.com/products/desktop/) and install it;
+    + For VirtualBox, install the Extension Pack.
     + For Parallels, install Parallels provider for vagrant
         - `vagrant plugin install vagrant-parallels`
     + [VMware provider](http://www.vagrantup.com/vmware) is not free and VMware is not used in our team, so I'm sorry for not providing VMware boxes.

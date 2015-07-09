@@ -35,4 +35,3 @@ sudo rm -f /EMPTY
 
 echo " + Clean the Bash history"
 cat /dev/null > ~/.bash_history
-history -c
