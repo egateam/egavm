@@ -35,17 +35,8 @@ cd $BASE_DIR/faops && make && cp faops ~/bin
 
 # node stuffs
 echo " + Clone ega"
+mkdir -p $BASE_DIR/ega
 sudo chown vagrant:vagrant $BASE_DIR/ega -R
 cd $BASE_DIR/ega
 git clone https://github.com/wang-q/ega.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
-
-echo " + Node modules"
-source ~/.bashrc
-
-npm --verbose -g install nodemon
-npm --verbose -g install bower
-npm --verbose -g install express-generator
-
-npm --verbose install
-bower --verbose install
 cp settings.js.example settings.js
