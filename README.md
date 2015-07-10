@@ -66,7 +66,7 @@ See [packer.sh](prepare/packer.sh)
 
 ### VirtualBox desktop
 
-#### STEPS on host machine
+* STEPS on host machine
 
 ```bash
 cd $HOME/Scripts/egavm/virtualbox-desktop
@@ -74,7 +74,7 @@ vagrant up --provider=virtualbox
 vagrant ssh
 ```
 
-#### STEPS inside VM
+* STEPS inside VM
 
 Disable auto updates: `System Settings -> Software and updates -> updates -> Automatically check for updates: Never`
 
@@ -107,7 +107,7 @@ sh /prepare/extra/7-mysql51.sh   # Optional, Linuxbrew mysql51, needed by alignD
 sh /prepare/9-postinstall.sh     # Clean the System
 ```
 
-#### Pack VM up
+* Pack VM up
 
 ```bash
 vagrant package --output ega-vd.box
@@ -115,7 +115,7 @@ vagrant package --output ega-vd.box
 
 ### Parallels desktop
 
-#### STEPS on host machine
+* STEPS on host machine
 
 ```bash
 cd $HOME/Scripts/egavm/parallels-desktop
@@ -123,11 +123,11 @@ vagrant up --provider=parallels
 vagrant ssh
 ```
 
-#### STEPS inside VM
+* STEPS inside VM
 
 Same as virtualbox-desktop.
 
-#### Pack VM up
+* Pack VM up
 
 ```bash
 vagrant package --output ega-pd.box
@@ -135,7 +135,7 @@ vagrant package --output ega-pd.box
 
 ### VirtualBox headless
 
-#### STEPS on host machine
+* STEPS on host machine
 
 ```bash
 cd $HOME/Scripts/egavm/virtualbox
@@ -143,11 +143,11 @@ vagrant up --provider=virtualbox
 vagrant ssh
 ```
 
-#### STEPS inside VM
+* STEPS inside VM
 
 Omit `sh /prepare/2-unity.sh`, and all others is the same as virtualbox-desktop.
 
-#### Pack VM up
+* Pack VM up
 
 ```bash
 vagrant package --output ega-v.box
