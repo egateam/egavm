@@ -43,3 +43,123 @@ To use your local EGA service, following the steps below.
     + `virtualbox-desktop/`
     + `parallels-desktop/`
     + `virtualbox/`
+
+## Instructions for these scripts
+
+### Get public vagrant boxes
+
+```bash
+vagrant box add box-cutter/ubuntu1404 --provider virtualbox
+
+vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox
+
+# Mac OSX
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    vagrant plugin install vagrant-parallels
+    vagrant box add box-cutter/ubuntu1404-desktop --provider parallels
+fi
+```
+
+### Build a vagrant box from .iso.
+
+See [packer.sh](prepare/packer.sh)
+
+### VirtualBox desktop
+
+#### STEPS on host machine
+
+```bash
+cd $HOME/Scripts/egavm/virtualbox-desktop
+vagrant up --provider=virtualbox
+vagrant ssh
+```
+
+#### STEPS inside VM
+
+Disable auto updates: `System Settings -> Software and updates -> updates -> Automatically check for updates: Never`
+
+```bash
+sh /prepare/1-apt.sh
+
+## In GUI terminal
+## sh /prepare/2-unity.sh
+
+sh /prepare/3-plenv.sh
+source $HOME/.bashrc
+sh /prepare/4-cpanm.sh
+
+sh /prepare/5-clone.sh
+sh /prepare/6-download.sh
+
+sh /prepare/extra/1-apt.sh       # Optional, needed by alignDB
+sh /prepare/extra/4-cpanm.sh     # Optional, needed by alignDB
+
+sh /prepare/7-brew.sh
+source $HOME/.bashrc
+sh /prepare/8-node.sh
+
+sh /prepare/extra/7-mysql51.sh   # Optional, Linuxbrew mysql51, needed by alignDB
+
+# Build jksrc.zip once and save binary files.
+# Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
+### sh /prepare/extra/8-jksrc.sh
+
+sh /prepare/9-postinstall.sh     # Clean the System
+```
+
+#### Pack VM up
+
+```bash
+vagrant package --output ega-vd.box
+```
+
+### Parallels desktop
+
+#### STEPS on host machine
+
+```bash
+cd $HOME/Scripts/egavm/parallels-desktop
+vagrant up --provider=parallels
+vagrant ssh
+```
+
+#### STEPS inside VM
+
+Same as virtualbox-desktop.
+
+#### Pack VM up
+
+```bash
+vagrant package --output ega-pd.box
+```
+
+### VirtualBox headless
+
+#### STEPS on host machine
+
+```bash
+cd $HOME/Scripts/egavm/virtualbox
+vagrant up --provider=virtualbox
+vagrant ssh
+```
+
+#### STEPS inside VM
+
+Omit `sh /prepare/2-unity.sh`, and all others is the same as virtualbox-desktop.
+
+#### Pack VM up
+
+```bash
+vagrant package --output ega-v.box
+```
+
+### Box sizes
+
+| name                    | size             |
+| :-------------          | :--------------: |
+| ega-vd.box              | 1.95 GB          |
+| ega-vd.box w/o optional | 1.87 GB          |
+| ega-pd.box              |                  |
+| ega-pd.box w/o optional |                  |
+| ega-v.box               | 1.44 GB          |
+| ega-v.box w/o optional  |                  |

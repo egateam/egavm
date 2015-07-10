@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR='/Users/wangq/Scripts/egavm/prepare'
+BASE_DIR='$HOME/Scripts/egavm/prepare'
 
 echo "Don't execute this script."
 echo "Open it in a text editor then execute line by line."
