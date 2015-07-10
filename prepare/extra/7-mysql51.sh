@@ -1,33 +1,8 @@
 #!/usr/bin/env bash
 
-#cd /prepare/resource/
-#curl http://cdn.mysql.com/Downloads/MySQL-5.1/mysql-5.1.73.tar.gz -O
-#cd $HOME/share/
-#tar xvfz /prepare/resource/mysql-5.1.73.tar.gz
-#cd mysql-*
-#
-## mysql 5.1
-#CFLAGS="-O3" CXX=gcc CXXFLAGS="-O3 -felide-constructors -fno-exceptions -fno-rtti" ; \
-#    ./configure \
-#        --prefix=$HOME/share/mysql \
-#        --without-readline \
-#        --enable-assembler \
-#        --with-plugins=myisam \
-#        --with-mysqld-user=vagrant \
-#        --with-unix-socket-path=$HOME/share/mysql/tmp/mysql.sock \
-#        --without-docs \
-#        --without-debug \
-#        --disable-dependency-tracking \
-#        --localstatedir=$HOME/share/mysql/data \
-#        --enable-thread-safe-client \
-#        --enable-local-infile
-#
-#mkdir -p $HOME/share/mysql/log
-
-#sudo mv /etc/mysql/my.cnf /etc/mysql/my.cnf.back
-
-# rm ~/.cache/Homebrew/mysql51-5.1.73.tar.gz.incomplete
-# cp /prepare/resource/mysql-5.1.73.tar.gz ~/.cache/Homebrew/mysql51-5.1.73.tar.gz
+rm ~/.cache/Homebrew/*.incomplete
+cp /prepare/resource/mysql-5.1.73.tar.gz    ~/.cache/Homebrew/mysql51-5.1.73.tar.gz
+cp /prepare/resource/openssl-1.0.2c.tar.gz  ~/.cache/Homebrew/openssl-1.0.2c.tar.gz
 
 brew tap homebrew/versions
 brew install mysql51
@@ -56,6 +31,9 @@ sleep 5
 
 echo " + Securing mysql service"
 mysql_secure_installation
+
+# There is no my.cnf by default.
+# http://stackoverflow.com/questions/7973927/for-homebrew-mysql-installs-wheres-my-cnf
 
 # copy & paste to command line; then type password of mysql root
 # mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"

@@ -15,6 +15,7 @@ sed -i 's/\~\/Scripts/\~/' $HOME/withncbi/config.ini
 
 echo " + Copy .screenrc"
 cp /prepare/resource/.screenrc $HOME
+chmod -x $HOME/.screenrc
 
 echo " + clean caches before release"
 sudo apt-get clean

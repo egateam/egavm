@@ -42,11 +42,16 @@ sh /prepare/7-brew.sh
 source $HOME/.bashrc
 sh /prepare/8-node.sh
 # sh /prepare/extra/7-mysql51.sh
-# sh /prepare/extra/8-jksrc.sh
+# source $HOME/.bashrc
+### sh /prepare/extra/8-jksrc.sh # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
 sh /prepare/9-postinstall.sh
 
 # leave VM
 exit
 
 ### pack the VM
-vagrant package --output ega-vd.box
+# just ega
+#vagrant package --output ega-vd.box # 1.87 GB
+
+# execute the extra lines to run alignDB
+vagrant package --output ega-vd.box # 1.95 GB

@@ -15,7 +15,7 @@ cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest App::Ack 
 #
 # In my current preference, I tend to use apt to install various development packages.
 #export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH
-cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ GD GD::SVG
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ GD SVG GD::SVG
 
 # bioperl
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Data::Stag Test::Most URI::Escape Algorithm::Munkres Array::Compare Clone Error File::Sort Graph IO::Scalar List::MoreUtils Set::Scalar Sort::Naturally
