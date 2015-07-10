@@ -94,6 +94,7 @@ sh /prepare/6-download.sh
 sh /prepare/extra/1-apt.sh       # Optional, needed by alignDB
 sh /prepare/extra/4-cpanm.sh     # Optional, needed by alignDB
 
+# linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them in the tail of job queue. 
 sh /prepare/7-brew.sh
 source $HOME/.bashrc
 sh /prepare/8-node.sh
@@ -110,6 +111,7 @@ sh /prepare/9-postinstall.sh     # Clean the System
 * Pack VM up
 
 ```bash
+cd $HOME/Scripts/egavm/virtualbox-desktop
 vagrant package --output ega-vd.box
 ```
 
@@ -130,6 +132,7 @@ Same as virtualbox-desktop.
 * Pack VM up
 
 ```bash
+cd $HOME/Scripts/egavm/parallels-desktop
 vagrant package --output ega-pd.box
 ```
 
@@ -145,11 +148,12 @@ vagrant ssh
 
 * STEPS inside VM
 
-Omit `sh /prepare/2-unity.sh`, and all others is the same as virtualbox-desktop.
+Omit `prepare/2-unity.sh`, and all others are the same as virtualbox-desktop.
 
 * Pack VM up
 
 ```bash
+cd $HOME/Scripts/egavm/virtualbox
 vagrant package --output ega-v.box
 ```
 
@@ -157,9 +161,7 @@ vagrant package --output ega-v.box
 
 | name                    | size             |
 | :-------------          | :--------------: |
-| ega-vd.box              | 1.95 GB          |
+| ega-vd.box              | 2.01 GB          |
 | ega-vd.box w/o optional | 1.87 GB          |
-| ega-pd.box              |                  |
-| ega-pd.box w/o optional |                  |
+| ega-pd.box              | 2.04 GD          |
 | ega-v.box               | 1.44 GB          |
-| ega-v.box w/o optional  |                  |

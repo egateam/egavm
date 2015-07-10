@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "====> Linuxbrew environment -"
+echo "====> Linuxbrew environment  <===="
 
 echo "==> Clone latest linuxbrew"
 git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew

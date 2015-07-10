@@ -14,7 +14,7 @@ cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest App::Ack 
 #/home/vagrant/.linuxbrew/lib/pkgconfig:/home/vagrant/.linuxbrew/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/home/vagrant/.linuxbrew/Library/ENV/pkgconfig/0
 #
 # In my current preference, I tend to use apt to install various development packages.
-#export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH
+#export PKG_CONFIG_PATH=/usr/share/pkgconfig/:/usr/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ GD SVG GD::SVG
 
 # bioperl

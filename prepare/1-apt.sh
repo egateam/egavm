@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # softwares via apt-get
-echo "====> Install softwares via apt-get -"
+echo "====> Install softwares via apt-get <===="
 
 echo "==> Change mirror source"
 sudo sed -i 's/us.archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # softwares via apt-get
-echo "====> Install extra softwares via apt-get -"
+echo "====> Install extra softwares via apt-get <===="
 
 echo "==> Install gtk3"
 sudo apt-get -y install libcairo2-dev libglib2.0-0 libglib2.0-dev libgtk-3-dev libgirepository1.0-dev

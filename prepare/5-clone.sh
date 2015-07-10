@@ -33,7 +33,7 @@ fi
 mkdir -p ~/bin
 cd $BASE_DIR/faops && make && cp faops ~/bin
 
-# node stuffs
+# ega/upload may be created by vagrant
 echo "==> Clone ega"
 mkdir -p $BASE_DIR/ega
 sudo chown vagrant:vagrant $BASE_DIR/ega -R

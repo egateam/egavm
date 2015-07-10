@@ -4,7 +4,7 @@
 
 PLENV_PERL_VERSION='5.18.4'
 
-echo "====> Building perl environment -"
+echo "====> Building perl environment  <===="
 
 # get plenv latest
 echo "==> Cloning latest plenv..."

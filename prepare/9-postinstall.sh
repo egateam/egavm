@@ -17,7 +17,7 @@ echo "==> Copy .screenrc"
 cp /prepare/resource/.screenrc $HOME
 chmod -x $HOME/.screenrc
 
-echo "==> clean caches before release"
+echo "==> Clean caches before release"
 sudo apt-get clean
 rm -fr $HOME/.cache/
 rm -fr $HOME/.npm/
