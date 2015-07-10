@@ -10,6 +10,10 @@ if [ -n "$DISPLAY" ]; then
     echo " + Disable unity lock screen"
     gsettings set org.gnome.desktop.screensaver lock-enabled false
     gsettings set org.gnome.desktop.session idle-delay 0 # (0 to disable)
+
+    echo " + Install nautilus plugins"
+    sudo apt-get -y install nautilus-open-terminal nautilus-actions
+
 else
     echo "This script should be execute inside a GUI terminal"
 fi
