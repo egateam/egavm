@@ -31,7 +31,9 @@ echo " + Add tap science"
 brew tap homebrew/science
 
 # Many bioinfomatics hosted on low band server, so don't waste time on downloading them repeatedly.
+mkdir -p ~/.cache/Homebrew
 rm ~/.cache/Homebrew/*.incomplete
+cp /prepare/resource/hmmer-3.1b2.tar.gz                     ~/.cache/Homebrew/hmmer-3.1b2.tar.gz
 cp /prepare/resource/newick-utils-1.6.tar.gz                ~/.cache/Homebrew/newick-utils-1.6.tar.gz
 cp /prepare/resource/pcre-8.37.tar.bz2                      ~/.cache/Homebrew/pcre-8.37.tar.bz2
 cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  ~/.cache/Homebrew/ncbi-rmblastn-2.2.28-x64-linux.tar.gz

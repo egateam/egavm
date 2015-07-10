@@ -19,18 +19,23 @@ fi
 
 ### STEPS on host machine
 
-cd $BASE_DIR/virtualbox-desktop
+cd $HOME/Scripts/egavm/virtualbox-desktop
 vagrant up --provider=virtualbox
 vagrant ssh
 
-### STEPS inside VM
+### STEPS inside VM (virtualbox-desktop)
 
-# Disable auto updates
-# System Settings -> Software and updates -> updates -> Automatically check for updates: Never
+# In the following steps,
+# #   means needed by alignDB;
+# ##  means needed by VMs with GUI;
+# ### means only do this once;
+
+## Disable auto updates
+## System Settings -> Software and updates -> updates -> Automatically check for updates: Never
 
 sh /prepare/1-apt.sh
-# In GUI terminal
-# sh /prepare/2-unity.sh
+## In GUI terminal
+## sh /prepare/2-unity.sh
 sh /prepare/3-plenv.sh
 source $HOME/.bashrc
 sh /prepare/4-cpanm.sh
@@ -42,7 +47,6 @@ sh /prepare/7-brew.sh
 source $HOME/.bashrc
 sh /prepare/8-node.sh
 # sh /prepare/extra/7-mysql51.sh
-# source $HOME/.bashrc
 ### sh /prepare/extra/8-jksrc.sh # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
 sh /prepare/9-postinstall.sh
 
@@ -50,8 +54,26 @@ sh /prepare/9-postinstall.sh
 exit
 
 ### pack the VM
-# just ega
+# virtualbox-desktop, just ega
 #vagrant package --output ega-vd.box # 1.87 GB
 
 # execute the extra lines to run alignDB
 vagrant package --output ega-vd.box # 1.95 GB
+
+### parallels-desktop
+cd $HOME/Scripts/egavm/parallels-desktop
+vagrant up --provider=parallels
+
+# ...
+# ...
+
+vagrant package --output ega-v.box # 1.44 GB
+
+### virtualbox headless
+cd $HOME/Scripts/egavm/virtualbox-desktop
+vagrant up --provider=virtualbox
+
+# ...
+# ...
+
+vagrant package --output ega-v.box # 1.44 GB

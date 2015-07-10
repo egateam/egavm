@@ -25,6 +25,9 @@ echo " + Install other softwares"
 sudo apt-get -y install parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev
 
 # http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
+# When GFW going on a rampage, let apt use host's shadowsocks
+# sudo vim /etc/apt/apt.conf
+# Acquire::socks::proxy "socks5://10.0.1.5:1080/";
 echo " + Install mongodb"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
