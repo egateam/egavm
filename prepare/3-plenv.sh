@@ -4,16 +4,16 @@
 
 PLENV_PERL_VERSION='5.18.4'
 
-echo " - Building perl environment -"
+echo "====> Building perl environment -"
 
 # get plenv latest
-echo " + Cloning latest plenv..."
+echo "==> Cloning latest plenv..."
 git clone git://github.com/tokuhirom/plenv.git ~/.plenv
 
 if grep -q -i plenv ~/.bashrc; then
-    echo " + .bashrc already contains plenv"
+    echo "==> .bashrc already contains plenv"
 else
-    echo " + Updating .bashrc with plenv bin and perl binary shims..."
+    echo "==> Updating .bashrc with plenv bin and perl binary shims..."
     PLENV_PATH='export PATH="$HOME/.plenv/bin:$PATH"'
     PLENV_INIT='eval "$(plenv init -)"'
     echo '# plenv' >> ~/.bashrc
@@ -26,20 +26,20 @@ else
     eval $PLENV_INIT
 fi
 
-echo " + Cloning perl-build..."
+echo "==> Cloning perl-build..."
 git clone git://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
 
-echo " + Building perl ${PLENV_PERL_VERSION}..."
+echo "==> Building perl ${PLENV_PERL_VERSION}..."
 #curl http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.gz -o /home/vagrant/.plenv/cache/perl-5.18.4.tar.gz
 plenv install $PLENV_PERL_VERSION -Dusethreads
 
-echo " + Switching to $PLENV_PERL_VERSION"
+echo "==> Switching to $PLENV_PERL_VERSION"
 plenv global $PLENV_PERL_VERSION
 
-echo " + Installing cpanminus..."
+echo "==> Installing cpanminus..."
 plenv install-cpanm
 
-echo " + Rehashing..."
+echo "==> Rehashing..."
 plenv rehash
 
 echo "plenv installation complete!"

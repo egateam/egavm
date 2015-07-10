@@ -8,10 +8,10 @@ for OP in faops egaz egas alignDB withncbi
 do
     if [ ! -d $BASE_DIR/$OP/.git ]
     then
-        echo " + Clone $OP"
+        echo "==> Clone $OP"
         git clone https://github.com/wang-q/$OP.git $BASE_DIR/$OP
     else
-        echo " + Pull $OP"
+        echo "==> Pull $OP"
         cd $BASE_DIR/$OP
         git pull
     fi
@@ -19,9 +19,9 @@ done
 
 # make sure ~/bin in your $PATH
 if grep -q -i homebin ~/.bashrc; then
-    echo " + .bashrc already contains homebin"
+    echo "==> .bashrc already contains homebin"
 else
-    echo " + Update .bashrc"
+    echo "==> Update .bashrc"
 
     HOME_PATH='export PATH="$HOME/bin:$PATH"'
     echo '# Homebin' >> ~/.bashrc
@@ -34,7 +34,7 @@ mkdir -p ~/bin
 cd $BASE_DIR/faops && make && cp faops ~/bin
 
 # node stuffs
-echo " + Clone ega"
+echo "==> Clone ega"
 mkdir -p $BASE_DIR/ega
 sudo chown vagrant:vagrant $BASE_DIR/ega -R
 cd $BASE_DIR/ega

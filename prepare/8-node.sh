@@ -2,10 +2,10 @@
 
 BASE_DIR=/home/vagrant
 
-echo " + Install nodejs"
+echo "==> Install nodejs"
 brew install node
 
-echo " + Node modules"
+echo "==> Node modules"
 cd $BASE_DIR/ega
 
 npm -g install nodemon

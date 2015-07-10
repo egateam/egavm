@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-echo " - Linuxbrew environment -"
+echo "====> Linuxbrew environment -"
 
-echo " + Clone latest linuxbrew"
+echo "==> Clone latest linuxbrew"
 git clone https://github.com/Homebrew/linuxbrew.git ~/.linuxbrew
 
 if grep -q -i linuxbrew ~/.bashrc; then
-    echo " + .bashrc already contains linuxbrew"
+    echo "==> .bashrc already contains linuxbrew"
 else
-    echo " + Update .bashrc"
+    echo "==> Update .bashrc"
 
     LB_PATH='export PATH="$HOME/.linuxbrew/bin:$PATH"'
     LB_MAN='export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"'
@@ -24,10 +24,10 @@ else
     eval $LB_INFO
 fi
 
-echo " + Check brew with doctor"
-brew doctor
+#echo "==> Check brew with doctor"
+#brew doctor
 
-echo " + Add tap science"
+echo "==> Add tap science"
 brew tap homebrew/science
 
 # Many bioinfomatics hosted on low band server, so don't waste time on downloading them repeatedly.
@@ -40,14 +40,15 @@ cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  ~/.cache/Homebrew/nc
 cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         ~/.cache/Homebrew/repeatmasker-4.0.5.tar.gz
 cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           ~/.cache/Homebrew/raxml-8.1.15.tar.gz
 cp /prepare/resource/ncbi-blast-2.2.31+src.tar.gz           ~/.cache/Homebrew/blast-2.2.31.tar.gz
+cp /prepare/resource/pkg-config-0.28.tar.gz                 ~/.cache/Homebrew/pkg-config-0.28.tar.gz
 
-echo " + Install bioinfomatics softwares"
+echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml
 brew install blast --without-check # this will not install boost
 brew install rmblast --without-blast
 brew install repeatmasker --without-configure # run config later
 
-echo " + Install vcftools"
+echo "==> Install vcftools"
 brew install vcftools
 cp $HOME/.linuxbrew/lib/perl5/site_perl/FaSlice.pm  `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
 cp $HOME/.linuxbrew/lib/perl5/site_perl/Vcf.pm      `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
