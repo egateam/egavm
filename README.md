@@ -2,7 +2,7 @@
 
 ## Setting up
 
-Normal users should not build EGA VMs themselves. We provide full functional boxes [here](http://ega.nju.edu.cn/download). If you insist to DIY, check scripts in `prepare/`.
+Normal users should not build EGA VMs themselves. We provide full functional boxes [here](http://ega.nju.edu.cn/download). If you insist to DIY, check scripts in `prepare/` and [this section](#instructions-for-building-scripts).
 
 To use your local EGA service, following the steps below.
 
@@ -44,7 +44,7 @@ To use your local EGA service, following the steps below.
     + `parallels-desktop/`
     + `virtualbox/`
 
-## Instructions for these scripts
+## Instructions for building scripts
 
 ### Get public vagrant boxes
 
