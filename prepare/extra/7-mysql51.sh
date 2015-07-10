@@ -8,9 +8,9 @@ brew tap homebrew/versions
 brew install mysql51
 
 if grep -q -i mysqlbin ~/.bashrc; then
-    echo " + .bashrc already contains mysqlbin"
+    echo "==> .bashrc already contains mysqlbin"
 else
-    echo " + Update .bashrc"
+    echo "==> Update .bashrc"
 
     LB_PATH='export PATH="$HOME/.linuxbrew/Cellar/mysql51/5.1.73_1/bin:$PATH"'
     echo '# mysqlbin' >> ~/.bashrc
@@ -20,16 +20,16 @@ else
     eval $LB_PATH
 fi
 
-echo " + Fill mysql system tables"
+echo "==> Fill mysql system tables"
 unset TMPDIR
 mysql_install_db
 
-echo " + Start mysql service"
+echo "==> Start mysql service"
 cd /home/vagrant/.linuxbrew/Cellar/mysql51/5.1.73_1
 /home/vagrant/.linuxbrew/Cellar/mysql51/5.1.73_1/bin/mysqld_safe &
 sleep 5
 
-echo " + Securing mysql service"
+echo "==> Securing mysql service"
 mysql_secure_installation
 
 # There is no my.cnf by default.
@@ -37,3 +37,5 @@ mysql_secure_installation
 
 # copy & paste to command line; then type password of mysql root
 # mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
+
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql

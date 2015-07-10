@@ -32,5 +32,6 @@ cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Chart::Math::Axis 
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest MooseX::AttributeHelpers
 
 # with external lib
-# cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Math::GSL Statistics::R Geo::Proj4
-# cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --look DBD::mysql
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest Math::GSL Statistics::R
+
+# DBD::mysql installed after brew mysql51
