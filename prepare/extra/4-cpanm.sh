@@ -24,7 +24,7 @@ cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Parallel::ForkMana
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Roman Text::Table Time::Duration Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel RTF::Writer
 
 # Math & Stat
-cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Math::Random::MT::Auto PDL Statistics::Lite Set::IntSpan::Fast Set::Light
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Math::Random::MT::Auto PDL Statistics::Lite Statistics::TTest Set::IntSpan::Fast Set::Light
 
 # others
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Chart::Math::Axis List::Flatten PPI::XS
