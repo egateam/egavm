@@ -21,7 +21,7 @@ cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ DBIx::Class::Helpe
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into
 
 # text, rtf and xlsx
-cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Roman Text::Table Time::Duration Data::Table Data::Table::Excel Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel RTF::Writer
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Roman Text::Table Time::Duration Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel RTF::Writer
 
 # Math & Stat
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ Math::Random::MT::Auto PDL Statistics::Lite Set::IntSpan::Fast Set::Light
