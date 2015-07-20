@@ -11,7 +11,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR Test::Class Test::Roo Test::Taint Test
 cpanm --mirror-only --mirror $CPAN_MIRROR MooX::Options MooseX::Getopt MooseX::Role::WithOverloading MooseX::Storage MooseX::Types::Path::Tiny
 
 # CPAN
-cpanm --mirror-only --mirror $CPAN_MIRROR App::pmuninstall CPAN::Mini CPANDB Dist::Zilla::Plugin::Git Dist::Zilla::Plugin::PerlTidy Dist::Zilla::Plugin::PodWeaver Module::Path Pod::POM::Web
+cpanm --mirror-only --mirror $CPAN_MIRROR App::pmuninstall CPAN::Mini CPANDB Dist::Zilla::Plugin::Git Dist::Zilla::Plugin::PerlTidy Dist::Zilla::Plugin::PodWeaver Module::Path Pod::POM::Web Search::Indexer
 
 # Gtk3 stuffs
 cpanm --mirror-only --mirror $CPAN_MIRROR Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
