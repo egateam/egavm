@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-BASE_DIR=/home/vagrant
+BASE_DIR=/home/vagrant/Scripts
+mkdir -p $BASE_DIR
 cd $BASE_DIR
 
 # all parts of ega

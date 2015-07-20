@@ -10,9 +10,6 @@ rm $HOME/.linuxbrew/bin/rmOutToGFF3.pl
 sed -i 's/::Bin/::RealBin/' $HOME/.linuxbrew//Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
 ln -s $HOME/.linuxbrew//Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl $HOME/.linuxbrew/bin/rmOutToGFF3.pl
 
-echo "==> Config withncbi"
-sed -i 's/\~\/Scripts/\~/' $HOME/withncbi/config.ini
-
 echo "==> Copy .screenrc"
 cp /prepare/resource/.screenrc $HOME
 chmod -x $HOME/.screenrc
