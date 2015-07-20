@@ -1,3 +1,5 @@
+http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.bz2
+http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.gz
 http://mirror.hust.edu.cn/gnu/readline/readline-6.3.tar.gz
 http://selab.janelia.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz
 http://221.204.176.53/openssl-1.0.2c.tar.gz

@@ -30,7 +30,16 @@ echo "==> Cloning perl-build..."
 git clone git://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
 
 echo "==> Building perl ${PLENV_PERL_VERSION}..."
-#curl http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.gz -o /home/vagrant/.plenv/cache/perl-5.18.4.tar.gz
+if [ -e /prepare/resource/perl-5.18.4.tar.gz ]
+then
+  cp /prepare/resource/perl-5.18.4.tar.gz  ~/.plenv/cache/
+fi
+
+if [ -e /prepare/resource/perl-5.18.4.tar.bz2 ]
+then
+  cp /prepare/resource/perl-5.18.4.tar.bz2  ~/.plenv/cache/
+fi
+
 plenv install $PLENV_PERL_VERSION -Dusethreads
 
 echo "==> Switching to $PLENV_PERL_VERSION"
