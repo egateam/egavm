@@ -36,4 +36,8 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooseX::AttributeHelpers
 # with external lib
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::GSL Statistics::R
 
+# AlignDB::*
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::DeltaG AlignDB::GC
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::SQL AlignDB::ToXLSX
+
 # DBD::mysql installed after brew mysql51
