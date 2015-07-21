@@ -33,14 +33,21 @@ brew tap homebrew/science
 # Many bioinfomatics hosted on low band server, so don't waste time on downloading them repeatedly.
 mkdir -p ~/.cache/Homebrew
 rm ~/.cache/Homebrew/*.incomplete
-cp /prepare/resource/hmmer-3.1b2.tar.gz                     ~/.cache/Homebrew/hmmer-3.1b2.tar.gz
-cp /prepare/resource/newick-utils-1.6.tar.gz                ~/.cache/Homebrew/newick-utils-1.6.tar.gz
-cp /prepare/resource/pcre-8.37.tar.bz2                      ~/.cache/Homebrew/pcre-8.37.tar.bz2
-cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  ~/.cache/Homebrew/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
-cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         ~/.cache/Homebrew/repeatmasker-4.0.5.tar.gz
-cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           ~/.cache/Homebrew/raxml-8.1.15.tar.gz
 cp /prepare/resource/ncbi-blast-2.2.31+src.tar.gz           ~/.cache/Homebrew/blast-2.2.31.tar.gz
+cp /prepare/resource/bzip2-1.0.6.tar.gz                     ~/.cache/Homebrew/bzip2-1.0.6.tar.gz
+cp /prepare/resource/clustalw-2.1.tar.gz                    ~/.cache/Homebrew/clustal-w-2.1.tar.gz
+cp /prepare/resource/hmmer-3.1b2.tar.gz                     ~/.cache/Homebrew/hmmer-3.1b2.tar.gz
+cp /prepare/resource/jpegsrc.v8d.tar.gz                     ~/.cache/Homebrew/jpeg-8d.tar.gz
+cp /prepare/resource/lastz-1.02.00.tar.gz                   ~/.cache/Homebrew/lastz-1.02.00.tar.gz
+cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    ~/.cache/Homebrew/mafft-7.221.tgz
+cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  ~/.cache/Homebrew/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
+cp /prepare/resource/node-v0.12.7.tar.gz                    ~/.cache/Homebrew/node-0.12.7.tar.gz
+cp /prepare/resource/pcre-8.37.tar.bz2                      ~/.cache/Homebrew/pcre-8.37.tar.bz2
 cp /prepare/resource/pkg-config-0.28.tar.gz                 ~/.cache/Homebrew/pkg-config-0.28.tar.gz
+cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           ~/.cache/Homebrew/raxml-8.1.15.tar.gz
+cp /prepare/resource/newick-utils-1.6.tar.gz                ~/.cache/Homebrew/newick-utils-1.6.tar.gz
+cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         ~/.cache/Homebrew/repeatmasker-4.0.5.tar.gz
+cp /prepare/resource/xz-5.2.1.tar.gz                        ~/.cache/Homebrew/xz-5.2.1.tar.gz
 
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml

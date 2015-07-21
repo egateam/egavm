@@ -11,7 +11,6 @@ mv blast-2.2.26 blast
 
 echo "==> circos"
 cd /prepare/resource/
-#curl http://circos.ca/distribution/circos-0.67-7.tgz -O
 wget -N http://science-annex.org/pub/circos/circos-0.67-7.tgz
 cd $HOME/share/
 tar xvfz /prepare/resource/circos-0.67-7.tgz
