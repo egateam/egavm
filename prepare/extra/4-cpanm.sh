@@ -17,7 +17,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR App::pmuninstall CPAN::Mini CPANDB Dis
 cpanm --mirror-only --mirror $CPAN_MIRROR Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
 
 # Database and WWW related
-cpanm --mirror-only --mirror $CPAN_MIRROR DBIx::Class::Helpers DBIx::XHTML_Table DBM::Deep MongoDB Mojolicious
+cpanm --mirror-only --mirror $CPAN_MIRROR DBIx::Class::Helpers DBIx::XHTML_Table DBM::Deep MongoDB Mojolicious IO::All IO::All::LWP
 
 # Develop
 cpanm --mirror-only --mirror $CPAN_MIRROR Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into
