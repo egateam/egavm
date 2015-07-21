@@ -11,7 +11,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.network "forwarded_port", guest: 3000, host: 30080
 
-  config.vm.synced_folder "upload", "/home/vagrant/ega/upload", owner: "vagrant", group: "vagrant", create: true
+  config.vm.synced_folder "data", "/home/vagrant/data", owner: "vagrant", group: "vagrant", create: true
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Parallels 
