@@ -39,7 +39,7 @@ cpanm --notest Bio::Phylo
 
 # others
 cpanm --mirror-only --mirror $CPAN_MIRROR DateTime::Format::Natural File::HomeDir DBD::CSV Path::Class File::Listing File::Remove File::Rename File::Copy::Recursive String::Compare
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https LWP::Protocol::socks
 
 # AlignDB::*
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::IntSpan AlignDB::Util AlignDB::Stopwatch AlignDB::Codon
