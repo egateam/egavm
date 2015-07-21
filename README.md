@@ -28,6 +28,12 @@ To use your local EGA service, following the steps below.
     + `cd ~/ega && node app.js` IMPORTANT! Be sure your cwd is ~/ega
 7. Open your favorite browser and visit `http://localhost:30080`. Or in VM GUI, open firefox and visit `http://localhost:3000`.
 
+### Software versions on my desktop PC
+
+* Vagrant: 1.7.4
+* VirtualBox: 5.0.0
+* Parallels: 10.1.2
+
 ## Directory structure
 
 * `vf/`
@@ -91,21 +97,24 @@ Disable auto updates: `System Settings -> Software and updates -> updates`, set 
     sh /prepare/5-clone.sh
     sh /prepare/6-download.sh
     
-    sh /prepare/extra/1-apt.sh       # Optional, needed by alignDB
-    sh /prepare/extra/4-cpanm.sh     # Optional, needed by alignDB
+    sh /prepare/extra/1-apt.sh      # Optional, needed by alignDB
+    sh /prepare/extra/4-cpanm.sh    # Optional, needed by alignDB
     
     # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them in the tail of job queue. 
     sh /prepare/7-brew.sh
     source $HOME/.bashrc
     sh /prepare/8-node.sh
     
-    sh /prepare/extra/7-mysql51.sh   # Optional, Linuxbrew mysql51, needed by alignDB
+    sh /prepare/extra/7-mysql51.sh  # Optional, Linuxbrew mysql51, needed by alignDB and building jksrc.
+    source $HOME/.bashrc            # After installation, add user alignDB to mysql.
     
     # Build jksrc.zip once and save binary files.
     # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
     ### sh /prepare/extra/8-jksrc.sh
-    
-    sh /prepare/9-postinstall.sh     # Clean the System
+
+    sh /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
+
+    sh /prepare/9-postinstall.sh    # Clean the System
     ```
 
 * Pack VM up
