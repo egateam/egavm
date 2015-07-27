@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR=/home/vagrant/Scripts
+BASE_DIR=$HOME/Scripts
 
 echo "==> Install nodejs"
 brew install node

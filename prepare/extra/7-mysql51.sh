@@ -25,8 +25,8 @@ unset TMPDIR
 mysql_install_db
 
 echo "==> Start mysql service"
-cd /home/vagrant/.linuxbrew/Cellar/mysql51/5.1.73_1
-/home/vagrant/.linuxbrew/Cellar/mysql51/5.1.73_1/bin/mysqld_safe &
+cd $HOME/.linuxbrew/Cellar/mysql51/5.1.73_1
+$HOME/.linuxbrew/Cellar/mysql51/5.1.73_1/bin/mysqld_safe &
 sleep 5
 
 echo "==> Securing mysql service"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR=/home/vagrant/Scripts
+BASE_DIR=$HOME/Scripts
 mkdir -p $BASE_DIR
 cd $BASE_DIR
 
@@ -37,7 +37,7 @@ cd $BASE_DIR/faops && make && cp faops ~/bin
 # ega/upload may be created by vagrant
 echo "==> Clone ega"
 mkdir -p $BASE_DIR/ega
-sudo chown vagrant:vagrant $BASE_DIR/ega -R
+sudo chown $USER:$USER $BASE_DIR/ega -R
 cd $BASE_DIR/ega
 git clone https://github.com/wang-q/ega.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
 cp settings.js.example settings.js
