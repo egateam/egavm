@@ -8,8 +8,8 @@ cd kent/src
 sed -i 's/CC\=gcc/CC\=gcc \-Wno\-error\=unused\-but\-set\-variable /' inc/common.mk
 
 export MACHTYPE=x86_64
-export MYSQLLIBS="-L/home/vagrant/.linuxbrew/opt/mysql51/lib/mysql -lmysqlclient -lz"
-export MYSQLINC="/home/vagrant/.linuxbrew/opt/mysql51/include/mysql"
+export MYSQLLIBS="-L$HOME/.linuxbrew/opt/mysql51/lib/mysql -lmysqlclient -lz"
+export MYSQLINC="$HOME/.linuxbrew/opt/mysql51/include/mysql"
 make
 
 cd $HOME/bin
