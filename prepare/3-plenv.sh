@@ -46,7 +46,12 @@ echo "==> Switching to $PLENV_PERL_VERSION"
 plenv global $PLENV_PERL_VERSION
 
 echo "==> Installing cpanminus..."
-plenv install-cpanm
+if [ -e /prepare/resource/cpanm ]
+then
+    plenv exec perl /prepare/resource/cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ ExtUtils::MakeMaker App::cpanminus
+else
+    plenv install-cpanm
+fi
 
 echo "==> Rehashing..."
 plenv rehash
