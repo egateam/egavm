@@ -8,18 +8,18 @@ echo "====> Building perl environment  <===="
 
 # get plenv latest
 echo "==> Cloning latest plenv..."
-git clone git://github.com/tokuhirom/plenv.git ~/.plenv
+git clone git://github.com/tokuhirom/plenv.git $HOME/.plenv
 
-if grep -q -i plenv ~/.bashrc; then
+if grep -q -i plenv $HOME/.bashrc; then
     echo "==> .bashrc already contains plenv"
 else
     echo "==> Updating .bashrc with plenv bin and perl binary shims..."
     PLENV_PATH='export PATH="$HOME/.plenv/bin:$PATH"'
     PLENV_INIT='eval "$(plenv init -)"'
-    echo '# plenv' >> ~/.bashrc
-    echo $PLENV_PATH >> ~/.bashrc  # add plenv to path
-    echo $PLENV_INIT >> ~/.bashrc  # shims and autocomplete
-    echo >> ~/.bashrc
+    echo '# plenv' >> $HOME/.bashrc
+    echo $PLENV_PATH >> $HOME/.bashrc  # add plenv to path
+    echo $PLENV_INIT >> $HOME/.bashrc  # shims and autocomplete
+    echo >> $HOME/.bashrc
 
     # make the above available for the rest of this script
     eval $PLENV_PATH
@@ -27,17 +27,17 @@ else
 fi
 
 echo "==> Cloning perl-build..."
-git clone git://github.com/tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
+git clone git://github.com/tokuhirom/Perl-Build.git $HOME/.plenv/plugins/perl-build/
 
 echo "==> Building perl ${PLENV_PERL_VERSION}..."
+mkdir -p $HOME/.plenv/cache/
 if [ -e /prepare/resource/perl-5.18.4.tar.gz ]
 then
-  cp /prepare/resource/perl-5.18.4.tar.gz  ~/.plenv/cache/
+  cp /prepare/resource/perl-5.18.4.tar.gz  $HOME/.plenv/cache/
 fi
-
 if [ -e /prepare/resource/perl-5.18.4.tar.bz2 ]
 then
-  cp /prepare/resource/perl-5.18.4.tar.bz2  ~/.plenv/cache/
+  cp /prepare/resource/perl-5.18.4.tar.bz2  $HOME/.plenv/cache/
 fi
 
 plenv install $PLENV_PERL_VERSION -Dusethreads
