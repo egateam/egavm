@@ -4,8 +4,27 @@
 echo "====> Install softwares via apt-get <===="
 
 echo "==> Change mirror source"
-sudo sed -i 's/us.archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
-sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/' /etc/apt/sources.list
+# https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu
+cat <<EOF > list.tmp
+deb http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+
+EOF
+
+if [ ! -e /etc/apt/sources.list.bak ]
+then
+    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+fi
+sudo mv list.tmp /etc/apt/sources.list
+sudo cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
 
 # I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
@@ -41,7 +60,7 @@ sudo apt-get -y install xvfb glade
 
 # install mongodb and redis by apt.
 echo "==> Install mongodb"
-sudo apt-get install -y mongodb
+sudo apt-get -y install mongodb
 
 echo "==> Install redis"
 sudo apt-get -y install redis-server
