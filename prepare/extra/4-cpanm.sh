@@ -3,33 +3,34 @@
 # This is a minimal set of modules, which means all intermediate modules are removed.
 
 CPAN_MIRROR=http://mirrors.ustc.edu.cn/CPAN/
+NO_TEST=--notest
 
 # Test::*
-cpanm --mirror-only --mirror $CPAN_MIRROR Test::Class Test::Roo Test::Taint Test::Without::Module
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Test::Class Test::Roo Test::Taint Test::Without::Module
 
 # Moose and Moo
-cpanm --mirror-only --mirror $CPAN_MIRROR MooX::Options MooseX::Getopt MooseX::Role::WithOverloading MooseX::Storage MooseX::Types::Path::Tiny
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST MooX::Options MooseX::Getopt MooseX::Role::WithOverloading MooseX::Storage MooseX::Types::Path::Tiny
 
 # CPAN
-cpanm --mirror-only --mirror $CPAN_MIRROR App::pmuninstall CPAN::Mini CPANDB Dist::Zilla::Plugin::Git Dist::Zilla::Plugin::PerlTidy Dist::Zilla::Plugin::PodWeaver Module::Path Pod::POM::Web Search::Indexer
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall CPAN::Mini CPANDB Dist::Zilla::Plugin::Git Dist::Zilla::Plugin::PerlTidy Dist::Zilla::Plugin::PodWeaver Module::Path Pod::POM::Web Search::Indexer
 
 # Gtk3 stuffs
-cpanm --mirror-only --mirror $CPAN_MIRROR Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
 
 # Database and WWW related
-cpanm --mirror-only --mirror $CPAN_MIRROR DBIx::Class::Helpers DBIx::XHTML_Table DBM::Deep MongoDB Mojolicious IO::All IO::All::LWP
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DBIx::Class::Helpers DBIx::XHTML_Table DBM::Deep MongoDB Mojolicious IO::All IO::All::LWP
 
 # Develop
-cpanm --mirror-only --mirror $CPAN_MIRROR Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into
 
 # text, rtf and xlsx
-cpanm --mirror-only --mirror $CPAN_MIRROR Roman Text::Table Time::Duration Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel RTF::Writer
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Roman Text::Table Time::Duration Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel RTF::Writer
 
 # Math & Stat
-cpanm --mirror-only --mirror $CPAN_MIRROR Math::Random::MT::Auto PDL Statistics::Lite Statistics::TTest Set::IntSpan::Fast Set::Light
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Math::Random::MT::Auto PDL Statistics::Lite Statistics::TTest Set::IntSpan::Fast Set::Light
 
 # others
-cpanm --mirror-only --mirror $CPAN_MIRROR Chart::Math::Axis List::Flatten PPI::XS
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Chart::Math::Axis List::Flatten PPI::XS
 
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooseX::AttributeHelpers
 
@@ -37,7 +38,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooseX::AttributeHelpers
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::GSL Statistics::R
 
 # AlignDB::*
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::DeltaG AlignDB::GC
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master AlignDB::SQL AlignDB::ToXLSX
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::DeltaG AlignDB::GC
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::SQL AlignDB::ToXLSX
 
 # DBD::mysql installed after brew mysql51
