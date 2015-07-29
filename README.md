@@ -84,13 +84,11 @@ See [packer.sh](prepare/packer.sh)
 
 Username and password are `vagrant` and `vagrant`, respectively.
 
+In GUI desktop, disable auto updates: `System Settings -> Software and updates -> updates`, 
+set `Automatically check for updates: Never`, untick all checkboxes and close. Don't reload indexes.
 
     ```bash
     sh /prepare/1-apt.sh
-
-    ## In GUI desktop
-    ## Disable auto updates: `System Settings -> Software and updates -> updates`, 
-    ## set `Automatically check for updates: Never`, untick all checkboxes and close. Don't reload indexes.
 
     ## Press master button (Win for Windows and Command for Mac) and type terminal to start a GUI terminal
     ## sh /prepare/2-unity.sh
@@ -102,7 +100,6 @@ Username and password are `vagrant` and `vagrant`, respectively.
     sh /prepare/5-clone.sh
     sh /prepare/6-download.sh
     
-    sh /prepare/extra/1-apt.sh      # Optional, needed by alignDB
     sh /prepare/extra/4-cpanm.sh    # Optional, needed by alignDB
     
     # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them in the tail of job queue. 
