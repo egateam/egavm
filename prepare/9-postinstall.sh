@@ -7,7 +7,7 @@ sed -i 's/\/usr\/bin\/perl/env/' config.txt
 ./configure < config.txt
 
 rm $HOME/.linuxbrew/bin/rmOutToGFF3.pl
-sed -i 's/::Bin/::RealBin/' $HOME/.linuxbrew//Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
+sed -i 's/::Bin/::RealBin/' $HOME/.linuxbrew/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
 ln -s $HOME/.linuxbrew//Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl $HOME/.linuxbrew/bin/rmOutToGFF3.pl
 
 echo "==> Copy .screenrc"
@@ -32,4 +32,4 @@ sudo dd if=/dev/zero of=/EMPTY bs=1M
 sudo rm -f /EMPTY
 
 echo "==> Clean the Bash history"
-cat /dev/null > ~/.bash_history
+cat /dev/null > $HOME/.bash_history

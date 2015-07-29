@@ -18,21 +18,21 @@ do
     fi
 done
 
-# make sure ~/bin in your $PATH
-if grep -q -i homebin ~/.bashrc; then
+# make sure $HOME/bin in your $PATH
+if grep -q -i homebin $HOME/.bashrc; then
     echo "==> .bashrc already contains homebin"
 else
     echo "==> Update .bashrc"
 
     HOME_PATH='export PATH="$HOME/bin:$PATH"'
-    echo '# Homebin' >> ~/.bashrc
-    echo $HOME_PATH >> ~/.bashrc
-    echo >> ~/.bashrc
+    echo '# Homebin' >> $HOME/.bashrc
+    echo $HOME_PATH >> $HOME/.bashrc
+    echo >> $HOME/.bashrc
 
     eval $HOME_PATH
 fi
-mkdir -p ~/bin
-cd $BASE_DIR/faops && make && cp faops ~/bin
+mkdir -p $HOME/bin
+cd $BASE_DIR/faops && make && cp faops $HOME/bin
 
 # ega/upload may be created by vagrant
 echo "==> Clone ega"
