@@ -30,12 +30,24 @@ sudo apt-get -y install libgsl0ldbl libgsl0-dev
 echo "==> Install r"
 sudo apt-get -y install r-base-dev
 
+# Gtk stuff, Need by alignDB
+# install them at a fresh machine to avoid problems
+echo "==> Install gtk3"
+sudo apt-get -y install libcairo2-dev libglib2.0-0 libglib2.0-dev libgtk-3-dev libgirepository1.0-dev
+sudo apt-get -y install gir1.2-glib-2.0 gir1.2-gtk-3.0 gir1.2-webkit-3.0
+
+echo "==> Install gtk3 related tools"
+sudo apt-get -y install xvfb glade
+
+# install mongodb and redis by apt.
 echo "==> Install mongodb"
 sudo apt-get install -y mongodb
 
 echo "==> Install redis"
 sudo apt-get -y install redis-server
 
+# mysql will be installed seperately.
+# remove system provided mysql package to avoid confusing linuxbrew.
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
 
