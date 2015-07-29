@@ -2,8 +2,6 @@
 
 ## Setting up
 
-Normal users should not build EGA VMs themselves. We provide full functional boxes [here](http://ega.nju.edu.cn/download). If you insist to DIY, check scripts in `prepare/` and [this section](#instructions-for-building-scripts).
-
 To use your local EGA service, following the steps below.
 
 1. Install [Vagrant](https://www.vagrantup.com/downloads.html);
@@ -28,7 +26,9 @@ To use your local EGA service, following the steps below.
     + `cd ~/ega && node app.js` IMPORTANT! Be sure your cwd is ~/ega
 7. Open your favorite browser and visit `http://localhost:30080`. Or in VM GUI, open firefox and visit `http://localhost:3000`.
 
-### Software versions on my desktop PC
+Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in `prepare/` and [this section](#instructions-for-building-scripts).
+
+### Software versions on my desktop PC and Mac
 
 * Vagrant: 1.7.4
 * VirtualBox: 5.0.0
@@ -52,7 +52,7 @@ To use your local EGA service, following the steps below.
 
 ## Instructions for building scripts
 
-### Get public vagrant boxes
+### Get public vagrant boxes for Ubuntu 14.04.2
 
     ```bash
     vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.0
@@ -82,12 +82,17 @@ See [packer.sh](prepare/packer.sh)
 
 * STEPS inside VM
 
-Disable auto updates: `System Settings -> Software and updates -> updates`, set `Automatically check for updates: Never` and uncheck all.
+Username and password are `vagrant` and `vagrant`, respectively.
+
 
     ```bash
     sh /prepare/1-apt.sh
-    
-    ## In GUI terminal
+
+    ## In GUI desktop
+    ## Disable auto updates: `System Settings -> Software and updates -> updates`, 
+    ## set `Automatically check for updates: Never`, untick all checkboxes and close. Don't reload indexes.
+
+    ## Press master button (Win for Windows and Command for Mac) and type terminal to start a GUI terminal
     ## sh /prepare/2-unity.sh
     
     sh /prepare/3-plenv.sh

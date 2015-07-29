@@ -39,5 +39,6 @@ echo "==> Clone ega"
 mkdir -p $BASE_DIR/ega
 sudo chown $USER:$USER $BASE_DIR/ega -R
 cd $BASE_DIR/ega
+rm -fr .git
 git clone https://github.com/wang-q/ega.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
 cp settings.js.example settings.js
