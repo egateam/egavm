@@ -3,9 +3,14 @@
 # softwares via apt-get
 echo "====> Install softwares via apt-get <===="
 
-echo "==> Change mirror source"
-# https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu
-cat <<EOF > list.tmp
+if grep -q -i USTC_MIRRORS /etc/apt/sources.list; then
+    echo "==> sources.list already contains USTC_MIRRORS"
+else
+    echo "==> Change mirror source"
+
+    # https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu
+    cat <<EOF > list.tmp
+# USTC_MIRRORS
 deb http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
 deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
 deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
@@ -19,12 +24,15 @@ deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted univ
 
 EOF
 
-if [ ! -e /etc/apt/sources.list.bak ]
-then
-    sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+    if [ ! -e /etc/apt/sources.list.bak ]
+    then
+        sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
+    fi
+    sudo mv list.tmp /etc/apt/sources.list
+    sudo cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
 fi
-sudo mv list.tmp /etc/apt/sources.list
-sudo cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
+
+
 
 # I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
@@ -34,7 +42,7 @@ sudo update-rc.d -f apparmor remove
 
 echo "==> Install linuxbrew dependences"
 sudo apt-get -y update
-#sudo apt-get -y upgrade # Avoid grub updates. Leave linux-base updates to GUI.
+#sudo apt-get -y upgrade # Avoid grub and linux-base updates.
 sudo apt-get -y install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
 
 echo "==> Install java"

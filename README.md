@@ -88,14 +88,14 @@ In GUI desktop, disable auto updates: `System Settings -> Software and updates -
 set `Automatically check for updates: Never`, untick all checkboxes and close. Don't reload indexes.
 
     ```bash
-    sh /prepare/1-apt.sh
+    sh /prepare/1-apt.sh | tee log-1-apt.txt
 
     ## Press master button (Win for Windows and Command for Mac) and type terminal to start a GUI terminal
     ## sh /prepare/2-unity.sh
     
     sh /prepare/3-plenv.sh
     source $HOME/.bashrc
-    sh /prepare/4-cpanm.sh
+    sh /prepare/4-cpanm.sh 
     
     sh /prepare/5-clone.sh
     sh /prepare/6-download.sh
@@ -103,7 +103,7 @@ set `Automatically check for updates: Never`, untick all checkboxes and close. D
     sh /prepare/extra/4-cpanm.sh    # Optional, needed by alignDB
     
     # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them in the tail of job queue. 
-    sh /prepare/7-brew.sh
+    sh /prepare/7-brew.sh | tee log-7-brew.txt
     source $HOME/.bashrc
     sh /prepare/8-node.sh
     
