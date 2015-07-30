@@ -12,7 +12,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Test::Class Test::Roo Test::T
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST MooX::Options MooseX::Getopt MooseX::Role::WithOverloading MooseX::Storage MooseX::Types::Path::Tiny
 
 # CPAN
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall CPAN::Mini CPANDB Dist::Zilla::Plugin::Git Dist::Zilla::Plugin::PerlTidy Dist::Zilla::Plugin::PodWeaver Module::Path Pod::POM::Web Search::Indexer
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall CPAN::Mini CPANDB Dist::Milla Module::Path Pod::POM::Web Search::Indexer
 
 # Gtk3 stuffs
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
@@ -41,4 +41,4 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::GSL Statistics::R
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::DeltaG AlignDB::GC
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::SQL AlignDB::ToXLSX
 
-# DBD::mysql installed after brew mysql51
+# DBD::mysql should be installed after brew install mysql51
