@@ -34,11 +34,13 @@ fi
 
 
 
-# I want life easier.
+# Virtual machines needn't this and I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
-echo "==> Disable AppArmor"
-sudo service apparmor stop
-sudo update-rc.d -f apparmor remove
+if [ "$(whoami)" == "vagrant" ]; then
+    echo "==> Disable AppArmor"
+    sudo service apparmor stop
+    sudo update-rc.d -f apparmor remove
+fi
 
 echo "==> Install linuxbrew dependences"
 sudo apt-get -y update
@@ -67,8 +69,10 @@ echo "==> Install gtk3 related tools"
 sudo apt-get -y install xvfb glade
 
 # install mongodb and redis by apt.
-echo "==> Install mongodb"
-sudo apt-get -y install mongodb
+if [ "$(whoami)" == "vagrant" ]; then
+    echo "==> Install mongodb"
+    sudo apt-get -y install mongodb
+fi
 
 echo "==> Install redis"
 sudo apt-get -y install redis-server
