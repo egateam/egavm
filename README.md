@@ -1,3 +1,5 @@
+[ Languages: [English](README.md), [中文](README-zh.md) ]
+
 # Virtual machines (Vagrant boxes) for [EGA](http://ega.nju.edu.cn).
 
 ## Setting up
