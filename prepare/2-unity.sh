@@ -33,6 +33,7 @@ if [ -n "$DISPLAY" ]; then
     rm -fr $HOME/Templates
     rm -fr $HOME/Videos
 
+    mkdir -p $HOME/.config/gtk-3.0/
     echo > $HOME/.config/gtk-3.0/bookmarks
 else
     echo "This script should be execute inside a GUI terminal"
