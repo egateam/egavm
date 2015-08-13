@@ -11,9 +11,6 @@ if [ -n "$DISPLAY" ]; then
     gsettings set org.gnome.desktop.screensaver lock-enabled false
     gsettings set org.gnome.desktop.session idle-delay 0 # (0 to disable)
 
-    echo "==> Install nautilus plugins"
-    sudo apt-get -y install nautilus-open-terminal nautilus-actions
-
     # http://askubuntu.com/questions/79150/how-to-remove-bookmarks-from-the-nautilus-sidebar/152540#152540
     echo "enabled=false" > $HOME/.config/user-dirs.conf
 

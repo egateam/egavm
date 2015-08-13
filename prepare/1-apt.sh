@@ -82,4 +82,9 @@ sudo apt-get -y install redis-server
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
 
+if [ -n "$DISPLAY" ]; then
+    echo "==> Install nautilus plugins"
+    sudo apt-get -y install nautilus-open-terminal nautilus-actions
+fi
+
 echo "Basic software installation complete!"
