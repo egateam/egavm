@@ -2,15 +2,15 @@
 
 mkdir -p $HOME/share/
 
-echo "==> httpd"
+echo "====> Building Apache httpd <===="
 
-# download
+echo "==> download"
 cd /prepare/resource/
 wget -N http://mirrors.ustc.edu.cn/apache/httpd/httpd-2.4.16.tar.gz
 wget -N http://mirrors.ustc.edu.cn/apache/apr/apr-1.5.2.tar.gz
 wget -N http://mirrors.ustc.edu.cn/apache/apr/apr-util-1.5.4.tar.gz
 
-# untar
+echo "==> untar"
 cd $HOME/share/
 tar xvfz /prepare/resource/httpd-2.*.tar.gz
 tar xvfz /prepare/resource/apr-1.*.tar.gz
@@ -21,7 +21,7 @@ mv apr-util-1* apr-util
 mv apr httpd-2.*/srclib/
 mv apr-util httpd-2.*/srclib/
 
-# compiling
+echo "==> compiling"
 cd $HOME/share/httpd-2.*
 ./configure \
     --enable-file-cache \
@@ -41,7 +41,8 @@ cd $HOME/share/httpd-2.*
 make -j 4
 make install
 
-# Modify httpd.conf
+#
+echo "==> Modify httpd.conf"
 cd $HOME/share/httpd
 if [ ! -e conf/httpd.conf.bak ]
 then
