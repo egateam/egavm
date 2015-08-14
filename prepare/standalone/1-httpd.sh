@@ -37,11 +37,14 @@ cd $HOME/share/httpd-2.*
     --enable-rewrite \
     --enable-so \
     --with-included-apr \
+    --with-pcre=/usr \
     --prefix=${HOME}/share/httpd
 make -j 4
 make install
 
-#
+# /usr/bin/pcre-config --prefix
+# ldd $HOME/share/httpd/bin/httpd | grep pcre
+
 echo "==> Modify httpd.conf"
 cd $HOME/share/httpd
 if [ ! -e conf/httpd.conf.bak ]
@@ -52,3 +55,6 @@ sed -i 's/Listen 80$/Listen 8080/' conf/httpd.conf
 sed -i 's/#LoadModule cgid_module/LoadModule cgid_module/' conf/httpd.conf
 sed -i 's/#LoadModule cgi_module/LoadModule cgi_module/' conf/httpd.conf
 sed -i 's/#AddHandler cgi-script/AddHandler cgi-script/' conf/httpd.conf
+
+cd $HOME/share/
+rm -fr httpd-2.*
