@@ -18,7 +18,7 @@ mv circos-0.67-7 circos
 
 echo "==> multiz"
 cd /prepare/resource/
-wget -N http://www.bx.psu.edu/miller_lab/dist/multiz-tba.012109.tar.gz -O
+wget -N http://www.bx.psu.edu/miller_lab/dist/multiz-tba.012109.tar.gz
 cd $HOME/share/
 tar xvfz /prepare/resource/multiz-tba.012109.tar.gz
 cd multiz-tba*
