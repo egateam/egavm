@@ -51,10 +51,20 @@ if [ ! -e conf/httpd.conf.bak ]
 then
     cp conf/httpd.conf conf/httpd.conf.bak
 fi
-sed -i 's/Listen 80$/Listen 8080/' conf/httpd.conf
+sed -i 's/Listen 80$/Listen 8088/' conf/httpd.conf
 sed -i 's/#LoadModule cgid_module/LoadModule cgid_module/' conf/httpd.conf
 sed -i 's/#LoadModule cgi_module/LoadModule cgi_module/' conf/httpd.conf
 sed -i 's/#AddHandler cgi-script/AddHandler cgi-script/' conf/httpd.conf
+sed -i 's/#ServerName www.example.com:80/ServerName 127.0.0.1/' conf/httpd.conf
 
 cd $HOME/share/
 rm -fr httpd-2.*
+
+echo "==> test cgi"
+chmod 0755 $HOME/share/httpd/cgi-bin/printenv
+sed -i 's/^#$/#!\/usr\/bin\/perl/' $HOME/share/httpd/cgi-bin/printenv
+
+$HOME/share/httpd/bin/apachectl restart
+curl localhost:8088/cgi-bin/printenv
+$HOME/share/httpd/bin/apachectl stop
+
