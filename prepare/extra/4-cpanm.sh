@@ -3,6 +3,7 @@
 # This is a minimal set of modules, which means all intermediate modules are removed.
 
 CPAN_MIRROR=http://mirrors.ustc.edu.cn/CPAN/
+#CPAN_MIRROR=http://www.cpan.org/
 NO_TEST=--notest
 
 # Test::*
