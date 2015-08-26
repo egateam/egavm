@@ -51,7 +51,7 @@ fi
 
 cat <<EOF > ${MYSQL_DIR}/my.cnf
 [mysqld]
-user=wangq
+user=${MYSQL_USER}
 basedir=${MYSQL_DIR}
 datadir=${MYSQL_DIR}/data
 port=3306
@@ -81,7 +81,7 @@ pid-file=${MYSQL_DIR}/mysqld.pid
 
 [client]
 port=3306
-user=wangq
+user=${MYSQL_USER}
 socket=${MYSQL_DIR}/mysql.sock
 
 [mysqladmin]
@@ -94,7 +94,7 @@ port=3306
 socket=${MYSQL_DIR}/mysql.sock
 
 [mysql_install_db]
-user=wangq
+user=${MYSQL_USER}
 port=3306
 basedir=${MYSQL_DIR}
 datadir=${MYSQL_DIR}/data
@@ -126,4 +126,5 @@ mysql_secure_installation
 # copy & paste to command line; then type password of mysql root
 # mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
 
+# perl Makefile.PL --testuser alignDB --testpassword alignDB
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql
