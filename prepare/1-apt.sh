@@ -42,6 +42,10 @@ if [ "$(whoami)" == "vagrant" ]; then
     sudo update-rc.d -f apparmor remove
 fi
 
+echo "==> Disable whoopsie"
+sudo sed -i 's/report_crashes=true/report_crashes=false/' /etc/default/whoopsie
+sudo service whoopsie stop
+
 echo "==> Install linuxbrew dependences"
 sudo apt-get -y update
 #sudo apt-get -y upgrade # Avoid grub and linux-base updates.
