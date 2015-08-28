@@ -38,7 +38,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Params::Validate Readonly Reg
 
 # Bio::Phylo
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::XML2JSON PDF::API2 Math::CDF Math::Random
-cpanm --notest Bio::Phylo
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Phylo
 
 # others
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural File::HomeDir DBD::CSV Path::Class File::Listing File::Remove File::Rename File::Copy::Recursive String::Compare
