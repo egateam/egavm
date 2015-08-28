@@ -23,10 +23,10 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest App::Ack EV AnyEvent DBI MCE 
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST GD SVG GD::SVG
 
 # bioperl
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Data::Stag Test::Most URI::Escape Algorithm::Munkres Array::Compare Clone Error File::Sort Graph IO::Scalar List::MoreUtils Set::Scalar Sort::Naturally
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Data::Stag Test::Most URI::Escape Algorithm::Munkres Array::Compare Clone Error File::Sort Graph List::MoreUtils Set::Scalar Sort::Naturally
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST HTML::Entities HTML::HeadParser HTML::TableExtract HTTP::Request::Common LWP::UserAgent PostScript::TextBlock
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::DOM XML::DOM::XPath XML::LibXML XML::SAX::Writer XML::Simple XML::Twig XML::Writer GraphViz SVG SVG::Graph
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest Convert::Binary::C YAML::Syck
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::DOM XML::DOM::XPath XML::LibXML XML::SAX::Writer XML::Simple XML::Twig XML::Writer GraphViz SVG::Graph
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Convert::Binary::C IO::Scalar YAML::Syck
 
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Perl # BioPerl
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Bio::ASN1::EntrezGene Bio::DB::EUtilities Bio::Graphics
