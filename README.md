@@ -33,7 +33,7 @@ Normal users should not build EGA VMs themselves. If you insist to DIY, check sc
 ### Software versions on my desktop PC and Mac
 
 * Vagrant: 1.7.4
-* VirtualBox: 5.0.0
+* VirtualBox: 5.0.4
 * Parallels: 10.1.2
 
 ## Directory structure
@@ -76,9 +76,11 @@ See [packer.sh](prepare/packer.sh)
 
 * STEPS on host machine
 
+This would download a fresh Ubuntu vm and take several minutes.
+
     ```bash
     cd $HOME/Scripts/egavm/virtualbox-desktop
-    vagrant up --provider=virtualbox
+    vagrant up --provider=virtualbox 
     vagrant ssh
     ```
 
@@ -87,7 +89,7 @@ See [packer.sh](prepare/packer.sh)
 Username and password are `vagrant` and `vagrant`, respectively.
 
 In GUI desktop, disable auto updates: `System Settings -> Software and updates -> updates`, 
-set `Automatically check for updates: Never`, untick all checkboxes and close. Don't reload indexes.
+set `Automatically check for updates: Never`, untick all checkboxes and close.
 
     ```bash
     sh /prepare/1-apt.sh | tee log-1-apt.txt
@@ -176,5 +178,5 @@ Omit `prepare/2-unity.sh`, and all others are the same as virtualbox-desktop.
 | :-------------          | :--------------: |
 | ega-vd.box              | 2.01 GB          |
 | ega-vd.box w/o optional | 1.87 GB          |
-| ega-pd.box              | 2.04 GD          |
+| ega-pd.box              | 2.04 GB          |
 | ega-v.box               | 1.44 GB          |
