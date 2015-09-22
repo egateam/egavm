@@ -55,9 +55,8 @@ Normal users should not build EGA VMs themselves. If you insist to DIY, check sc
 ### Get public vagrant boxes for Ubuntu 14.04.3
 
     ```bash
-    vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.3
-    
     vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.3
+    vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.3
     ```
 
 ### Build a vagrant box from .iso.
