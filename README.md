@@ -34,8 +34,6 @@ To use your local EGA service, following the steps below.
 
 7. Open your favorite browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
 
-Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in `prepare/` and [this section](#instructions-for-building-scripts).
-
 ## Directory structure
 
 * `vf/`
@@ -51,6 +49,8 @@ Normal users should not build EGA VMs themselves. If you insist to DIY, check sc
     + `virtualbox/`
 
 ## Instructions for building scripts
+
+Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in `prepare/` and [this section](#instructions-for-building-scripts).
 
 ### Get public vagrant boxes for Ubuntu 14.04.3
 
