@@ -34,10 +34,5 @@ fi
 mkdir -p $HOME/bin
 cd $BASE_DIR/faops && make && cp faops $HOME/bin
 
-# ega/upload may be created by vagrant
-echo "==> Clone ega"
-mkdir -p $BASE_DIR/ega
-cd $BASE_DIR/ega
-rm -fr .git
-git clone https://github.com/wang-q/ega.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard
+# settings.js
 cp settings.js.example settings.js
