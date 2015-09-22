@@ -19,7 +19,8 @@ brew cask install packer
 
 #
 cd $BASE_DIR
-wget http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.2/ubuntu-14.04.2-server-amd64.iso
+wget -N http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.3/ubuntu-14.04.3-desktop-amd64.iso
+wget -N http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.3/ubuntu-14.04.3-server-amd64.iso
 
 # Ubuntu template
 git clone https://github.com/boxcutter/ubuntu
@@ -28,15 +29,3 @@ echo "ISO_PATH := file://$BASE_DIR" > Makefile.local
 echo "CM := nocm" >> Makefile.local
 #rm box/virtualbox/ubuntu1404-nocm-*.box
 make virtualbox/ubuntu1404
-
-### Parallels
-
-# Install Parallels manually
-# http://www.parallels.com/products/desktop/
-
-# install Parallels provider for vagrant
-vagrant plugin install vagrant-parallels
-
-cd $BASE_DIR/ubuntu
-#rm box/parallels/ubuntu1404-nocm-*.box
-make parallels/ubuntu1404
