@@ -11,9 +11,8 @@ To use your local EGA service, following the steps below.
 
 2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and the extension pack;
     + Current version is 5.0.4.
-        - VirtualBox [Windows](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-Win.exe), [Mac](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg).
-        - [the extension pack](http://download.virtualbox.org/virtualbox/5.0.4/Oracle_VM_VirtualBox_Extension_Pack-5.0.4-102546.vbox-extpack)
-    + [VMware provider](http://www.vagrantup.com/vmware) is not free and VMware is not used in our team, so I'm sorry for not providing VMware boxes.
+    + VirtualBox [Windows](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-Win.exe), [Mac](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg).
+    + [The extension pack](http://download.virtualbox.org/virtualbox/5.0.4/Oracle_VM_VirtualBox_Extension_Pack-5.0.4-102546.vbox-extpack)
 
 3. Get configuration file by
     + cloning this repository and check [Directory structure](#directory-structure)
@@ -27,7 +26,7 @@ To use your local EGA service, following the steps below.
 
 6. Start EGA service.
     + `vagrant up --provider=virtualbox # start VM`
-    + You can either 
+    + You can either
         - `vagrant ssh # log into VM via ssh`
         - or open a terminal window in the VM GUI.
     + `cd ~/Scripts/ega && node app.js` IMPORTANT! Be sure your cwd is ~/Scripts/ega
@@ -51,3 +50,5 @@ To use your local EGA service, following the steps below.
 ## Instructions for building scripts
 
 Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in [`prepare/`](prepare/).
+
+Be cautious, all settings for building are optimised for China.

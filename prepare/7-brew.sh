@@ -40,7 +40,7 @@ cp /prepare/resource/hmmer-3.1b2.tar.gz                     $HOME/.cache/Homebre
 cp /prepare/resource/jpegsrc.v8d.tar.gz                     $HOME/.cache/Homebrew/jpeg-8d.tar.gz
 cp /prepare/resource/lastz-1.02.00.tar.gz                   $HOME/.cache/Homebrew/lastz-1.02.00.tar.gz
 cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    $HOME/.cache/Homebrew/mafft-7.221.tgz
-cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  $HOME/.cache/Homebrew/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
+cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  $HOME/.cache/Homebrew/rmblast-2.2.28.tar.gz
 cp /prepare/resource/node-v0.12.7.tar.gz                    $HOME/.cache/Homebrew/node-0.12.7.tar.gz
 cp /prepare/resource/pcre-8.37.tar.bz2                      $HOME/.cache/Homebrew/pcre-8.37.tar.bz2
 cp /prepare/resource/pkg-config-0.28.tar.gz                 $HOME/.cache/Homebrew/pkg-config-0.28.tar.gz

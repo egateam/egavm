@@ -35,4 +35,4 @@ mkdir -p $HOME/bin
 cd $BASE_DIR/faops && make && cp faops $HOME/bin
 
 # settings.js
-cp settings.js.example settings.js
+cp $BASE_DIR/ega/settings.js.example $BASE_DIR/ega/settings.js
