@@ -123,8 +123,15 @@ sleep 5
 echo "==> Securing mysql service"
 mysql_secure_installation
 
-# copy & paste to command line; then type password of mysql root
-# mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
-
 # perl Makefile.PL --testuser alignDB --testpassword alignDB
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql
+
+# create mysql user
+cat <<EOF
+
+# copy & paste the following lines to command prompt; then type password of mysql root
+
+source $HOME/.bashrc
+mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
+
+EOF
