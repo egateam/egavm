@@ -1,23 +1,19 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
-
 Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox"
 
-  config.vm.box = "ega-vd"
+  config.vm.box = "egavm"
 
-  config.vm.define "ega-vd" do |v|
+  config.vm.define "egavm" do |v|
   end
 
   config.vm.network "forwarded_port", guest: 3000, host: 30080
 
-  config.vm.synced_folder "data", "/home/vagrant/data", owner: "vagrant", group: "vagrant", create: true
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # VirtualBox
   config.vm.provider "virtualbox" do |v|
     v.gui = true
-    v.name = "ega-vd"
+    v.name = "egavm"
     v.memory = 4096
     v.cpus = 4
   end
