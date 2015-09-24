@@ -17,6 +17,11 @@
 
 See [packer.sh](prepare/packer.sh)
 
+##  Vagrantfiles for setting up basic VM.
+
+* `prepare/virtualbox/`
+* `prepare/virtualbox-headless/`
+
 ## VirtualBox desktop
 
 * STEPS on host machine
@@ -24,7 +29,7 @@ See [packer.sh](prepare/packer.sh)
 This would download a fresh Ubuntu vm and take several minutes.
 
     ```bash
-    cd $HOME/Scripts/egavm/virtualbox
+    cd $HOME/Scripts/egavm/prepare/virtualbox
     vagrant up --provider=virtualbox
     vagrant ssh
     ```
@@ -72,7 +77,7 @@ set `Automatically check for updates: Never`, untick all checkboxes, click close
 * Pack VM up
 
     ```bash
-    cd $HOME/Scripts/egavm/virtualbox
+    cd $HOME/Scripts/egavm/prepare/virtualbox
     vagrant package --output egavm.box
     du -hs egavm.box
     ```
@@ -82,7 +87,7 @@ set `Automatically check for updates: Never`, untick all checkboxes, click close
 * STEPS on host machine
 
     ```bash
-    cd $HOME/Scripts/egavm/virtualbox-headless
+    cd $HOME/Scripts/egavm/prepare/virtualbox-headless
     vagrant up --provider=virtualbox
     vagrant ssh
     ```
@@ -94,7 +99,7 @@ Omit `prepare/2-unity.sh`, and all others are the same as virtualbox-desktop.
 * Pack VM up
 
     ```bash
-    cd $HOME/Scripts/egavm/virtualbox-headless
+    cd $HOME/Scripts/egavm/prepare/virtualbox-headless
     vagrant package --output egavm-headless.box
     du -hs egavm-headless.box
     ```

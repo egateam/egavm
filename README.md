@@ -29,23 +29,17 @@ To use your local EGA service, following the steps below.
     + You can either
         - `vagrant ssh # log into VM via ssh`
         - or open a terminal window in the VM GUI.
-    + `cd ~/Scripts/ega && node app.js` IMPORTANT! Be sure your cwd is ~/Scripts/ega
+    + `cd ~/Scripts/ega && node app.js` IMPORTANT! Be sure your cwd is `~/Scripts/ega`
 
 7. Open your favorite browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
 
 ## Directory structure
 
-* Vagrantfile for users.
-    + `vf/`
+* `vf/`: configuration files for users.
     + [Vagrantfile](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
     + [Vagrantfile-headless](vf/Vagrantfile-headless): VirtualBox without GUI on Linux, Mac and Windows. For experienced users only.
 
-* Vagrantfiles for setting up basic VM.
-    + `virtualbox/`
-    + `virtualbox-headless/`
-
-* Scirpts to build VMs.
-    + `prepare/`
+* `prepare/`: Scirpts to build VMs.
 
 ## Instructions for building scripts
 
