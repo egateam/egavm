@@ -17,12 +17,12 @@ To use your local EGA service, following the steps below.
 3. Get configuration file by
     + cloning this repository and check [Directory structure](#directory-structure)
         - `git clone https://github.com/wang-q/egavm.git`
-    + or downloading corresponding Vagrantfile and putting it in a clean directory;
+    + or downloading the corresponding [Vagrantfile](vf/Vagrantfile) and putting it in a clean directory;
 
-4. Download `ega-vd.box` for VirtualBox and put it in the same directory of the configuration file;
+4. Download `egavm.box` and put it in the same directory of the configuration file;
 
 5. `cd` into your project directory and run
-    + `vagrant box add ega-vd ega-vd.box` for VirtualBox
+    + `vagrant box add egavm egavm.box` for VirtualBox
 
 6. Start EGA service.
     + `vagrant up --provider=virtualbox # start VM`
@@ -40,12 +40,12 @@ To use your local EGA service, following the steps below.
     + [Vagrantfile](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
     + [Vagrantfile-headless](vf/Vagrantfile-headless): VirtualBox without GUI on Linux, Mac and Windows. For experienced users only.
 
-* Scirpts to build VMs.
-    + `prepare/`
-
 * Vagrantfiles for setting up basic VM.
     + `virtualbox/`
     + `virtualbox-headless/`
+
+* Scirpts to build VMs.
+    + `prepare/`
 
 ## Instructions for building scripts
 
