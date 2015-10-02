@@ -6,13 +6,13 @@
 
 To use your local EGA service, following the steps below.
 
-1. Install [Vagrant](https://www.vagrantup.com/downloads.html);
-    + Current version is 1.7.4
-
-2. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and the extension pack;
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);
     + Current version is 5.0.4.
     + VirtualBox [Windows](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-Win.exe), [Mac](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg).
-    + [The extension pack](http://download.virtualbox.org/virtualbox/5.0.4/Oracle_VM_VirtualBox_Extension_Pack-5.0.4-102546.vbox-extpack)
+    + Optional, install [the extension pack](http://download.virtualbox.org/virtualbox/5.0.4/Oracle_VM_VirtualBox_Extension_Pack-5.0.4-102546.vbox-extpack)
+
+2. Install [Vagrant](https://www.vagrantup.com/downloads.html);
+    + Current version is 1.7.4
 
 3. Get configuration file by
     + cloning this repository and check [Directory structure](#directory-structure)
@@ -25,21 +25,23 @@ To use your local EGA service, following the steps below.
     + `vagrant box add egavm egavm.box` for VirtualBox
 
 6. Start EGA service.
-    + `vagrant up --provider=virtualbox # start VM`
+    + Start VM
+        - `vagrant up --provider=virtualbox`
     + You can either
         - `vagrant ssh # log into VM via ssh`
         - or open a terminal window in the VM GUI.
-    + `cd ~/Scripts/ega && node app.js` IMPORTANT! Be sure your cwd is `~/Scripts/ega`
+    + Now you're inside the VM. IMPORTANT! Be sure your cwd is `~/Scripts/ega`.
+        - `cd ~/Scripts/ega && node app.js`
 
 7. Open your favorite browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
 
 ## Directory structure
 
-* `vf/`: configuration files for users.
-    + [Vagrantfile](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
-    + [Vagrantfile-headless](vf/Vagrantfile-headless): VirtualBox without GUI on Linux, Mac and Windows. For experienced users only.
+* [`vf/`](vf/): configuration files for users.
+    + [`Vagrantfile`](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
+    + [`Vagrantfile-headless`](vf/Vagrantfile-headless): VirtualBox without GUI on Linux, Mac and Windows. For experienced users only.
 
-* `prepare/`: Scirpts to build VMs.
+* [`prepare/`](prepare/): Scirpts to build VMs.
 
 ## Instructions for building scripts
 
