@@ -4,29 +4,38 @@ mkdir -p $HOME/share/
 
 echo "==> compile mysql"
 cd $HOME/share/
+rm -fr mysql-*
 tar xvfz /prepare/resource/mysql-5.1.73.tar.gz
-
 cd mysql-*
 
 export MYSQL_USER=`whoami`
 export MYSQL_DIR=$HOME/share/mysql
 
-CFLAGS="-O3" CXX=gcc CXXFLAGS="-O3 -felide-constructors -fno-exceptions -fno-rtti" \
+if [[ `uname` == 'Darwin' ]];
+then
+    export CC=gcc-5
+    export CXX=gcc-5
+else
+    export CC=gcc
+    export CXX=gcc
+fi
+
+CFLAGS="-O3" CXXFLAGS="-O3 -felide-constructors -fno-exceptions -fno-rtti" \
     ./configure \
-    --enable-assembler \
-    --without-bench \
-    --without-docs \
-    --without-man \
-    --without-debug \
-    --with-plugins=myisam \
+    --prefix=${MYSQL_DIR} \
+    --with-extra-charsets=complex \
     --enable-thread-safe-client \
     --enable-local-infile \
     --enable-shared \
+    --enable-assembler \
+    --without-docs \
+    --without-man \
+    --without-debug \
+    --without-bench \
+    --with-plugins=myisam \
     --with-partition \
-    --with-extra-charsets=complex \
     --disable-dependency-tracking \
     --with-mysqld-user=${MYSQL_USER} \
-    --prefix=${MYSQL_DIR} \
     --localstatedir=${MYSQL_DIR}/data \
     --sysconfdir=${MYSQL_DIR} \
     --with-unix-socket-path=${MYSQL_DIR}/mysql.sock
