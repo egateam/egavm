@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-rm $HOME/.cache/Homebrew/*.incomplete
-cp /prepare/resource/mysql-5.1.73.tar.gz    $HOME/.cache/Homebrew/mysql51-5.1.73.tar.gz
-cp /prepare/resource/openssl-1.0.2c.tar.gz  $HOME/.cache/Homebrew/openssl-1.0.2c.tar.gz
+rm `brew --cache`/*.incomplete
+cp /prepare/resource/mysql-5.1.73.tar.gz    `brew --cache`/mysql51-5.1.73.tar.gz
+cp /prepare/resource/openssl-1.0.2c.tar.gz  `brew --cache`/openssl-1.0.2c.tar.gz
 
 brew tap homebrew/versions
 brew install mysql51 --without-server
