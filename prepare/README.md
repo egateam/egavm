@@ -4,13 +4,19 @@
 
 * Ubuntu:       14.04.3
 * Vagrant:      1.7.4
-* VirtualBox:   5.0.4
+* VirtualBox:   5.0.6
+
+## Build Ubuntu base box with packer
+
+`prepare/packer.sh`
+
+OR
 
 ## Get public vagrant boxes for Ubuntu 14.04.3
 
     ```bash
-    vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.3
-    vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.3
+    vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.5
+    vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.5
     ```
 
 ## Build a vagrant box from .iso.
