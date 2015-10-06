@@ -1,14 +1,24 @@
 #!/usr/bin/env bash
 
 echo "==> Config repeatmasker"
-cd $HOME/.linuxbrew/Cellar/repeatmasker/4.0.5/libexec
+cd `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec
 tar zxvf /prepare/resource/repeatmaskerlibraries-20140131.tar.gz
-sed -i 's/\/usr\/bin\/perl/env/' config.txt
+if [[ `uname` == 'Darwin' ]];
+then
+    sed -i".bak" 's/\/usr\/bin\/perl/env/' config.txt
+else
+    sed -i 's/\/usr\/bin\/perl/env/' config.txt
+fi
 ./configure < config.txt
 
-rm $HOME/.linuxbrew/bin/rmOutToGFF3.pl
-sed -i 's/::Bin/::RealBin/' $HOME/.linuxbrew/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
-ln -s $HOME/.linuxbrew//Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl $HOME/.linuxbrew/bin/rmOutToGFF3.pl
+rm `brew --prefix`/bin/rmOutToGFF3.pl
+if [[ `uname` == 'Darwin' ]];
+then
+    sed -i".bak" 's/::Bin/::RealBin/' `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
+else
+    sed -i 's/::Bin/::RealBin/' `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
+fi
+ln -s `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl `brew --prefix`/bin/rmOutToGFF3.pl
 
 echo "==> Copy .screenrc"
 cp /prepare/resource/.screenrc $HOME

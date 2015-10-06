@@ -33,21 +33,21 @@ brew tap homebrew/science
 # Many bioinfomatics hosted on low band server, so don't waste time on downloading them repeatedly.
 mkdir -p $HOME/.cache/Homebrew
 rm $HOME/.cache/Homebrew/*.incomplete
-cp /prepare/resource/ncbi-blast-2.2.31+src.tar.gz           $HOME/.cache/Homebrew/blast-2.2.31.tar.gz
-cp /prepare/resource/bzip2-1.0.6.tar.gz                     $HOME/.cache/Homebrew/bzip2-1.0.6.tar.gz
-cp /prepare/resource/clustalw-2.1.tar.gz                    $HOME/.cache/Homebrew/clustal-w-2.1.tar.gz
-cp /prepare/resource/hmmer-3.1b2.tar.gz                     $HOME/.cache/Homebrew/hmmer-3.1b2.tar.gz
-cp /prepare/resource/jpegsrc.v8d.tar.gz                     $HOME/.cache/Homebrew/jpeg-8d.tar.gz
-cp /prepare/resource/lastz-1.02.00.tar.gz                   $HOME/.cache/Homebrew/lastz-1.02.00.tar.gz
-cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    $HOME/.cache/Homebrew/mafft-7.221.tgz
-cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  $HOME/.cache/Homebrew/rmblast-2.2.28.tar.gz
-cp /prepare/resource/node-v0.12.7.tar.gz                    $HOME/.cache/Homebrew/node-0.12.7.tar.gz
-cp /prepare/resource/pcre-8.37.tar.bz2                      $HOME/.cache/Homebrew/pcre-8.37.tar.bz2
-cp /prepare/resource/pkg-config-0.28.tar.gz                 $HOME/.cache/Homebrew/pkg-config-0.28.tar.gz
-cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           $HOME/.cache/Homebrew/raxml-8.1.15.tar.gz
-cp /prepare/resource/newick-utils-1.6.tar.gz                $HOME/.cache/Homebrew/newick-utils-1.6.tar.gz
-cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         $HOME/.cache/Homebrew/repeatmasker-4.0.5.tar.gz
-cp /prepare/resource/xz-5.2.1.tar.gz                        $HOME/.cache/Homebrew/xz-5.2.1.tar.gz
+cp /prepare/resource/ncbi-blast-2.2.31+src.tar.gz           `brew --cache`/blast-2.2.31.tar.gz
+cp /prepare/resource/bzip2-1.0.6.tar.gz                     `brew --cache`/bzip2-1.0.6.tar.gz
+cp /prepare/resource/clustalw-2.1.tar.gz                    `brew --cache`/clustal-w-2.1.tar.gz
+cp /prepare/resource/hmmer-3.1b2.tar.gz                     `brew --cache`/hmmer-3.1b2.tar.gz
+cp /prepare/resource/jpegsrc.v8d.tar.gz                     `brew --cache`/jpeg-8d.tar.gz
+cp /prepare/resource/lastz-1.02.00.tar.gz                   `brew --cache`/lastz-1.02.00.tar.gz
+cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    `brew --cache`/mafft-7.221.tgz
+cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  `brew --cache`/rmblast-2.2.28.tar.gz
+cp /prepare/resource/node-v0.12.7.tar.gz                    `brew --cache`/node-0.12.7.tar.gz
+cp /prepare/resource/pcre-8.37.tar.bz2                      `brew --cache`/pcre-8.37.tar.bz2
+cp /prepare/resource/pkg-config-0.28.tar.gz                 `brew --cache`/pkg-config-0.28.tar.gz
+cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           `brew --cache`/raxml-8.1.15.tar.gz
+cp /prepare/resource/newick-utils-1.6.tar.gz                `brew --cache`/newick-utils-1.6.tar.gz
+cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
+cp /prepare/resource/xz-5.2.1.tar.gz                        `brew --cache`/xz-5.2.1.tar.gz
 
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml
