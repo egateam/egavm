@@ -3,7 +3,8 @@
 # softwares via apt-get
 echo "====> Install softwares via apt-get <===="
 
-if grep -q -i USTC_MIRRORS /etc/apt/sources.list; then
+if grep -q -i USTC_MIRRORS /etc/apt/sources.list;
+then
     echo "==> sources.list already contains USTC_MIRRORS"
 else
     echo "==> Change mirror source"
@@ -24,7 +25,7 @@ deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted univ
 
 EOF
 
-    if [ ! -e /etc/apt/sources.list.bak ]
+    if [ ! -e /etc/apt/sources.list.bak ];
     then
         sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
     fi
@@ -36,7 +37,8 @@ fi
 
 # Virtual machines needn't this and I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
-if [ "$(whoami)" == "vagrant" ]; then
+if [ `whoami` == 'vagrant' ];
+then
     echo "==> Disable AppArmor"
     sudo service apparmor stop
     sudo update-rc.d -f apparmor remove
@@ -55,7 +57,7 @@ echo "==> Install java"
 sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
 
 echo "==> Install other softwares"
-sudo apt-get -y install csh parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev
+sudo apt-get -y install csh parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev ﻿xsltproc
 
 echo "==> Install gsl"
 sudo apt-get -y install libgsl0ldbl libgsl0-dev
@@ -73,7 +75,8 @@ echo "==> Install gtk3 related tools"
 sudo apt-get -y install xvfb glade
 
 # install mongodb and redis by apt.
-if [ "$(whoami)" == "vagrant" ]; then
+if [[ `whoami` == 'vagrant' ]];
+then
     echo "==> Install mongodb"
     sudo apt-get -y install mongodb
 fi
@@ -86,7 +89,8 @@ sudo apt-get -y install redis-server
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
 
-if [ -n "$DISPLAY" ]; then
+if [ -n "$DISPLAY" ];
+then
     echo "==> Install nautilus plugins"
     sudo apt-get -y install nautilus-open-terminal nautilus-actions
 fi

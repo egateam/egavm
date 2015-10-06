@@ -14,7 +14,7 @@ echo "==> circos"
 cd /prepare/resource/
 wget -N http://science-annex.org/pub/circos/circos-0.67-7.tgz
 cd $HOME/share/
-rm -fr circosß
+rm -fr circos
 tar xvfz /prepare/resource/circos-0.67-7.tgz
 mv circos-0.67-7 circos
 
@@ -23,7 +23,7 @@ cd /prepare/resource/
 wget -N http://www.bx.psu.edu/miller_lab/dist/multiz-tba.012109.tar.gz
 cd $HOME/share/
 tar xvfz /prepare/resource/multiz-tba.012109.tar.gz
-cd multiz-tba*ß
+cd multiz-tba*
 if [[ `uname` == 'Darwin' ]];
 then
     sed -i".bak" 's/\-Werror//' Makefile
@@ -51,6 +51,7 @@ then
 else
     JBBIN_TAR_GZ=/prepare/resource/jkbin-ubuntu-1404-2011.tar.gz
 fi
+echo "==> untar from ${JBBIN_TAR_GZ}"
 tar xvfz ${JBBIN_TAR_GZ} x86_64/axtChain
 tar xvfz ${JBBIN_TAR_GZ} x86_64/axtSort
 tar xvfz ${JBBIN_TAR_GZ} x86_64/axtToMaf

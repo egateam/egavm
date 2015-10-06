@@ -48,36 +48,36 @@ In GUI desktop, disable auto updates: `System Settings -> Software and updates -
 set `Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
 
     ```bash
-    sh /prepare/1-apt.sh | tee log-1-apt.txt
+    bash /prepare/1-apt.sh | tee log-1-apt.txt
 
     ## Press master button (Win for Windows and right Command for Mac) and type `terminal` to start a GUI terminal
-    ## sh /prepare/2-unity.sh
+    ## bash /prepare/2-unity.sh
 
-    sh /prepare/3-plenv.sh
+    bash /prepare/3-plenv.sh
     source $HOME/.bashrc
-    sh /prepare/4-cpanm.sh | tee log-4-cpanm.txt
+    bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
 
-    sh /prepare/5-clone.sh
-    sh /prepare/6-download.sh
+    bash /prepare/5-clone.sh
+    bash /prepare/6-download.sh
 
-    sh /prepare/extra/4-cpanm.sh    # Optional, needed by alignDB
+    bash /prepare/extra/4-cpanm.sh  # Optional, needed by alignDB
 
     # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
-    sh /prepare/7-brew.sh | tee log-7-brew.txt
+    bash /prepare/7-brew.sh | tee log-7-brew.txt
     source $HOME/.bashrc
-    sh /prepare/8-node.sh
+    bash /prepare/8-node.sh
 
-    sh /prepare/extra/7-mysql.sh           # Optional, compiling full mysql51.
-    # sh /prepare/extra/7-mysql-client.sh  # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
-    source $HOME/.bashrc                   # After installation, add user alignDB to mysql.
+    bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51.
+    # bash /prepare/extra/7-mysql-client.sh     # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
+    source $HOME/.bashrc                        # After installation, add user alignDB to mysql.
 
     # Build jksrc.zip once and save binary files.
     # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
-    ### sh /prepare/extra/8-jksrc.sh
+    ### bash /prepare/extra/8-jksrc.sh
 
-    sh /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
+    bash /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
 
-    sh /prepare/9-postinstall.sh    # Clean the System
+    bash /prepare/9-postinstall.sh    # Clean the System
     ```
 
 * Pack VM up
