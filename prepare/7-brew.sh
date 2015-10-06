@@ -41,7 +41,7 @@ cp /prepare/resource/jpegsrc.v8d.tar.gz                     `brew --cache`/jpeg-
 cp /prepare/resource/lastz-1.02.00.tar.gz                   `brew --cache`/lastz-1.02.00.tar.gz
 cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    `brew --cache`/mafft-7.221.tgz
 cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  `brew --cache`/rmblast-2.2.28.tar.gz
-cp /prepare/resource/node-v0.12.7.tar.gz                    `brew --cache`/node-0.12.7.tar.gz
+cp /prepare/resource/node-v4.1.1.tar.gz                     `brew --cache`/node-4.1.1.tar.gz
 cp /prepare/resource/pcre-8.37.tar.bz2                      `brew --cache`/pcre-8.37.tar.bz2
 cp /prepare/resource/pkg-config-0.28.tar.gz                 `brew --cache`/pkg-config-0.28.tar.gz
 cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           `brew --cache`/raxml-8.1.15.tar.gz

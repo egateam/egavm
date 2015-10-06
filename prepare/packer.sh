@@ -32,6 +32,7 @@ mv $BASE_DIR/ubuntu/box/virtualbox/ubuntu1404-desktop*.box $BASE_DIR/resource
 
 cd $BASE_DIR/resource
 vagrant box add ubuntu1404-desktop*.box --name box-cutter/ubuntu1404-desktop
+
 # cd /Users/wangq/Scripts/windows
 # packer build -only=virtualbox-iso -var 'cm=nocm' -var 'version=1.0.4' -var 'update=false' -var 'headless=false' -var "shutdown_command=shutdown /s /t 10 /f /d p:4:1 /c Packer_Shutdown" -var "iso_url=/Users/wangq/Downloads/en_windows_7_professional_with_sp1_vl_build_x64_dvd_u_677791.iso" -var "iso_checksum=708e0338d4e2f094dfeb860347c84a6ed9e91d0c" win7x64-pro-ssh.json
 # packer build -only=parallels-iso -var 'cm=nocm' -var 'version=1.0.4' -var 'update=false' -var 'headless=false' -var "shutdown_command=shutdown /s /t 10 /f /d p:4:1 /c Packer_Shutdown" -var "iso_url=/Users/wangq/Downloads/en_windows_7_professional_with_sp1_vl_build_x64_dvd_u_677791.iso" -var "iso_checksum=708e0338d4e2f094dfeb860347c84a6ed9e91d0c" win7x64-pro-ssh.json
