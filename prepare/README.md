@@ -3,12 +3,12 @@
 ## Software versions
 
 * Ubuntu:       14.04.3
-* Vagrant:      1.7.4
 * VirtualBox:   5.0.6
+* Vagrant:      1.7.4
 
-## Build Ubuntu base box with packer
+## Build Ubuntu base box with packer from .iso
 
-`prepare/packer.sh`
+See [packer.sh](prepare/packer.sh)
 
 OR
 
@@ -18,10 +18,6 @@ OR
     vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.5
     vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.5
     ```
-
-## Build a vagrant box from .iso.
-
-See [packer.sh](prepare/packer.sh)
 
 ##  Vagrantfiles for setting up basic VM.
 

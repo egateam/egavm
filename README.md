@@ -1,39 +1,49 @@
 [ Languages: [English](README.md), [中文](README-zh.md) ]
 
-# Virtual machines (Vagrant boxes) for [EGA](http://ega.nju.edu.cn).
+# Virtual machines for [EGA](http://ega.nju.edu.cn).
 
 ## Setting up
 
 To use your local EGA service, following the steps below.
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);
-    + Current version is 5.0.4.
-    + VirtualBox [Windows](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-Win.exe), [Mac](http://download.virtualbox.org/virtualbox/5.0.4/VirtualBox-5.0.4-102546-OSX.dmg).
-    + Optional, install [the extension pack](http://download.virtualbox.org/virtualbox/5.0.4/Oracle_VM_VirtualBox_Extension_Pack-5.0.4-102546.vbox-extpack)
+    + Current version is 5.0.6.
+    + VirtualBox [Mac](http://download.virtualbox.org/virtualbox/5.0.6/VirtualBox-5.0.6-103037-OSX.dmg), [Windows](http://download.virtualbox.org/virtualbox/5.0.6/VirtualBox-5.0.6-103037-Win.exe).
+    + Optionally, install [the extension pack](http://download.virtualbox.org/virtualbox/5.0.6/Oracle_VM_VirtualBox_Extension_Pack-5.0.6-103037.vbox-extpack)
+
+2. Download `egavm.ova` and import it into VirtualBox;
+
+3. Start virtual machine and open a terminal window in the VM GUI.
+   
+4. Type or paste `cd ~/Scripts/ega && node app.js` in virtual machine terminal window.
+
+5. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
+
+## Setting up with vagrant
+
+1. Same as step 1 in previous section;
 
 2. Install [Vagrant](https://www.vagrantup.com/downloads.html);
     + Current version is 1.7.4
 
-3. Get configuration file by
-    + cloning this repository and check [Directory structure](#directory-structure)
-        - `git clone https://github.com/wang-q/egavm.git`
-    + or downloading the corresponding [Vagrantfile](vf/Vagrantfile) and putting it in a clean directory;
+3. Get configuration file [`Vagrantfile`](vf/Vagrantfile) and putting it in a clean directory;
 
 4. Download `egavm.box` and put it in the same directory of the configuration file;
 
-5. `cd` into your project directory and run
-    + `vagrant box add egavm egavm.box` for VirtualBox
+5. `cd` into the previous directory and run `vagrant box add egavm egavm.box`.
 
-6. Start EGA service.
+6. Start virtual machine.
     + Start VM
-        - `vagrant up --provider=virtualbox`
+        - `vagrant up`
     + You can either
-        - `vagrant ssh # log into VM via ssh`
+        - log into VM via ssh `vagrant ssh`
         - or open a terminal window in the VM GUI.
+        
+7. Start EGA service.
     + Now you're inside the VM. IMPORTANT! Be sure your cwd is `~/Scripts/ega`.
         - `cd ~/Scripts/ega && node app.js`
 
-7. Open your favorite browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
+8. Same as step 5 in previous section;
 
 ## Directory structure
 
