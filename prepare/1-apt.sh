@@ -57,7 +57,7 @@ echo "==> Install java"
 sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
 
 echo "==> Install other softwares"
-sudo apt-get -y install csh parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev ﻿xsltproc
+sudo apt-get -y install csh parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev ﻿xsltproc numactl
 
 echo "==> Install gsl"
 sudo apt-get -y install libgsl0ldbl libgsl0-dev
