@@ -12,11 +12,11 @@ echo "==> untar"
 cd $HOME/share/
 tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404*.tgz
 
-mkdir -p mongodb
+mkdir -p $HOME/share/mongodb
 cp -R -n mongodb-linux-x86_64-*/ mongodb
 
-mkdir -p mongodb/log
-mkdir -p mongodb/data
+mkdir -p $HOME/share/mongodb/log
+mkdir -p $HOME/share/mongodb/data
 
 echo "==> cnf file"
 cd $HOME/share/mongodb

@@ -14,3 +14,6 @@ npm -g install express-generator
 
 npm install
 bower --config.analytics=false install
+
+# settings.js
+cp $BASE_DIR/ega/settings.js.example $BASE_DIR/ega/settings.js
