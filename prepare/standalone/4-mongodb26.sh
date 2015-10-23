@@ -6,7 +6,7 @@ echo "====> Install MongoDB <===="
 
 echo "==> download"
 cd /prepare/resource/
-wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.0.7.tgz
+wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-2.6.11.tgz
 
 echo "==> untar"
 cd $HOME/share/
@@ -28,7 +28,6 @@ systemLog:
 storage:
     dbPath: $HOME/share/mongodb/data
     directoryPerDB: true
-    engine: wiredTiger
     journal:
         enabled: false
 net:
