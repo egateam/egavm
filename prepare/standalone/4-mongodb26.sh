@@ -4,23 +4,38 @@ mkdir -p $HOME/share/
 
 echo "====> Install MongoDB <===="
 
-echo "==> download"
-cd /prepare/resource/
-wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-2.6.11.tgz
-
-echo "==> untar"
-cd $HOME/share/
-tar xvfz /prepare/resource/mongodb-linux*.tgz
-
 mkdir -p $HOME/share/mongodb
-cp -R -n mongodb-linux*/ mongodb
+
+if [[ `uname` == 'Darwin' ]];
+then
+    echo "==> download"
+    cd /prepare/resource/
+    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.6.11.tgz
+
+    echo "==> untar"
+    cd $HOME/share/
+    tar xvfz /prepare/resource/mongodb-osx*-2.*.tgz
+    cp -R -n mongodb-osx*/ mongodb
+
+    rm -fr mongodb-osx*/
+else
+    echo "==> download"
+    cd /prepare/resource/
+    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-2.6.11.tgz
+
+    echo "==> untar"
+    cd $HOME/share/
+    tar xvfz /prepare/resource/mongodb-linux*-2.*.tgz
+    cp -R -n mongodb-linux*/ mongodb
+
+    rm -fr mongodb-osx*/
+fi
 
 mkdir -p $HOME/share/mongodb/log
 mkdir -p $HOME/share/mongodb/data
 
 echo "==> cnf file"
-cd $HOME/share/mongodb
-cat <<EOF > mongod.cnf
+cat <<EOF > $HOME/share/mongodb/mongod.cnf
 systemLog:
     destination: file
     path: $HOME/share/mongodb/log/mongod.log
