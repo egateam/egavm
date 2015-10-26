@@ -33,8 +33,6 @@ EOF
     sudo cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
 fi
 
-
-
 # Virtual machines needn't this and I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
 if [ `whoami` == 'vagrant' ];
@@ -51,7 +49,7 @@ sudo service whoopsie stop
 echo "==> Install linuxbrew dependences"
 sudo apt-get -y update
 #sudo apt-get -y upgrade # Avoid grub and linux-base updates.
-sudo apt-get -y install build-essential curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev
+sudo apt-get -y install build-essential module-assistant curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev p7zip-full
 
 echo "==> Install java"
 sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
