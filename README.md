@@ -45,7 +45,7 @@ To use your local EGA service, following the steps below.
 
 8. Same as step 5 in previous section;
 
-## Directory structure
+## Directory Organization
 
 * [`vf/`](vf/): configuration files for users.
     + [`Vagrantfile`](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
