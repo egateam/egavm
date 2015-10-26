@@ -11,7 +11,9 @@ if [ -n "$DISPLAY" ]; then
     gsettings set org.gnome.desktop.screensaver lock-enabled false
     gsettings set org.gnome.desktop.session idle-delay 0 # (0 to disable)
 
+
     # http://askubuntu.com/questions/79150/how-to-remove-bookmarks-from-the-nautilus-sidebar/152540#152540
+    echo "==> Remove nautilus bookmarks"
     echo "enabled=false" > $HOME/.config/user-dirs.conf
 
     sed -i 's/\Documents//' $HOME/.config/user-dirs.dirs
@@ -32,6 +34,7 @@ if [ -n "$DISPLAY" ]; then
 
     mkdir -p $HOME/.config/gtk-3.0/
     echo > $HOME/.config/gtk-3.0/bookmarks
+
 else
     echo "This script should be execute inside a GUI terminal"
 fi
