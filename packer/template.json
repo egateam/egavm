@@ -6,7 +6,8 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
-            "build.sh"
+            "scripts/apt.sh",
+            "scripts/build.sh"
           ]
         }
       }
@@ -49,29 +50,33 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 40960,
+      "disk_size": 102400,
+      "hard_drive_interface": "sata",
       "guest_os_type": "Ubuntu_64",
       "http_directory": "http",
       "iso_checksum": "9e5fecc94b3925bededed0fdca1bd417",
       "iso_checksum_type": "md5",
       "iso_url": "file:///prepare/resource/ubuntu-14.04.3-server-amd64.iso",
+      "guest_additions_url": "file:///prepare/resource/VBoxGuestAdditions_5.0.6.iso",
+      "guest_additions_sha256": "59ed9911c2bb22357345448c3df6104938b45fa780311d20c330e39c6e309991",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "echo 'shutdown -P now' > /tmp/shutdown.sh; echo 'vagrant'|sudo -S sh '/tmp/shutdown.sh'",
+      "virtualbox_version_file": ".vbox_version",
       "vboxmanage": [
         [
           "modifyvm",
           "{{.Name}}",
           "--memory",
-          "512"
+          "1024"
         ],
         [
           "modifyvm",
           "{{.Name}}",
           "--cpus",
-          "1"
+          "2"
         ]
       ]
     }
