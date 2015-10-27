@@ -5,53 +5,69 @@
 * Ubuntu:       14.04.3
 * VirtualBox:   5.0.6
 * Vagrant:      1.7.4
+* Packer:       0.8.6
 
 ## Build Ubuntu base box with packer from .iso
 
-See [packer.sh](prepare/packer.sh) or [trusty64.sh](prepare/trusty64.sh)
+See [`packer/`](packer/) and [README.md](packer/README.md).
 
-OR
+##  Vagrantfiles for setting up VM
 
-## Get public vagrant boxes for Ubuntu 14.04.3
+* `prepare/virtualbox/Vagrantfile`
 
-```bash
-vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.5
-vagrant box add box-cutter/ubuntu1404 --provider virtualbox --box-version 2.0.5
-```
+## VM rules
 
-##  Vagrantfiles for setting up basic VM.
+* Perl is managed by plenv, used version is 5.18.4.
+* Dependant libs of Perl modules are installed by apt-get.
+* R and mongodb are installed by apt-get in VM.
+* Node.js and most bioinformatics software are install by linuxbrew.
 
-* `prepare/virtualbox/`
-* `prepare/virtualbox-headless/`
-* `prepare/virtualbox-trusty64/`
+## VirtualBox VM building steps
 
-## VirtualBox desktop
+This build starts from `mytrusty.box`.
 
 * STEPS on host machine
 
-This would download a fresh Ubuntu vm and take several minutes.
-
 ```bash
 cd $HOME/Scripts/egavm/prepare/virtualbox
-vagrant up --provider=virtualbox
+vagrant destroy -f
+rm -fr .vagrant/
+
+echo "You may need remove orphan disks first if you have modifyhd. VirtualBox->File->Virtual Media Manager."
+
+cd $HOME/Scripts/egavm/prepare/virtualbox
+
+echo "Change resolution"
+vagrant up
+VBoxManage controlvm egavm-build setvideomodehint 1024 768 32
+
 vagrant ssh
 ```
 
 * STEPS inside VM
 
+Now you have a GUI desktop.
+
 Username and password are `vagrant` and `vagrant`, respectively.
 
-In GUI desktop, disable auto updates: `System Settings -> Software and updates -> updates`,
+In GUI desktop, disable auto updates: `System Settings -> Software and updates -> Updates`,
 set `Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
 
+Change mirror: `System Settings -> Software and updates -> Ubuntu Software`, set `Download from:` to `china -> mirrors.ustc.edu.cn`.
+
+Disable screen saver, VM needn't it. `System Settings -> Brightness & Lock`.
+
 ```bash
+echo "==> Install Ubuntu packages"
+echo "==> When some packages went wrong, check http://mirrors.ustc.edu.cn/ubuntu/ for updating status."
 bash /prepare/1-apt.sh | tee log-1-apt.txt
 
 echo "==> Press master button (Win for Windows and right Command for Mac) and type `terminal` to start a GUI terminal"
- ## bash /prepare/2-unity.sh
+bash /prepare/2-unity.sh
 
 bash /prepare/3-plenv.sh
 source $HOME/.bashrc
+
 bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
 
 bash /prepare/5-clone.sh
@@ -75,48 +91,35 @@ source $HOME/.bashrc                        # After installation, add user align
 bash /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
 
 bash /prepare/9-postinstall.sh    # Clean the System
+
+ # review and delete all logs
+rm $HOME/log*.txt
 ```
 
 * Pack VM up
 
 ```bash
 cd $HOME/Scripts/egavm/prepare/virtualbox
+vagrant halt
 vagrant package --output egavm.box
 du -hs egavm.box
 ```
 
-## VirtualBox headless
+## Box sizes
 
-* STEPS on host machine
+| name         | size    |
+| :-----       | :-----: |
+| egavm.box    | 2.1 GB  |
+| mytrusty.box | 1.0 GB  |
 
-```bash
-cd $HOME/Scripts/egavm/prepare/virtualbox-headless
-vagrant up --provider=virtualbox
-vagrant ssh
-```
+## Useful tips
 
-* STEPS inside VM
-
-Omit `prepare/2-unity.sh`, and all others are the same as virtualbox-desktop.
-
-* Pack VM up
+* Resize hard driver
 
 ```bash
-cd $HOME/Scripts/egavm/prepare/virtualbox-headless
-vagrant package --output egavm-headless.box
-du -hs egavm-headless.box
-```
+echo "You may need remove existing disks in VirtualBox catalog first, VirtualBox->File->Virtual Media Manager."
 
-## VirtualBox trusty64
-
-This build starts from official Ubuntu 14.04 [vagrant box](https://cloud-images.ubuntu.com/vagrant/trusty/current/).
-
-* STEPS on host machine
-
-```bash
 cd $HOME/Scripts/egavm/prepare/virtualbox-trusty64
-bash ../trusty64.sh
-rm -fr .vagrant/
 vagrant up
 vagrant halt
 
@@ -131,71 +134,25 @@ VBoxManage clonehd "box-disk1.vmdk" "clone-disk1.vdi" --format vdi
 VBoxManage modifyhd "clone-disk1.vdi" --resize 102400
 VBoxManage showvminfo egavm-build | grep "Storage"
 VBoxManage storageattach egavm-build --storagectl "SATAController" --port 0 --device 0 --type hdd --medium clone-disk1.vdi
-
-cd $HOME/Scripts/egavm/prepare/virtualbox-trusty64
-vagrant up
-vagrant ssh
 ```
 
-* STEPS inside VM
-
-Install Ubuntu desktop and upgrade VirtualBox guest additions.
+* Manually install/upgrade VirtualBox guest additions
 
 ```bash
-echo "==> Install Ubuntu desktop"
-bash /prepare/1-apt.sh | tee log-1-apt.txt
-bash /prepare/10-desktop.sh | tee log-10-desktop.txt
-
-echo "==> Upgrade VirtualBox guest additions"
-
-cd $HOME
+echo "==> Install VirtualBox guest additions"
 sudo m-a prepare
+
+cd /prepare/resource/
 wget -N http://download.virtualbox.org/virtualbox/5.0.6/VBoxGuestAdditions_5.0.6.iso
 sudo mount VBoxGuestAdditions_5.0.6.iso -o loop /mnt
 cd /mnt
-sudo sh VBoxLinuxAdditions.run --nox11
-cd $HOME
-rm *.iso
+echo "yes" | sudo sh VBoxLinuxAdditions.run --nox11 # type yes
+
 sudo /etc/init.d/vboxadd setup
 sudo update-rc.d vboxadd defaults
-
 
 echo "==> Check that Guest Editions are installed"
 lsmod | grep vboxguest
 
-exit
+sudo reboot
 ```
-
-* Back to host machine
-
-```bash
-cd $HOME/Scripts/egavm/prepare/virtualbox-trusty64
-vagrant reload
-vagrant ssh
-```
-
-* Log into VM
-
-Now you have a GUI desktop.
-
-```bash
-echo "Press master button (Win for Windows and right Command for Mac) and type `terminal` to start a GUI terminal"
-bash /prepare/2-unity.sh
-```
-
-All others are the same as virtualbox-desktop.
-
-* Pack VM up
-
-```bash
-cd $HOME/Scripts/egavm/prepare/virtualbox-headless
-vagrant package --output egavm-headless.box
-du -hs egavm-headless.box
-```
-
-## Box sizes
-
-| name               | size    |
-| :-----             | :-----: |
-| egavm.box          | 2.1 GB  |
-| egavm-headless.box | 1.4 GB  |
