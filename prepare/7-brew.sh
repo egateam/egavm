@@ -65,3 +65,13 @@ cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm `perl -e 'print grep {/site_
 
 echo "==> Install wang-q/tap"
 brew install faops multiz-tba
+
+echo "==> Config repeatmasker"
+cd `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec
+tar zxvf /prepare/resource/repeatmaskerlibraries-20140131.tar.gz
+sed -i".bak" 's/\/usr\/bin\/perl/env/' config.txt
+./configure < config.txt
+
+rm `brew --prefix`/bin/rmOutToGFF3.pl
+sed -i".bak" 's/::Bin/::RealBin/' `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
+ln -s `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl `brew --prefix`/bin/rmOutToGFF3.pl
