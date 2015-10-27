@@ -8,6 +8,7 @@ brew cask install packer
 echo "==> Get Ubuntu iso"
 cd $BASE_DIR/prepare/resource
 wget -N http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.3/ubuntu-14.04.3-server-amd64.iso
+wget -N http://download.virtualbox.org/virtualbox/5.0.6/VBoxGuestAdditions_5.0.6.iso
 
 echo "==> Build Ubuntu box"
 cd $BASE_DIR/packer

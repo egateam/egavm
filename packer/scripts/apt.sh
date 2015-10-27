@@ -55,3 +55,10 @@ tee -a /etc/lightdm/lightdm.conf <<EOF
 autologin-user=vagrant
 
 EOF
+
+# restore original sources.list
+if [ -e /etc/apt/sources.list.bak ];
+then
+    rm /etc/apt/sources.list
+    mv /etc/apt/sources.list.bak /etc/apt/sources.list
+fi
