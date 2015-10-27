@@ -3,36 +3,6 @@
 # softwares via apt-get
 echo "====> Install softwares via apt-get <===="
 
-if grep -q -i USTC_MIRRORS /etc/apt/sources.list;
-then
-    echo "==> sources.list already contains USTC_MIRRORS"
-else
-    echo "==> Change mirror source"
-
-    # https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu
-    cat <<EOF > list.tmp
-# USTC_MIRRORS
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
-
-EOF
-
-    if [ ! -e /etc/apt/sources.list.bak ];
-    then
-        sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
-    fi
-    sudo mv list.tmp /etc/apt/sources.list
-    sudo cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
-fi
-
 # Virtual machines needn't this and I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
 if [ `whoami` == 'vagrant' ];
@@ -58,7 +28,9 @@ echo "==> Install java"
 sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
 
 echo "==> Install other softwares"
-sudo apt-get -y install csh parallel vim graphviz screen unzip libdb-dev libedit-dev libgd-dev libreadline-dev libpng-dev libxml2-dev ﻿xsltproc numactl
+sudo apt-get -y install csh parallel vim graphviz screen unzip xsltproc numactl
+sudo apt-get -y install libdb-dev libreadline-dev libedit-dev
+sudo apt-get -y install libgd-dev libxml2-dev
 
 echo "==> Install gsl"
 sudo apt-get -y install libgsl0ldbl libgsl0-dev
