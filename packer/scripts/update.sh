@@ -23,7 +23,6 @@ then
     cp /etc/apt/sources.list /etc/apt/sources.list.bak
 fi
 mv list.tmp /etc/apt/sources.list
-cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
 
 echo "==> Disabling the release upgrader"
 sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades

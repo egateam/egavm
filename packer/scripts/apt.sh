@@ -23,19 +23,18 @@ then
     cp /etc/apt/sources.list /etc/apt/sources.list.bak
 fi
 mv list.tmp /etc/apt/sources.list
-cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
 
 echo "==> Installing Ubunutu desktop"
 apt-get update -y
 apt-get upgrade -y
 
+# needed by virtualbox guest additions
+apt-get install -y build-essential module-assistant linux-headers-$(uname -r)
+
 apt-get install -y --no-install-recommends ubuntu-desktop
 apt-get install -y gnome-terminal firefox xrdp
 apt-get install -y unity-lens-applications unity-lens-files
 apt-get install -y --no-install-recommends indicator-applet-complete indicator-session
-
-# needed by virtualbox guest additions
-apt-get install -y build-essential module-assistant linux-headers-$(uname -r)
 
 # GUI default login
 mkdir -p /etc/lightdm
@@ -62,3 +61,6 @@ then
     rm /etc/apt/sources.list
     mv /etc/apt/sources.list.bak /etc/apt/sources.list
 fi
+
+reboot
+sleep 60
