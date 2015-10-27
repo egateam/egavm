@@ -35,9 +35,6 @@ if [ -n "$DISPLAY" ]; then
     mkdir -p $HOME/.config/gtk-3.0/
     echo > $HOME/.config/gtk-3.0/bookmarks
 
-    echo "==> Install nautilus plugins"
-    sudo apt-get -y install nautilus-open-terminal nautilus-actions
-
 else
     echo "This script should be execute inside a GUI terminal"
 fi
