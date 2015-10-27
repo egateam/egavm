@@ -6,6 +6,7 @@
       "override": {
         "virtualbox-iso": {
           "scripts": [
+            "scripts/update.sh",
             "scripts/apt.sh",
             "scripts/build.sh"
           ]
