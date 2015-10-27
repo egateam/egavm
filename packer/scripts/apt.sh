@@ -25,7 +25,7 @@ fi
 mv list.tmp /etc/apt/sources.list
 cat /etc/apt/sources.list.bak >> /etc/apt/sources.list
 
-echo "==> Installing ubunutu desktop"
+echo "==> Installing Ubunutu desktop"
 apt-get update -y
 apt-get upgrade -y
 
@@ -56,7 +56,7 @@ autologin-user=vagrant
 
 EOF
 
-# restore original sources.list
+echo "==> Restore original sources.list"
 if [ -e /etc/apt/sources.list.bak ];
 then
     rm /etc/apt/sources.list
