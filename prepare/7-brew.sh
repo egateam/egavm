@@ -29,6 +29,7 @@ fi
 
 echo "==> Add tap science"
 brew tap homebrew/science
+brew tap wang-q/tap
 
 # Many bioinfomatics hosted on low band server, so don't waste time on downloading them repeatedly.
 mkdir -p $HOME/.cache/Homebrew
@@ -48,6 +49,7 @@ cp /prepare/resource/standard-RAxML-8.1.15.tar.gz           `brew --cache`/raxml
 cp /prepare/resource/newick-utils-1.6.tar.gz                `brew --cache`/newick-utils-1.6.tar.gz
 cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
 cp /prepare/resource/xz-5.2.1.tar.gz                        `brew --cache`/xz-5.2.1.tar.gz
+cp /prepare/resource/multiz-tba.012109.tar.gz               `brew --cache`/multiz-tba-20090121.tar.gz
 
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml
@@ -60,3 +62,6 @@ brew install vcftools
 cp $HOME/.linuxbrew/lib/perl5/site_perl/FaSlice.pm  `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
 cp $HOME/.linuxbrew/lib/perl5/site_perl/Vcf.pm      `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
 cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
+
+echo "==> Install wang-q/tap"
+brew install faops multiz-tba

@@ -1,5 +1,20 @@
 #!/usr/bin/env bash
 
+# make sure $HOME/bin in your $PATH
+if grep -q -i homebin $HOME/.bashrc; then
+    echo "==> .bashrc already contains homebin"
+else
+    echo "==> Update .bashrc"
+
+    HOME_PATH='export PATH="$HOME/bin:$PATH"'
+    echo '# Homebin' >> $HOME/.bashrc
+    echo $HOME_PATH >> $HOME/.bashrc
+    echo >> $HOME/.bashrc
+
+    eval $HOME_PATH
+fi
+
+mkdir -p $HOME/bin
 mkdir -p $HOME/share/
 
 echo "==> blast"
@@ -18,28 +33,19 @@ rm -fr circos
 tar xvfz /prepare/resource/circos-0.67-7.tgz
 mv circos-0.67-7 circos
 
-echo "==> multiz"
-cd /prepare/resource/
-wget -N http://www.bx.psu.edu/miller_lab/dist/multiz-tba.012109.tar.gz
-cd $HOME/share/
-tar xvfz /prepare/resource/multiz-tba.012109.tar.gz
-cd multiz-tba*
-if [[ `uname` == 'Darwin' ]];
-then
-    sed -i".bak" 's/\-Werror//' Makefile
-else
-    sed -i 's/\-Werror//' Makefile
-fi
-perl -npi -e 's/\/depot\/apps\/\$\(ARCH\)\/bin/\~\/bin/' Makefile
-make
-make install
-rm -fr $HOME/share/multiz-tba*
-
 echo "==> jvarkit"
+cd /prepare/resource/
+if [ ! -e 1.139.zip ];
+then
+    wget -N https://github.com/samtools/htsjdk/archive/1.139.zip
+fi
 cd $HOME/share/
 rm -fr jvarkit
-git clone "https://github.com/lindenb/jvarkit.git"
+git clone "https://github.com/wang-q/jvarkit.git"
+cp /prepare/resource/1.139.zip $HOME/share/jvarkit/
+
 cd jvarkit
+perl -nli -e '/samtools\/htsjdk/ and next; print' Makefile
 make biostar94573
 cp dist*/biostar94573.jar .
 
