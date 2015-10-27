@@ -53,8 +53,6 @@ Username and password are `vagrant` and `vagrant`, respectively.
 In GUI desktop, disable auto updates: `System Settings -> Software and updates -> Updates`,
 set `Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
 
-Change mirror: `System Settings -> Software and updates -> Ubuntu Software`, set `Download from:` to `china -> mirrors.ustc.edu.cn`.
-
 Disable screen saver, VM needn't it. `System Settings -> Brightness & Lock`.
 
 ```bash
