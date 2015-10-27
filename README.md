@@ -48,13 +48,14 @@ To use your local EGA service, following the steps below.
 ## Directory Organization
 
 * [`vf/`](vf/): configuration files for users.
-    + [`Vagrantfile`](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
-    + [`Vagrantfile-headless`](vf/Vagrantfile-headless): VirtualBox without GUI on Linux, Mac and Windows. For experienced users only.
+    * [`Vagrantfile`](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
 
-* [`prepare/`](prepare/): Scirpts to build VMs.
+* [`packer/`](packer/): Scirpts for building Ubuntu base box.
+
+* [`prepare/`](prepare/): Scirpts for using vagrant to build VMs.
 
 ## Instructions for building scripts
 
-Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in [`prepare/`](prepare/).
+Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in [`packer/`](packer/) and [`prepare/`](prepare/).
 
 Be cautious, all settings for building are optimised for China.
