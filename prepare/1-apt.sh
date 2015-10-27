@@ -48,8 +48,11 @@ sudo service whoopsie stop
 
 echo "==> Install linuxbrew dependences"
 sudo apt-get -y update
-#sudo apt-get -y upgrade # Avoid grub and linux-base updates.
-sudo apt-get -y install build-essential module-assistant curl git m4 ruby texinfo libbz2-dev libcurl4-openssl-dev libexpat-dev libncurses-dev zlib1g-dev p7zip-full
+sudo apt-get -y upgrade
+sudo apt-get -y install build-essential module-assistant linux-headers-$(uname -r)
+sudo apt-get -y install curl git m4 ruby texinfo
+sudo apt-get -y install libbz2-dev zlib1g-dev
+sudo apt-get -y install libcurl4-openssl-dev libexpat-dev libncurses-dev
 
 echo "==> Install java"
 sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
@@ -86,11 +89,5 @@ sudo apt-get -y install redis-server
 # remove system provided mysql package to avoid confusing linuxbrew.
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
-
-if [ -n "$DISPLAY" ];
-then
-    echo "==> Install nautilus plugins"
-    sudo apt-get -y install nautilus-open-terminal nautilus-actions
-fi
 
 echo "Basic software installation complete!"

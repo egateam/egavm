@@ -8,6 +8,7 @@ echo "====> Building perl environment  <===="
 
 # get plenv latest
 echo "==> Cloning latest plenv..."
+rm -fr $HOME/.plenv
 git clone git://github.com/tokuhirom/plenv.git $HOME/.plenv
 
 if grep -q -i plenv $HOME/.bashrc; then
