@@ -82,7 +82,7 @@ source $HOME/.bashrc
 bash /prepare/8-node.sh
 
 bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51.
- # bash /prepare/extra/7-mysql-client.sh     # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
+ # bash /prepare/extra/7-mysql-client.sh    # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
 source $HOME/.bashrc                        # After installation, add user alignDB to mysql.
 
  # Build jksrc.zip once and save binary files.
@@ -93,8 +93,9 @@ bash /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
 
 bash /prepare/9-postinstall.sh    # Clean the System
 
- # review and delete all logs
-rm $HOME/log*.txt
+rm $HOME/log*.txt                 # review and delete all logs
+
+exit
 ```
 
 * Pack VM up
@@ -110,7 +111,7 @@ du -hs egavm.box
 
 | name         | size    |
 | :-----       | :-----: |
-| egavm.box    | 2.1 GB  |
+| egavm.box    | 1.9 GB  |
 | mytrusty.box | 1.0 GB  |
 
 ## Useful tips

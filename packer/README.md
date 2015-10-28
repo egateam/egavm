@@ -20,6 +20,7 @@ Rules:
 cd ~/Scripts/egavm/packer
 rm mytrusty.box
 bash packer.sh
+du -hs mytrusty.box
 ```
 
 ## Other boxes

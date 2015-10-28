@@ -5,13 +5,14 @@ BASE_DIR=$HOME/Scripts
 echo "==> Install nodejs"
 brew install node
 
-echo "==> Node modules"
-cd $BASE_DIR/ega
-
+echo "==> Global node modules"
 npm -g install nodemon
+npm -g install pm2
 npm -g install bower
 npm -g install express-generator
 
+echo "==> Node modules"
+cd $BASE_DIR/ega
 npm install
 bower --config.analytics=false install
 

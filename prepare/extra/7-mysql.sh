@@ -135,6 +135,8 @@ mysql_secure_installation
 # perl Makefile.PL --testuser alignDB --testpassword alignDB
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql
 
+rm -fr $HOME/share/mysql-*
+
 # create mysql user
 cat <<EOF
 
