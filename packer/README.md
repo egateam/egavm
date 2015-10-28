@@ -9,6 +9,7 @@ Rules:
 
 * Keep it as simple as possible in `http/preseed.cfg`.
 * apt-get from nearby mirrors.
+* Upgrade kernel.
 * Install Ubuntu desktop without recommends.
 * VirtualBox only. For other platform, just use boxcutter's atlas boxes.
 * Install VirtualBox guest additions in building phase.

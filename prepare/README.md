@@ -53,7 +53,7 @@ Username and password are `vagrant` and `vagrant`, respectively.
 In GUI desktop, disable auto updates: `System Settings -> Software and updates -> Updates`,
 set `Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
 
-Disable screen saver, VM needn't it. `System Settings -> Brightness & Lock`.
+`2-unity.sh` removes nautilus bookmarks and disables lock screen.
 
 ```bash
 echo "==> Install Ubuntu packages"
@@ -62,6 +62,9 @@ bash /prepare/1-apt.sh | tee log-1-apt.txt
 
 echo "==> Press master button (Win for Windows and right Command for Mac) and type `terminal` to start a GUI terminal"
 bash /prepare/2-unity.sh
+
+echo "==> Return host machine and `vagrant reload && vagrant ssh`"
+exit
 
 bash /prepare/3-plenv.sh
 source $HOME/.bashrc
