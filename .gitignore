@@ -22,6 +22,8 @@ ubuntu
 # iso images and vagrant boxes
 *.iso
 *.box
+*.ova
+*.ovf
 
 #
 *.gz
