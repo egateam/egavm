@@ -69,10 +69,55 @@ fi
 
 echo "==> done"
 
+if [[ `uname` == 'Darwin' ]];
+then
+cat <<EOF > $HOME/Library/LaunchAgents/org.mongodb.mongod.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>org.mongodb.mongod</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>$HOME/share/mongodb/bin/mongod</string>
+    <string>--config</string>
+    <string>$HOME/share/mongodb/mongod.cnf</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <false/>
+  <key>WorkingDirectory</key>
+  <string>$HOME/share/mongodb</string>
+  <key>StandardErrorPath</key>
+  <string>$HOME/share/mongodb/output.log</string>
+  <key>StandardOutPath</key>
+  <string>$HOME/share/mongodb/output.log</string>
+  <key>HardResourceLimits</key>
+  <dict>
+    <key>NumberOfFiles</key>
+    <integer>4096</integer>
+  </dict>
+  <key>SoftResourceLimits</key>
+  <dict>
+    <key>NumberOfFiles</key>
+    <integer>4096</integer>
+  </dict>
+</dict>
+</plist>
+
+EOF
+fi
+
 cat <<EOF
 
 # Start mongodb by running
 
 numactl --interleave=all ~/share/mongodb/bin/mongod --config ~/share/mongodb/mongod.cnf
+
+OR
+
+launchctl load ~/Library/LaunchAgents/org.mongodb.mongod.plist
 
 EOF
