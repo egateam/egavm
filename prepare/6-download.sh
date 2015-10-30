@@ -75,3 +75,5 @@ tar xvfz ${JKBIN_TAR_GZ} x86_64/netFilter
 tar xvfz ${JKBIN_TAR_GZ} x86_64/netSplit
 tar xvfz ${JKBIN_TAR_GZ} x86_64/netSyntenic
 tar xvfz ${JKBIN_TAR_GZ} x86_64/netToAxt
+
+mv $HOME/bin/x86_64/* $HOME/bin/

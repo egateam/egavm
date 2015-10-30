@@ -5,7 +5,7 @@ mkdir -p $BASE_DIR
 cd $BASE_DIR
 
 # all parts of ega
-for OP in ega egaz egas alignDB withncbi
+for OP in ega egaz egas egavm alignDB withncbi
 do
     if [ ! -d $BASE_DIR/$OP/.git ]
     then
