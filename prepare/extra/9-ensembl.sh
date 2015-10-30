@@ -1,25 +1,33 @@
 #!/usr/bin/env bash
 
-if [ -e /prepare/resource/ensembl.tar.gz ]; then
-    cd /prepare/resource/
+export ENSEMBL_VERSION='82'
 
-    echo "==> ensembl"
-    tar xfz /prepare/resource/ensembl.tar.gz ensembl/modules/Bio/EnsEMBL
-    cp -R ensembl/modules/Bio `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
+cd /prepare/resource
 
-    echo "==> ensembl-compara"
-    tar xfz /prepare/resource/ensembl-compara.tar.gz ensembl-compara/modules/Bio/EnsEMBL
-    cp -R ensembl-compara/modules/Bio `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
-
-    echo "==> ensembl-variation"
-    tar xfz /prepare/resource/ensembl-variation.tar.gz ensembl-variation/modules/Bio/EnsEMBL
-    cp -R ensembl-variation/modules/Bio `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
-
-    rm -fr ensembl
-    rm -fr ensembl-compara
-    rm -fr ensembl-variation
-
-    perl -MBio::EnsEMBL::Root -e 'print qq{If you see this, means ensembl installation successful.\n}'
-else
-    echo "Ensembl Tarballs don't exist."
+if [ ! -e /prepare/resource/ensembl-${ENSEMBL_VERSION}.tar.gz ];
+then
+    echo "==> Get ensembl tarballs"
+    wget https://github.com/Ensembl/ensembl/archive/release/${ENSEMBL_VERSION}.tar.gz           -O ensembl-${ENSEMBL_VERSION}.tar.gz
+    wget https://github.com/Ensembl/ensembl-compara/archive/release/${ENSEMBL_VERSION}.tar.gz   -O ensembl-compara-${ENSEMBL_VERSION}.tar.gz
+    wget https://github.com/Ensembl/ensembl-variation/archive/release/${ENSEMBL_VERSION}.tar.gz -O ensembl-variation-${ENSEMBL_VERSION}.tar.gz
 fi
+
+echo "==> ensembl"
+tar xfz /prepare/resource/ensembl-${ENSEMBL_VERSION}.tar.gz ensembl-release-${ENSEMBL_VERSION}/modules/Bio/EnsEMBL
+cp -R ensembl-release-${ENSEMBL_VERSION}/modules/Bio `perl -e 'print grep {/site_perl/ and /plenv/} grep {!/darwin/i and !/x86_64/} @INC'`
+
+echo "==> ensembl-compara"
+tar xfz /prepare/resource/ensembl-compara-${ENSEMBL_VERSION}.tar.gz ensembl-compara-release-${ENSEMBL_VERSION}/modules/Bio/EnsEMBL
+cp -R ensembl-compara-release-${ENSEMBL_VERSION}/modules/Bio `perl -e 'print grep {/site_perl/ and /plenv/} grep {!/darwin/i and !/x86_64/} @INC'`
+
+echo "==> ensembl-variation"
+tar xfz /prepare/resource/ensembl-variation-${ENSEMBL_VERSION}.tar.gz ensembl-variation-release-${ENSEMBL_VERSION}/modules/Bio/EnsEMBL
+cp -R ensembl-variation-release-${ENSEMBL_VERSION}/modules/Bio `perl -e 'print grep {/site_perl/ and /plenv/} grep {!/darwin/i and !/x86_64/} @INC'`
+
+rm -fr ensembl-release-${ENSEMBL_VERSION}
+rm -fr ensembl-compara-release-${ENSEMBL_VERSION}
+rm -fr ensembl-variation-release-${ENSEMBL_VERSION}
+
+perl -MBio::EnsEMBL::Root -e 'print qq{If you see this, means ensembl installation successful.\n}'
+
+unset ENSEMBL_VERSION
