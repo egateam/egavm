@@ -87,6 +87,7 @@ query_cache_limit = 8M
 [mysqld_safe]
 log-error=${MYSQL_DIR}/mysqld.log
 pid-file=${MYSQL_DIR}/mysqld.pid
+socket=${MYSQL_DIR}/mysql.sock
 
 [client]
 port=3306
@@ -137,6 +138,32 @@ cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysq
 
 rm -fr $HOME/share/mysql-*
 
+if [[ `uname` == 'Darwin' ]];
+then
+cat <<EOF > $HOME/Library/LaunchAgents/org.mysql.mysqld.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>KeepAlive</key>
+  <true/>
+  <key>Label</key>
+  <string>org.mysql.mysqld</string>
+  <key>Program</key>
+  <string>$HOME/share/mysql/bin/mysqld_safe</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>WorkingDirectory</key>
+  <string>$HOME/share/mysql</string>
+  <key>StandardErrorPath</key>
+  <string>$HOME/share/mysql/output.log</string>
+  <key>StandardOutPath</key>
+  <string>$HOME/share/mysql/output.log</string>
+</dict>
+</plist>
+EOF
+fi
+
 # create mysql user
 cat <<EOF
 
@@ -144,5 +171,9 @@ cat <<EOF
 
 source $HOME/.bashrc
 mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
+
+# start mysql on logon
+
+launchctl load ~/Library/LaunchAgents/org.mysql.mysqld.plist
 
 EOF
