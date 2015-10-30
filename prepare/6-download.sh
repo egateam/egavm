@@ -58,21 +58,20 @@ else
     JKBIN_TAR_GZ=/prepare/resource/jkbin-ubuntu-1404-2011.tar.gz
 fi
 echo "==> untar from ${JKBIN_TAR_GZ}"
-tar xvfz ${JKBIN_TAR_GZ} axtChain
-tar xvfz ${JKBIN_TAR_GZ} axtSort
-tar xvfz ${JKBIN_TAR_GZ} axtToMaf
-tar xvfz ${JKBIN_TAR_GZ} chainAntiRepeat
-tar xvfz ${JKBIN_TAR_GZ} chainMergeSort
-tar xvfz ${JKBIN_TAR_GZ} chainNet
-tar xvfz ${JKBIN_TAR_GZ} chainPreNet
-tar xvfz ${JKBIN_TAR_GZ} chainSplit
-tar xvfz ${JKBIN_TAR_GZ} chainStitchId
-tar xvfz ${JKBIN_TAR_GZ} faSize
-tar xvfz ${JKBIN_TAR_GZ} faToTwoBit
-tar xvfz ${JKBIN_TAR_GZ} lavToPsl
-tar xvfz ${JKBIN_TAR_GZ} mafSpeciesList
-tar xvfz ${JKBIN_TAR_GZ} netChainSubset
-tar xvfz ${JKBIN_TAR_GZ} netFilter
-tar xvfz ${JKBIN_TAR_GZ} netSplit
-tar xvfz ${JKBIN_TAR_GZ} netSyntenic
-tar xvfz ${JKBIN_TAR_GZ} netToAxt
+tar xvfz ${JKBIN_TAR_GZ} x86_64/axtChain
+tar xvfz ${JKBIN_TAR_GZ} x86_64/axtSort
+tar xvfz ${JKBIN_TAR_GZ} x86_64/axtToMaf
+tar xvfz ${JKBIN_TAR_GZ} x86_64/chainAntiRepeat
+tar xvfz ${JKBIN_TAR_GZ} x86_64/chainMergeSort
+tar xvfz ${JKBIN_TAR_GZ} x86_64/chainNet
+tar xvfz ${JKBIN_TAR_GZ} x86_64/chainPreNet
+tar xvfz ${JKBIN_TAR_GZ} x86_64/chainSplit
+tar xvfz ${JKBIN_TAR_GZ} x86_64/chainStitchId
+tar xvfz ${JKBIN_TAR_GZ} x86_64/faToTwoBit
+tar xvfz ${JKBIN_TAR_GZ} x86_64/lavToPsl
+tar xvfz ${JKBIN_TAR_GZ} x86_64/mafSpeciesList
+tar xvfz ${JKBIN_TAR_GZ} x86_64/netChainSubset
+tar xvfz ${JKBIN_TAR_GZ} x86_64/netFilter
+tar xvfz ${JKBIN_TAR_GZ} x86_64/netSplit
+tar xvfz ${JKBIN_TAR_GZ} x86_64/netSyntenic
+tar xvfz ${JKBIN_TAR_GZ} x86_64/netToAxt

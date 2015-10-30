@@ -7,7 +7,7 @@ NO_TEST=--notest
 #NO_TEST=
 
 # very basic
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Config::Tiny DB_File File::Find::Rule JSON JSON::XS Text::CSV Text::CSV_XS YAML
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule JSON JSON::XS Text::CSV Text::CSV_XS YAML
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest App::Ack EV AnyEvent DBI MCE Moose Perl::Tidy POE Template WWW::Mechanize
 
 # linuxbrew's pkg-config (node's dependency) overide system pkg-config, and don't inherit system PKG_CONFIG_PATH
