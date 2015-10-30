@@ -2,7 +2,7 @@
 
 mkdir -p $HOME/share/
 
-echo "====> Building Apache httpd <===="
+echo "====> Building Genomics related tools <===="
 
 echo "==> python"
 brew install python
@@ -30,5 +30,3 @@ tar xvfz /prepare/resource/v2.0.6.tar.gz
 cd $HOME/share/trinityrnaseq-*
 make
 make plugins
-
-mv
