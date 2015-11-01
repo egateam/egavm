@@ -6,14 +6,17 @@ echo "==> Install nodejs"
 brew install node
 
 echo "==> Global node modules"
-npm -g install nodemon
-npm -g install pm2
-npm -g install bower
-npm -g install express-generator
+# node-gyp need node source for the first time
+npm --registry=http://registry.npm.taobao.org --disturl=http://npm.taobao.org/mirrors/node -g install microtime
+npm --registry=http://registry.npm.taobao.org -g install nodemon pm2 bower express-generator
+
 
 echo "==> Node modules"
 cd $BASE_DIR/ega
-npm install
+npm --registry=http://registry.npm.taobao.org install
+
+echo "==> bower modules"
+cd $BASE_DIR/ega
 bower --config.analytics=false install
 
 # settings.js
