@@ -9,9 +9,9 @@
 
 ## Build Ubuntu base box with packer from .iso
 
-See [`packer/`](packer/) and [README.md](packer/README.md).
+See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
 
-##  Vagrantfiles for setting up VM
+## Vagrantfiles for setting up VM
 
 * `prepare/virtualbox/Vagrantfile`
 
@@ -19,7 +19,13 @@ See [`packer/`](packer/) and [README.md](packer/README.md).
 
 * Perl is managed by plenv, used version is 5.18.4.
 * Dependant libs of Perl modules are installed by apt-get.
-* R and mongodb are installed by apt-get in VM.
+    * zlib
+    * gsl
+    * BerkeleyDB
+    * GD
+    * libxml2
+    * gtk3
+* R and mongodb are installed by apt-get in VM (by linuxbrew in real machine).
 * Node.js and most bioinformatics software are install by linuxbrew.
 
 ## VirtualBox VM building steps
@@ -76,18 +82,18 @@ bash /prepare/6-download.sh
 
 bash /prepare/extra/4-cpanm.sh  # Optional, needed by alignDB
 
- # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
+    # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
 bash /prepare/7-brew.sh | tee log-7-brew.txt
 source $HOME/.bashrc
 bash /prepare/8-node.sh
 
 bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51.
- # bash /prepare/extra/7-mysql-client.sh    # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
+    # bash /prepare/extra/7-mysql-client.sh    # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
 source $HOME/.bashrc                        # After installation, add user alignDB to mysql.
 
- # Build jksrc.zip once and save binary files.
- # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
- ### bash /prepare/extra/8-jksrc.sh
+    # Build jksrc.zip once and save binary files.
+    # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
+    ### bash /prepare/extra/8-jksrc.sh
 
 bash /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
 
