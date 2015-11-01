@@ -13,10 +13,12 @@ wget -N http://download.virtualbox.org/virtualbox/5.0.6/VBoxGuestAdditions_5.0.6
 echo "==> Build Ubuntu box"
 cd $BASE_DIR/packer
 
-if [ ! -e mytrusty.box ];
+if [ ! -e $BASE_DIR/vm/mytrusty.box ];
 then
     packer build template.json
+    mv mytrusty.box $BASE_DIR/vm
 fi
 
 echo "==> Add base box"
-vagrant box add mytrusty mytrusty.box --force
+vagrant box add mytrusty $BASE_DIR/vm/mytrusty.box --force
+

@@ -54,6 +54,8 @@ To use your local EGA service, following the steps below.
 
 * [`prepare/`](prepare/): Scirpts for using vagrant to build VMs.
 
+* [`vm/`](vm/): .box and .ova, should be empty.
+
 ## Instructions for building scripts
 
 Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in [`packer/`](packer/) and [`prepare/`](prepare/).
