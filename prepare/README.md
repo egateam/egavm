@@ -66,10 +66,11 @@ echo "==> Install Ubuntu packages"
 echo "==> When some packages went wrong, check http://mirrors.ustc.edu.cn/ubuntu/ for updating status."
 bash /prepare/1-apt.sh | tee log-1-apt.txt
 
-echo "==> Press master button (Win for Windows and right Command for Mac) and type `terminal` to start a GUI terminal"
+echo '==> Press master key (`Win` for Windows and right `Command` for Mac) and type `terminal` to start a GUI terminal'
+echo '==> Or `Ctrl+Alt+T` to start a GUI terminal'
 bash /prepare/2-unity.sh
 
-echo "==> Return host machine and `vagrant reload && vagrant ssh`"
+echo '==> Return host machine and `vagrant reload && vagrant ssh`'
 exit
 
 bash /prepare/3-plenv.sh
@@ -80,7 +81,7 @@ bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
 
-bash /prepare/extra/4-cpanm.sh  # Optional, needed by alignDB
+bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt # Optional, needed by alignDB
 
     # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
 bash /prepare/7-brew.sh | tee log-7-brew.txt
@@ -97,9 +98,9 @@ source $HOME/.bashrc                        # After installation, add user align
 
 bash /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
 
-bash /prepare/9-postinstall.sh    # Clean the System
-
 rm $HOME/log*.txt                 # review and delete all logs
+
+bash /prepare/9-postinstall.sh    # Clean the System
 
 exit
 ```
@@ -110,15 +111,33 @@ exit
 cd $HOME/Scripts/egavm/prepare/virtualbox
 vagrant halt
 vagrant package --output egavm.box
-du -hs egavm.box
+mv egavm.box $HOME/Scripts/egavm/vm
+```
+
+* Create `egavm.ova`
+
+```bash
+cd $HOME/Scripts/egavm/vf
+vagrant destroy -f
+
+vagrant box add egavm ../vm/egavm.box --force
+
+vagrant up
+vagrant halt
+
+VBoxManage export egavm -o egavm.ova
+mv egavm.ova $HOME/Scripts/egavm/vm
 ```
 
 ## Box sizes
 
+`du -hs ~/Scripts/egavm/vm/*`
+
 | name         | size    |
 | :-----       | :-----: |
-| egavm.box    | 1.9 GB  |
-| mytrusty.box | 1.0 GB  |
+| egavm.box    | 1.8 GB  |
+| egavm.ova    | 1.8 GB  |
+| mytrusty.box | 945 MB  |
 
 ## Useful tips
 
