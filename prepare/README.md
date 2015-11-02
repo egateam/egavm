@@ -27,6 +27,9 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
     * gtk3
 * R and mongodb are installed by apt-get in VM (by linuxbrew in real machine).
 * Node.js and most bioinformatics software are install by linuxbrew.
+* Jim Kent's utils are installed to `~/bin`.
+* Blast, circos and mysql are installed to `~/share`.
+* All ega related things are placed in `~/Scripts`.
 
 ## VirtualBox VM building steps
 
@@ -77,11 +80,10 @@ bash /prepare/3-plenv.sh
 source $HOME/.bashrc
 
 bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
+bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt # Optional, needed by alignDB
 
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
-
-bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt # Optional, needed by alignDB
 
     # linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
 bash /prepare/7-brew.sh | tee log-7-brew.txt
