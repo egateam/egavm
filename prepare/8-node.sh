@@ -3,17 +3,18 @@
 BASE_DIR=$HOME/Scripts
 
 echo "==> Install nodejs"
-brew install node
+brew install node012
 
 echo "==> Global node modules"
 # node-gyp need node source for the first time
-npm --registry=http://registry.npm.taobao.org --disturl=http://npm.taobao.org/mirrors/node -g install microtime
-npm --registry=http://registry.npm.taobao.org -g install nodemon pm2 bower express-generator
+npm --registry=http://registry.npm.taobao.org --disturl=http://npm.taobao.org/mirrors/node -g --verbose install microtime
+npm -g --verbose install bower
 
+# npm -g install nodemon express-generator
 
 echo "==> Node modules"
 cd $BASE_DIR/ega
-npm --registry=http://registry.npm.taobao.org install
+npm --verbose install
 
 echo "==> bower modules"
 cd $BASE_DIR/ega
