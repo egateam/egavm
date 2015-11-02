@@ -24,7 +24,7 @@ To use your local EGA service, following the steps below.
 2. Install [Vagrant](https://www.vagrantup.com/downloads.html);
     + Current version is 1.7.4
 
-3. Get configuration file [`Vagrantfile`](vf/Vagrantfile) and putting it in a clean directory;
+3. Get configuration file [`Vagrantfile`](vm/Vagrantfile) and putting it in a clean directory;
 
 4. Download `egavm.box` and put it in the same directory of the configuration file;
 
@@ -36,14 +36,12 @@ To use your local EGA service, following the steps below.
 
 ## Directory Organization
 
-* [`vf/`](vf/): configuration files for users.
-    * [`Vagrantfile`](vf/Vagrantfile): VirtualBox on Linux, Mac and Windows.
-
 * [`packer/`](packer/): Scirpts for building Ubuntu base box.
 
 * [`prepare/`](prepare/): Scirpts for using vagrant to build VMs.
 
-* [`vm/`](vm/): .box and .ova, should be empty.
+* [`vm/`](vm/): .box and .ova.
+    * [`Vagrantfile`](vm/Vagrantfile): configuration files for users.
 
 ## Instructions for building scripts
 

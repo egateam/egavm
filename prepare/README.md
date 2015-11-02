@@ -17,6 +17,7 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
 
 ## VM rules
 
+* The building VM's name is `egavm-build` and the user VM's is `egavm`.
 * Perl is managed by plenv, used version is 5.18.4.
 * Dependant libs of Perl modules are installed by apt-get.
     * zlib
@@ -80,7 +81,7 @@ bash /prepare/3-plenv.sh
 source $HOME/.bashrc
 
 bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
-bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt # Optional, needed by alignDB
+bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed by alignDB
 
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
@@ -90,19 +91,21 @@ bash /prepare/7-brew.sh | tee log-7-brew.txt
 source $HOME/.bashrc
 bash /prepare/8-node.sh
 
-bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51.
-    # bash /prepare/extra/7-mysql-client.sh    # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
-source $HOME/.bashrc                        # After installation, add user alignDB to mysql.
+bash /prepare/extra/7-mysql.sh                  # Optional, compiling full mysql51.
+    # bash /prepare/extra/7-mysql-client.sh     # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
+source $HOME/.bashrc                            # After installation, add user alignDB to mysql.
 
     # Build jksrc.zip once and save binary files.
     # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
     ### bash /prepare/extra/8-jksrc.sh
 
-bash /prepare/extra/9-ensembl.sh  # Optional, needed by alignDB
+bash /prepare/extra/9-ensembl.sh    # Optional, needed by alignDB
 
-rm $HOME/log*.txt                 # review and delete all logs
+bash /prepare/9-pm2.sh
 
-bash /prepare/9-postinstall.sh    # Clean the System
+rm $HOME/log*.txt                   # review and delete all logs
+
+bash /prepare/10-postinstall.sh     # Clean the System
 
 exit
 ```
@@ -119,16 +122,14 @@ mv egavm.box $HOME/Scripts/egavm/vm
 * Create `egavm.ova`
 
 ```bash
-cd $HOME/Scripts/egavm/vf
+cd $HOME/Scripts/egavm/vm
 vagrant destroy -f
 
-vagrant box add egavm ../vm/egavm.box --force
-
+vagrant box add egavm egavm.box --force
 vagrant up
-vagrant halt
 
+vagrant halt
 VBoxManage export egavm -o egavm.ova
-mv egavm.ova $HOME/Scripts/egavm/vm
 ```
 
 ## Box sizes
@@ -138,7 +139,7 @@ mv egavm.ova $HOME/Scripts/egavm/vm
 | name         | size    |
 | :-----       | :-----: |
 | egavm.box    | 1.8 GB  |
-| egavm.ova    | 1.8 GB  |
+| egavm.ova    | 1.9 GB  |
 | mytrusty.box | 945 MB  |
 
 ## Useful tips
