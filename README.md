@@ -13,11 +13,9 @@ To use your local EGA service, following the steps below.
 
 2. Download `egavm.ova` and import it into VirtualBox;
 
-3. Start virtual machine and open a terminal window in the VM GUI.
-   
-4. Type or paste `cd ~/Scripts/ega && node app.js` in virtual machine terminal window.
+3. Start virtual machine.
 
-5. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
+4. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
 
 ## Setting up with vagrant
 
@@ -32,18 +30,9 @@ To use your local EGA service, following the steps below.
 
 5. `cd` into the previous directory and run `vagrant box add egavm egavm.box`.
 
-6. Start virtual machine.
-    + Start VM
-        - `vagrant up`
-    + You can either
-        - log into VM via ssh `vagrant ssh`
-        - or open a terminal window in the VM GUI.
-        
-7. Start EGA service.
-    + Now you're inside the VM. IMPORTANT! Be sure your cwd is `~/Scripts/ega`.
-        - `cd ~/Scripts/ega && node app.js`
+6. Start virtual machine, `vagrant up`.
 
-8. Same as step 5 in previous section;
+7. Same as step 4 in previous section;
 
 ## Directory Organization
 
