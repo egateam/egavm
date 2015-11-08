@@ -31,9 +31,7 @@ CFLAGS="-O3" CXXFLAGS="-O3 -felide-constructors -fno-exceptions -fno-rtti" \
     --without-docs \
     --without-man \
     --without-debug \
-    --without-bench \
     --with-plugins=myisam \
-    --with-partition \
     --disable-dependency-tracking \
     --with-mysqld-user=${MYSQL_USER} \
     --localstatedir=${MYSQL_DIR}/data \

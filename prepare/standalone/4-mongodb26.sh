@@ -28,7 +28,7 @@ else
     tar xvfz /prepare/resource/mongodb-linux*-2.*.tgz
     cp -R -n mongodb-linux*/ mongodb
 
-    rm -fr mongodb-osx*/
+    rm -fr mongodb-linux*/
 fi
 
 mkdir -p $HOME/share/mongodb/log
