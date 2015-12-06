@@ -12,8 +12,7 @@ echo "==> other tools"
 brew install cmake
 brew install samtools bamtools htslib bowtie bowtie2
 brew install tophat cufflinks
-brew install fastqc picard-tools
-brew install sickle
+brew install sratoolkit fastqc sickle
 
 echo "==> custom tap"
 brew tap wang-q/tap
@@ -33,7 +32,6 @@ make plugins
 
 echo "==> gatk"
 # brew install maven
-# sudo apt-get install maven
 
 if [ ! -e /prepare/resource/gatk-3.5.tar.gz ];
 then
