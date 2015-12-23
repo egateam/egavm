@@ -7,7 +7,7 @@ NO_TEST=--notest
 #NO_TEST=
 
 # very basic
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule JSON JSON::XS Text::CSV Text::CSV_XS YAML
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule JSON JSON::XS Text::CSV Text::CSV_XS YAML YAML::XS
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest App::Ack EV AnyEvent DBI MCE Moose Perl::Tidy POE Template WWW::Mechanize
 
 # linuxbrew's pkg-config (node's dependency) override system pkg-config, and don't inherit system PKG_CONFIG_PATH
@@ -46,4 +46,4 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::ht
 
 # AlignDB::*
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::IntSpan AlignDB::Util AlignDB::Stopwatch AlignDB::Codon
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::Run AlignDB::Window App::Fasops
+cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::Run AlignDB::Window App::Fasops App::RL
