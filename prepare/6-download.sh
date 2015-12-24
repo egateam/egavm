@@ -79,7 +79,6 @@ tar xvfz ${JKBIN_TAR_GZ} x86_64/chainSplit
 tar xvfz ${JKBIN_TAR_GZ} x86_64/chainStitchId
 tar xvfz ${JKBIN_TAR_GZ} x86_64/faToTwoBit
 tar xvfz ${JKBIN_TAR_GZ} x86_64/lavToPsl
-tar xvfz ${JKBIN_TAR_GZ} x86_64/mafSpeciesList
 tar xvfz ${JKBIN_TAR_GZ} x86_64/netChainSubset
 tar xvfz ${JKBIN_TAR_GZ} x86_64/netFilter
 tar xvfz ${JKBIN_TAR_GZ} x86_64/netSplit
