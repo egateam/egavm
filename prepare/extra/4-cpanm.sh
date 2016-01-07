@@ -31,7 +31,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Roman Text::Table Time::Durat
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Math::Random::MT::Auto PDL Statistics::Lite Statistics::TTest Set::IntSpan::Fast Set::Light
 
 # others
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Chart::Math::Axis List::Flatten PPI::XS
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Chart::Math::Axis PPI::XS
 
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooseX::AttributeHelpers
 
@@ -42,4 +42,4 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::GSL Statistics::R
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::DeltaG AlignDB::GC
 cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::SQL AlignDB::ToXLSX
 
-# DBD::mysql should be installed after brew install mysql51
+# DBD::mysql should be installed after `brew install mysql51`
