@@ -48,7 +48,7 @@ echo "You may need remove orphan disks first if you have modifyhd. VirtualBox->F
 cd $HOME/Scripts/egavm/prepare/virtualbox
 
 echo "Change resolution"
-vagrant up
+vagrant up --provide=virtualbox
 VBoxManage controlvm egavm-build setvideomodehint 1024 768 32
 
 vagrant ssh
