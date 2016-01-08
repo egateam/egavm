@@ -28,3 +28,4 @@ ubuntu
 #
 *.gz
 *.bz2
+*.xml
