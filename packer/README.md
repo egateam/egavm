@@ -16,6 +16,8 @@ Rules:
 * vagrant:vagrant as username:password.
 * Leave DVD there. Remove it by vagrant later.
 
+When internet connection is OK, the building process costs about less than 30 minutes.
+
 ```bash
 cd ~/Scripts/egavm/packer
 bash packer.sh
