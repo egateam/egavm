@@ -53,9 +53,6 @@ cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repea
 cp /prepare/resource/xz-5.2.1.tar.gz                        `brew --cache`/xz-5.2.1.tar.gz
 cp /prepare/resource/multiz-tba.012109.tar.gz               `brew --cache`/multiz-tba-20090121.tar.gz
 
-cp /prepare/resource/node-v0.12.7.tar.gz                    `brew --cache`/node012-0.12.7.tar.gz
-﻿cp /prepare/resource/npm-2.14.4.tgz `brew --cache`/node012--npm-2.14.4.tgz
-
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft newick-utils raxml
 brew install blast --without-check # this will not install boost

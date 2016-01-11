@@ -37,7 +37,7 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
 This build starts from `mytrusty.box`.
 
 When internet connection is OK and most source files were downloaded previously, 
-the building process costs about less than 30 minutes.
+the building process costs about 100 minutes.
 
 * STEPS on host machine
 
@@ -89,7 +89,7 @@ bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed b
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
 
-# linuxbrew's pkg-config will conflict system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
+# linuxbrew's pkg-config conflicts with system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
 bash /prepare/7-brew.sh | tee log-7-brew.txt
 source $HOME/.bashrc
 bash /prepare/8-node.sh
@@ -129,7 +129,7 @@ cd $HOME/Scripts/egavm/vm
 vagrant destroy -f
 
 vagrant box add egavm egavm.box --force
-vagrant up
+vagrant up --provider virtualbox
 
 vagrant halt
 VBoxManage export egavm -o egavm.ova
@@ -142,8 +142,8 @@ VBoxManage export egavm -o egavm.ova
 | name         | size    |
 | :-----       | :-----: |
 | egavm.box    | 1.8 GB  |
-| egavm.ova    | 1.9 GB  |
-| mytrusty.box | 945 MB  |
+| egavm.ova    | 1.8 GB  |
+| mytrusty.box | 946 MB  |
 
 ## Useful tips
 
