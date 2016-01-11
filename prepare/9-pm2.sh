@@ -14,3 +14,6 @@ pm2 start app.js
 #ls -al `which node`
 #sudo apt-get install libcap2-bin
 #sudo setcap cap_net_bind_service=+ep /home/ega/.linuxbrew/Cellar/node012/0.12.7/bin/node
+
+#  Get basic info
+# pm2 desc 0
