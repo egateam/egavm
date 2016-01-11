@@ -21,5 +21,5 @@ wget -N http://cegg.unige.ch/pub/newick-utils-1.6.tar.gz
 wget -N http://mysql.mirrors.pair.com/Downloads/MySQL-5.1/mysql-5.1.73.tar.gz
 wget -N https://fossies.org/linux/misc/xz-5.2.1.tar.gz
 
-wget -N https://nodejs.org/dist/v0.12.7/node-v0.12.7.tar.gz
+wget -N https://nodejs.org/dist/v0.12.9/node-v0.12.9.tar.gz
 wget -N https://registry.npmjs.org/npm/-/npm-2.14.4.tgz
