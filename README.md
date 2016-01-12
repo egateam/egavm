@@ -7,9 +7,8 @@
 To use your local EGA service, following the steps below.
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);
-    + Current version is 5.0.6.
-    + VirtualBox [Mac](http://download.virtualbox.org/virtualbox/5.0.6/VirtualBox-5.0.6-103037-OSX.dmg), [Windows](http://download.virtualbox.org/virtualbox/5.0.6/VirtualBox-5.0.6-103037-Win.exe).
-    + Optionally, install [the extension pack](http://download.virtualbox.org/virtualbox/5.0.6/Oracle_VM_VirtualBox_Extension_Pack-5.0.6-103037.vbox-extpack)
+    + Current version is 5.0.12.
+    + Optionally, install the extension pack.
 
 2. Download `egavm.ova` and import it into VirtualBox;
 
