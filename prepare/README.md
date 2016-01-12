@@ -152,7 +152,7 @@ VBoxManage export egavm -o egavm.ova
 ```bash
 echo "You may need remove existing disks in VirtualBox catalog first, VirtualBox->File->Virtual Media Manager."
 
-cd $HOME/Scripts/egavm/prepare/virtualbox-trusty64
+cd $HOME/Scripts/egavm/prepare/virtualbox
 vagrant up
 vagrant halt
 
@@ -175,9 +175,8 @@ VBoxManage storageattach egavm-build --storagectl "SATAController" --port 0 --de
 echo "==> Install VirtualBox guest additions"
 sudo m-a prepare
 
-cd /prepare/resource/
-wget -N http://download.virtualbox.org/virtualbox/5.0.6/VBoxGuestAdditions_5.0.6.iso
-sudo mount VBoxGuestAdditions_5.0.6.iso -o loop /mnt
+wget -N -P /prepare/resource http://download.virtualbox.org/virtualbox/5.0.12/VBoxGuestAdditions_5.0.12.iso
+sudo mount /prepare/resource/VBoxGuestAdditions_5.0.12.iso -o loop /mnt
 cd /mnt
 echo "yes" | sudo sh VBoxLinuxAdditions.run --nox11 # type yes
 
