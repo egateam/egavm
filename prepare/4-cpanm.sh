@@ -7,8 +7,8 @@ NO_TEST=--notest
 #NO_TEST=
 
 # very basic
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule JSON JSON::XS Text::CSV Text::CSV_XS YAML YAML::XS
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest App::Ack EV AnyEvent DBI MCE Moose Perl::Tidy POE Template WWW::Mechanize
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule JSON::XS Text::CSV_XS YAML YAML::Syck YAML::XS
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest AnyEvent App::Ack DBI EV MCE Moo Moose Perl::Tidy POE Template WWW::Mechanize
 
 # linuxbrew's pkg-config (node's dependency) override system pkg-config, and don't inherit system PKG_CONFIG_PATH
 # See also https://github.com/Homebrew/linuxbrew/issues/47
@@ -26,9 +26,9 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST GD SVG GD::SVG
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Data::Stag Test::Most URI::Escape Algorithm::Munkres Array::Compare Clone Error File::Sort Graph List::MoreUtils Set::Scalar Sort::Naturally
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST HTML::Entities HTML::HeadParser HTML::TableExtract HTTP::Request::Common LWP::UserAgent PostScript::TextBlock
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::DOM XML::DOM::XPath XML::LibXML XML::SAX::Writer XML::Simple XML::Twig XML::Writer GraphViz SVG::Graph
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest Convert::Binary::C IO::Scalar YAML::Syck
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Convert::Binary::C IO::Scalar
 
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Perl # BioPerl
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Seq # BioPerl
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Bio::ASN1::EntrezGene Bio::DB::EUtilities Bio::Graphics
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Tools::Run::Alignment::Clustalw # BioPerl-Run
 
@@ -41,9 +41,9 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::XML2JSON PDF::API2 Math:
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Phylo
 
 # others
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural File::HomeDir DBD::CSV Path::Class File::Listing File::Remove File::Rename File::Copy::Recursive List::Flatten String::Compare
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural DBD::CSV Path::Class File::HomeDir File::Listing File::Remove File::Rename File::Copy::Recursive List::Flatten String::Compare
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https LWP::Protocol::socks
 
 # AlignDB::*
-cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::IntSpan AlignDB::Util AlignDB::Stopwatch AlignDB::Codon
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::IntSpan AlignDB::Stopwatch AlignDB::Codon AlignDB::Util
 cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::Run AlignDB::Window App::Fasops App::RL
