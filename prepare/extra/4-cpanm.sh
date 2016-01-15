@@ -39,7 +39,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooseX::AttributeHelpers
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::GSL Statistics::R
 
 # AlignDB::*
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::DeltaG AlignDB::GC
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::SQL AlignDB::ToXLSX
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::DeltaG AlignDB::GC
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::SQL AlignDB::ToXLSX
 
 # DBD::mysql should be installed after `brew install mysql51`

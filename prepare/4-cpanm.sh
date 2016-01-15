@@ -45,5 +45,5 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural Fil
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https LWP::Protocol::socks
 
 # AlignDB::*
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::IntSpan AlignDB::Util AlignDB::Stopwatch AlignDB::Codon
-cpanm --mirror-only --mirror https://stratopan.com/wangq/alignDB/master $NO_TEST AlignDB::Run AlignDB::Window App::Fasops App::RL
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::IntSpan AlignDB::Util AlignDB::Stopwatch AlignDB::Codon
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::Run AlignDB::Window App::Fasops App::RL
