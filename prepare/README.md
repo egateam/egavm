@@ -141,9 +141,9 @@ VBoxManage export egavm -o egavm.ova
 
 | name         | size    |
 | :-----       | :-----: |
-| egavm.box    | 1.8 GB  |
-| egavm.ova    | 1.8 GB  |
-| mytrusty.box | 946 MB  |
+| egavm.box    | 1.9 GB  |
+| egavm.ova    | 1.9 GB  |
+| mytrusty.box | 966 MB  |
 
 ## Useful tips
 
