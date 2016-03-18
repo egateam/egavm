@@ -37,3 +37,13 @@ This build is a mixture of the following builds.
     * `vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.5`
 * shiguredo
     * https://github.com/shiguredo/packer-templates/tree/develop/ubuntu-14.04
+
+## Checksum
+
+For `template.json`.
+
+```bash
+openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.4-server-amd64.iso
+
+openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.0.16.iso
+```
