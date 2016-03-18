@@ -7,7 +7,7 @@
 To use your local EGA service, following the steps below.
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);
-    + Current version is 5.0.12.
+    + Current version is 5.0.16.
     + Optionally, install the extension pack.
 
 2. Download `egavm.ova` and import it into VirtualBox;
@@ -21,7 +21,7 @@ To use your local EGA service, following the steps below.
 1. Same as step 1 in previous section;
 
 2. Install [Vagrant](https://www.vagrantup.com/downloads.html);
-    + Current version is 1.7.4
+    + Current version is 1.8.1
 
 3. Get configuration file [`Vagrantfile`](vm/Vagrantfile) and putting it in a clean directory;
 
