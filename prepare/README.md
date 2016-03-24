@@ -26,6 +26,9 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
     * GD
     * libxml2
     * gtk3
+* CPAN modules from Stratopan.
+    * AlignDB::*, App::Fasops and App::RL in https://stratopan.com/wangq/ega/master.
+    * All others in https://stratopan.com/wangq/ega/full. (Pulled by Task::EGA)
 * R and mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
 * Node.js and most bioinformatics softwares (including blast+) are install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
