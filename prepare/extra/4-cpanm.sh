@@ -23,7 +23,8 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Gli
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DBIx::Class::Helpers DBIx::XHTML_Table DBM::Deep MongoDB Mojolicious IO::All IO::All::LWP
 
 # text, rtf and xlsx
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Roman Text::Table Time::Duration Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel RTF::Writer Chart::Math::Axis
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Roman Text::Table Time::Duration RTF::Writer Chart::Math::Axis
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Spreadsheet::XLSX Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel
 
 # Math and Stat
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Statistics::Lite Statistics::TTest Set::Light Math::GSL Statistics::R
