@@ -66,3 +66,17 @@ cd $HOME/share/
 unzip /prepare/resource/picard-tools-1.128.zip
 
 java -jar picard-tools-1.128/picard.jar -h
+
+if [ -e /prepare/resource/MaSuRCA-3.1.3.tar.gz ];
+then
+    echo "==> MaSuRCA"
+
+    cd $HOME/share/
+    tar xvfz /prepare/resource/MaSuRCA-3.1.3.tar.gz
+
+    mv MaSuRCA-* MaSuRCA
+    cd MaSuRCA
+    sh install.sh
+else
+    echo "==> MaSuRCA tarball does not exist"
+fi
