@@ -43,6 +43,13 @@ rm -fr circos
 tar xvfz /prepare/resource/circos-0.67-7.tgz
 mv circos-0.67-7 circos
 
+cd /prepare/resource/
+wget -N http://circos.ca/distribution/circos-tools-0.21.tgz
+cd $HOME/share/
+rm -fr circos-tools
+tar xvfz /prepare/resource/circos-tools-0.21.tgz
+mv circos-tools-0.21 circos-tools
+
 echo "==> jvarkit"
 cd /prepare/resource/
 if [ ! -e 1.139.zip ];
