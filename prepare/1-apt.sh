@@ -62,7 +62,7 @@ echo "==> Install r"
 sudo apt-get -y install r-base-dev
 
 # Gtk stuff, Need by alignDB
-# install them at a fresh machine to avoid problems
+# install them in a fresh machine to avoid problems
 echo "==> Install gtk3"
 sudo apt-get -y install libcairo2-dev libglib2.0-0 libglib2.0-dev libgtk-3-dev libgirepository1.0-dev
 sudo apt-get -y install gir1.2-glib-2.0 gir1.2-gtk-3.0 gir1.2-webkit-3.0
@@ -87,6 +87,10 @@ sudo apt-get -y install redis-server
 # remove system provided mysql package to avoid confusing linuxbrew.
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
+
+echo "==> Copy .screenrc"
+cp /prepare/resource/.screenrc $HOME
+chmod -x $HOME/.screenrc
 
 echo "==> Restore original sources.list"
 if [ -e /etc/apt/sources.list.bak ];

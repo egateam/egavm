@@ -72,6 +72,8 @@ In GUI desktop, disable auto updates: `System Settings -> Software & updates -> 
 `2-unity.sh` removes nautilus bookmarks and disables lock screen.
 
 ```bash
+cd ~
+
 echo "==> Install Ubuntu packages"
 echo "==> When some packages went wrong, check http://mirrors.ustc.edu.cn/ubuntu/ for updating status."
 bash /prepare/1-apt.sh | tee log-1-apt.txt

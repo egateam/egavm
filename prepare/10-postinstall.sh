@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-echo "==> Copy .screenrc"
-cp /prepare/resource/.screenrc $HOME
-chmod -x $HOME/.screenrc
-
 echo "==> Clean caches before release"
 sudo apt-get clean
 rm -fr $HOME/.cache/

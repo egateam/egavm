@@ -46,5 +46,5 @@ wget -N -P ${DOWNLOADDIR} http://cegg.unige.ch/pub/newick-utils-1.6.tar.gz
 wget -N -P ${DOWNLOADDIR} http://mysql.mirrors.pair.com/Downloads/MySQL-5.1/mysql-5.1.73.tar.gz
 
 # 8-node.sh
-wget -N -P ${DOWNLOADDIR} https://nodejs.org/dist/v0.12.12/node-v0.12.12.tar.gz
-wget -N -P ${DOWNLOADDIR} https://registry.npmjs.org/npm/-/npm-2.14.9.tgz
+wget -N -P ${DOWNLOADDIR} https://nodejs.org/dist/v0.12.12/node-v0.12.13.tar.gz
+wget -N -P ${DOWNLOADDIR} https://registry.npmjs.org/npm/-/npm-2.15.1.tgz

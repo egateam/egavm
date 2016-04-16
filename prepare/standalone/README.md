@@ -18,7 +18,7 @@ chmod 775 ~/Scripts/egavm/prepare/resource/
 
 ## Software
 
-* Mongodb 3.0
+* Mongodb 3.x
 * Self compiled mysql 5.1
 * Pre-builded NCBI blast DB
 * Apache httpd (for webblast)
