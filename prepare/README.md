@@ -66,8 +66,8 @@ Now you have a GUI desktop.
 
 Username and password are `vagrant` and `vagrant`, respectively.
 
-In GUI desktop, disable auto updates: `System Settings -> Software & updates -> Updates`,
-set `Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
+In GUI desktop, disable auto updates: `System Settings -> Software & updates -> Updates`, set
+`Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
 
 `2-unity.sh` removes nautilus bookmarks and disables lock screen.
 

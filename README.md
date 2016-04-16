@@ -14,7 +14,8 @@ To use your local EGA service, following the steps below.
 
 3. Start virtual machine.
 
-4. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit `http://localhost:3000`.
+4. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit
+`http://localhost:3000`.
 
 ## Setting up with vagrant
 
@@ -44,6 +45,7 @@ To use your local EGA service, following the steps below.
 
 ## Instructions for building scripts
 
-Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in [`packer/`](packer/) and [`prepare/`](prepare/).
+Normal users should not build EGA VMs themselves. If you insist to DIY, check scripts in
+[`packer/`](packer/) and [`prepare/`](prepare/).
 
 Be cautious, all settings for building are optimised for China.
