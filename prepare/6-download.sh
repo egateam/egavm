@@ -66,6 +66,13 @@ perl -nli -e '/samtools\/htsjdk/ and next; print' Makefile
 make biostar94573
 cp dist*/biostar94573.jar .
 
+echo "==> jrunlist"
+cd /prepare/resource/
+wget -N https://github.com/wang-q/jrunlist/releases/download/jrunlist-0.1.1/jrunlist-0.1.1-jar-with-dependencies.jar
+
+cd $HOME/share/
+cp /prepare/resource/jrunlist-0.1.1-jar-with-dependencies.jar jrunlist.jar
+
 echo "==> kent bin"
 cd $HOME/bin/
 if [[ `uname` == 'Darwin' ]];
