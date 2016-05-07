@@ -4,6 +4,7 @@ DOWNLOADDIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # ubuntu
 wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.4/ubuntu-14.04.4-server-amd64.iso
+wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.4/ubuntu-14.04.4-desktop-amd64.iso
 
 # virtualbox
 wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.0.16/VirtualBox-5.0.16-105871-OSX.dmg

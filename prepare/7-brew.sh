@@ -65,7 +65,7 @@ cp $HOME/.linuxbrew/lib/perl5/site_perl/Vcf.pm      `perl -e 'print grep {/site_
 cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
 
 echo "==> Install wang-q/tap"
-brew install faops multiz sparsemem
+brew install faops multiz sparsemem paml49
 
 echo "==> Config repeatmasker"
 cd `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec
