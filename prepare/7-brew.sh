@@ -48,12 +48,11 @@ cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    `brew --cache`/mafft
 cp /prepare/resource/pcre-8.37.tar.bz2                      `brew --cache`/pcre-8.37.tar.bz2
 cp /prepare/resource/pkg-config-0.29.1.tar.gz               `brew --cache`/pkg-config-0.29.1.tar.gz
 cp /prepare/resource/v8.1.15.tar.gz                         `brew --cache`/raxml-8.1.15.tar.gz
-cp /prepare/resource/newick-utils-1.6.tar.gz                `brew --cache`/newick-utils-1.6.tar.gz
 cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
 cp /prepare/resource/xz-5.2.1.tar.gz                        `brew --cache`/xz-5.2.1.tar.gz
 
 echo "==> Install bioinfomatics softwares"
-brew install clustal-w hmmer lastz mafft newick-utils raxml
+brew install clustal-w hmmer lastz mafft raxml
 brew install blast --without-check # this will not install boost
 brew install rmblast --without-blast
 brew install repeatmasker --without-configure # run config later

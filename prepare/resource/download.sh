@@ -11,7 +11,6 @@ wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.0.16/Virtu
 wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.0.16/VirtualBox-5.0.16-105871-Win.exe
 wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.0.16/Oracle_VM_VirtualBox_Extension_Pack-5.0.16-105871.vbox-extpack
 
-
 # virtualbox additions
 wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.0.16/VBoxGuestAdditions_5.0.16.iso
 
@@ -41,7 +40,6 @@ wget -N -P ${DOWNLOADDIR} http://mafft.cbrc.jp/alignment/software/mafft-7.221-wi
 wget -N -P ${DOWNLOADDIR} https://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.37.tar.bz2
 wget -N -P ${DOWNLOADDIR} https://github.com/stamatak/standard-RAxML/archive/v8.1.15.tar.gz
 wget -N -P ${DOWNLOADDIR} http://www.repeatmasker.org/RepeatMasker-open-4-0-5.tar.gz
-wget -N -P ${DOWNLOADDIR} http://cegg.unige.ch/pub/newick-utils-1.6.tar.gz
 
 # extra/7-mysql.sh
 wget -N -P ${DOWNLOADDIR} http://mysql.mirrors.pair.com/Downloads/MySQL-5.1/mysql-5.1.73.tar.gz
