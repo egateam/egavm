@@ -43,6 +43,11 @@ rm -fr circos
 tar xvfz /prepare/resource/circos-0.67-7.tgz
 mv circos-0.67-7 circos
 
+perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/circos
+perl -pi -e 's{^#!\/bin\/env}{#!\/usr\/bin\/env}g' $HOME/share/circos/bin/gddiag
+
+ln -s $HOME/share/circos/bin/circos $HOME/bin/circos
+
 cd /prepare/resource/
 wget -N http://circos.ca/distribution/circos-tools-0.21.tgz
 cd $HOME/share/
