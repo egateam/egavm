@@ -46,4 +46,5 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::ht
 
 # AlignDB::*
 cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::IntSpan AlignDB::IntSpanXS AlignDB::Stopwatch AlignDB::Codon
-cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::Run AlignDB::Window App::Fasops App::RL
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::Run AlignDB::Window
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST App::Fasops App::RL App::Rangeops
