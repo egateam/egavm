@@ -45,7 +45,7 @@ sudo service docker start
 
 # Create a Docker group
 sudo groupadd docker
-# sudo usermod -aG docker ubuntu
+sudo usermod -aG docker ${USER}
 
 # Enable memory and swap accounting
 sudo sed -i 's/GRUB_CMDLINE_LINUX=""/GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"/' /etc/default/grub
