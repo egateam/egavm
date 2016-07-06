@@ -83,7 +83,7 @@ fi
 echo "==> Install redis"
 sudo apt-get -y install redis-server
 
-# mysql will be installed seperately.
+# mysql will be installed separately.
 # remove system provided mysql package to avoid confusing linuxbrew.
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
