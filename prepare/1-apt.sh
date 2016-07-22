@@ -29,7 +29,7 @@ sudo mv list.tmp /etc/apt/sources.list
 
 # Virtual machines needn't this and I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
-if [ `whoami` == 'vagrant' ];
+if [ "$(whoami)" == 'vagrant' ];
 then
     echo "==> Disable AppArmor"
     sudo service apparmor stop
@@ -74,7 +74,7 @@ echo "==> Install nautilus plugins"
 sudo apt-get -y install nautilus-open-terminal nautilus-actions
 
 # install mongodb and redis by apt.
-if [[ `whoami` == 'vagrant' ]];
+if [ "$(whoami)" == 'vagrant' ];
 then
     echo "==> Install mongodb"
     sudo apt-get -y install mongodb
@@ -87,10 +87,6 @@ sudo apt-get -y install redis-server
 # remove system provided mysql package to avoid confusing linuxbrew.
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
-
-echo "==> Copy .screenrc"
-cp /prepare/resource/.screenrc $HOME
-chmod -x $HOME/.screenrc
 
 echo "==> Restore original sources.list"
 if [ -e /etc/apt/sources.list.bak ];

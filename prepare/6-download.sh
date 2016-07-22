@@ -19,7 +19,7 @@ mkdir -p $HOME/share/
 
 echo "==> blast"
 cd /prepare/resource/
-if [[ `uname` == 'Darwin' ]];
+if [[ $(uname) == 'Darwin' ]];
 then
     wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/blast-2.2.26-universal-macosx.tar.gz
 else
@@ -27,7 +27,7 @@ else
 fi
 cd $HOME/share/
 rm -fr blast
-if [[ `uname` == 'Darwin' ]];
+if [[ $(uname) == 'Darwin' ]];
 then
     tar xvfz /prepare/resource/blast-2.2.26-universal-macosx.tar.gz
 else
@@ -80,7 +80,7 @@ cp /prepare/resource/jrunlist-0.1.2-jar-with-dependencies.jar jrunlist.jar
 
 echo "==> kent bin"
 cd $HOME/bin/
-if [[ `uname` == 'Darwin' ]];
+if [[ $(uname) == 'Darwin' ]];
 then
     JKBIN_TAR_GZ=/prepare/resource/jkbin-darwin-2011.tar.gz
 else

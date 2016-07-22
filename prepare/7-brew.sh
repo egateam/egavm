@@ -59,19 +59,19 @@ brew install repeatmasker --without-configure # run config later
 
 echo "==> Install vcftools"
 brew install vcftools
-cp $HOME/.linuxbrew/lib/perl5/site_perl/FaSlice.pm  `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
-cp $HOME/.linuxbrew/lib/perl5/site_perl/Vcf.pm      `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
-cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm `perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC'`
+cp $HOME/.linuxbrew/lib/perl5/site_perl/FaSlice.pm  $(perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC')
+cp $HOME/.linuxbrew/lib/perl5/site_perl/Vcf.pm      $(perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC')
+cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm $(perl -e 'print grep {/site_perl/} grep {!/x86_64/} @INC')
 
 echo "==> Install wang-q/tap"
 brew install faops multiz sparsemem paml49
 
 echo "==> Config repeatmasker"
-cd `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec
+cd $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec
 tar zxvf /prepare/resource/repeatmaskerlibraries-20140131.tar.gz
 sed -i".bak" 's/\/usr\/bin\/perl/env/' config.txt
 ./configure < config.txt
 
-rm `brew --prefix`/bin/rmOutToGFF3.pl
-sed -i".bak" 's/::Bin/::RealBin/' `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
-ln -s `brew --prefix`/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl `brew --prefix`/bin/rmOutToGFF3.pl
+rm $(brew --prefix)/bin/rmOutToGFF3.pl
+sed -i".bak" 's/::Bin/::RealBin/' $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
+ln -s $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl $(brew --prefix)/bin/rmOutToGFF3.pl
