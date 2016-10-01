@@ -27,7 +27,7 @@ bower --config.analytics=false install
 cp $BASE_DIR/ega/settings.js.example $BASE_DIR/ega/settings.js
 
 # in a VM
-if [[ `whoami` == 'vagrant' ]];
+if [[ $(whoami) == 'vagrant' ]];
 then
     echo "==> Remove file size limits in VM"
     perl -npi -e 's{file_size_limit\:.+}{file_size_limit\: 999 \* 1024 \* 1024 \/\/ 999 MB}' $BASE_DIR/ega/settings.js
