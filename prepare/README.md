@@ -49,7 +49,7 @@ cd $HOME/Scripts/egavm/prepare/virtualbox
 vagrant destroy -f
 rm -fr .vagrant/
 
-echo "You may need remove orphan disks first if you have modifyhd. VirtualBox->File->Virtual Media Manager."
+echo "You might need remove orphan disks first. VirtualBox->File->Virtual Media Manager."
 
 cd $HOME/Scripts/egavm/prepare/virtualbox
 
@@ -67,7 +67,7 @@ Now you have a GUI desktop.
 Username and password are `vagrant` and `vagrant`, respectively.
 
 In GUI desktop, disable auto updates: `System Settings -> Software & updates -> Updates`, set
-`Automatically check for updates: Never`, untick all checkboxes, click close and click close again.
+`Automatically check for updates:` to `Never`, untick all checkboxes, click close and click close again.
 
 `2-unity.sh` removes nautilus bookmarks and disables lock screen.
 
@@ -113,7 +113,7 @@ bash /prepare/9-pm2.sh
 
 rm $HOME/log*.txt                   # review and delete all logs
 
-bash /prepare/10-postinstall.sh     # Clean the System
+bash /prepare/90-cleanup.sh         # Clean the vm
 
 exit
 ```
@@ -148,7 +148,7 @@ VBoxManage export egavm -o egavm.ova
 | :-----       | :-----: |
 | egavm.box    | 1.9 GB  |
 | egavm.ova    | 1.9 GB  |
-| mytrusty.box | 966 MB  |
+| mytrusty.box | 924 MB  |
 
 ## Useful tips
 
