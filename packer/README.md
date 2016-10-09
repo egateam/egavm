@@ -1,9 +1,9 @@
-# Instructions for get a Ubuntu base box
+# Instructions for getting an Ubuntu base box
 
 ## Build it myself
 
-I'm tired of guessing parameters of other people's box. So just copy & paste codes from other repos
-to get my own packer template.
+I'm tired of guessing parameters of other people's boxes. So just 
+copy & paste codes from other repos to get my own packer template.
 
 Rules:
 
@@ -20,7 +20,7 @@ When internet connection is OK, the building process costs about less than 30 mi
 
 ```bash
 cd ~/Scripts/egavm/packer
-bash packer.sh
+time bash packer.sh
 ```
 
 ## Other boxes
