@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash -eux
 
 # base
 sed -i -e '/Defaults\s\+env_reset/a Defaults\texempt_group=sudo' /etc/sudoers
@@ -38,20 +38,3 @@ rm $HOME/VBoxGuestAdditions.iso
 
 echo "==> Check that Guest Editions are installed"
 lsmod | grep vboxguest
-
-# cleanup
-apt-get -y autoremove
-apt-get -y clean
-
-echo "==> Cleaning up dhcp leases"
-rm /var/lib/dhcp/*
-
-echo "==> Cleaning up udev rules"
-rm /etc/udev/rules.d/70-persistent-net.rules
-mkdir /etc/udev/rules.d/70-persistent-net.rules
-rm -rf /dev/.udev/
-rm /lib/udev/rules.d/75-persistent-net-generator.rules
-
-echo "==> Zero disk"
-dd if=/dev/zero of=/EMPTY bs=1M
-rm -f /EMPTY
