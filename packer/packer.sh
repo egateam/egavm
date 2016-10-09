@@ -4,8 +4,13 @@ BASE_DIR=$HOME/Scripts/egavm
 
 if [[ `uname` == 'Darwin' ]];
 then
-    echo "==> Install packer via brew"
-    brew install packer
+    if [ hash packer 2>/dev/null ];
+    then
+        echo "==> Install packer via brew"
+        brew install packer
+    else
+        echo "==> Found packer in PATH"
+    fi
 fi
 
 echo "==> Get Ubuntu iso"
