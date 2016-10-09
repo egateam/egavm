@@ -2,10 +2,10 @@
 
 ## Software versions
 
-* Ubuntu:       14.04.4
-* VirtualBox:   5.0.16
-* Vagrant:      1.8.1
-* Packer:       0.10.0
+* Ubuntu:       14.04.5
+* VirtualBox:   5.1.6
+* Vagrant:      1.8.6
+* Packer:       0.10.2
 
 ## Build Ubuntu base box with packer from .iso
 
@@ -27,10 +27,10 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
     * libxml2
     * gtk3
 * CPAN modules from Stratopan.
-    * AlignDB::*, App::Fasops and App::RL in https://stratopan.com/wangq/ega/master.
-    * All others in https://stratopan.com/wangq/ega/full. (Pulled by Task::EGA)
+    * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
+    * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
 * R and mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
-* Node.js and most bioinformatics softwares (including blast+) are install by linuxbrew.
+* Node.js and most of bioinformatics softwares (including blast+) are install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
 * Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
 * All ega related things are placed in `~/Scripts`.

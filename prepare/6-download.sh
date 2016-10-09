@@ -21,9 +21,9 @@ echo "==> blast"
 cd /prepare/resource/
 if [[ $(uname) == 'Darwin' ]];
 then
-    wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/blast-2.2.26-universal-macosx.tar.gz
+    wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-universal-macosx.tar.gz
 else
-    wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/blast-2.2.26-x64-linux.tar.gz
+    wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26//blast-2.2.26-x64-linux.tar.gz
 fi
 cd $HOME/share/
 rm -fr blast
