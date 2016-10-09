@@ -12,7 +12,8 @@ do
         git clone https://github.com/egateam/$OP.git "$BASE_DIR/$OP"
     else
         echo "==> Pull $OP"
-        git pull "$BASE_DIR/$OP"
+        cd "$BASE_DIR/$OP"
+        git pull
     fi
 done
 
@@ -24,6 +25,7 @@ do
         git clone https://github.com/wang-q/$OP.git "$BASE_DIR/$OP"
     else
         echo "==> Pull $OP"
-        git pull "$BASE_DIR/$OP"
+        cd "$BASE_DIR/$OP"
+        git pull
     fi
 done

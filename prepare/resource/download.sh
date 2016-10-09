@@ -31,7 +31,7 @@ wget -N -P ${DOWNLOADDIR} http://221.204.176.53/openssl-1.0.2c.tar.gz
 wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/gnu/readline/readline-6.3.tar.gz
 
 # 7-brew.sh bioinformatics tools
-wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.31/ncbi-blast-2.2.31+-src.tar.gz
+wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.4.0/ncbi-blast-2.4.0+-src.tar.gz
 wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
 wget -N -P ${DOWNLOADDIR} http://www.clustal.org/download/2.1/clustalw-2.1.tar.gz
 wget -N -P ${DOWNLOADDIR} http://selab.janelia.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz

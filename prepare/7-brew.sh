@@ -3,7 +3,7 @@
 echo "====> Linuxbrew environment  <===="
 
 echo "==> Clone latest linuxbrew"
-git clone https://github.com/Homebrew/linuxbrew.git $HOME/.linuxbrew
+git clone https://github.com/Linuxbrew/brew.git $HOME/.linuxbrew
 
 if grep -q -i linuxbrew $HOME/.bashrc; then
     echo "==> .bashrc already contains linuxbrew"
