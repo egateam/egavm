@@ -8,12 +8,12 @@ to get my own packer template.
 Rules:
 
 * Keep it as simple as possible in `http/preseed.cfg`.
-* apt-get from nearby mirrors.
+* `apt-get` from nearby mirrors.
 * Upgrade kernel.
 * Install Ubuntu desktop without recommends.
 * VirtualBox only. For other platform, just use boxcutter's atlas boxes.
 * Install VirtualBox guest additions in building phase.
-* vagrant:vagrant as username:password.
+* `vagrant:vagrant` as username:password.
 * Leave DVD there. Remove it by vagrant later.
 
 When internet connection is OK, the building process costs about less than 30 minutes.
@@ -21,7 +21,6 @@ When internet connection is OK, the building process costs about less than 30 mi
 ```bash
 cd ~/Scripts/egavm/packer
 bash packer.sh
-
 ```
 
 ## Other boxes
@@ -43,7 +42,6 @@ This build is a mixture of the following builds.
 For `template.json`.
 
 ```bash
-openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.4-server-amd64.iso
-
-openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.0.16.iso
+openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.5-server-amd64.iso
+openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.1.6.iso
 ```
