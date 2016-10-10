@@ -4,8 +4,9 @@ This folder contains setup scripts for standalone servers.
 
 ## Prepare
 
-In Vagrant boxes, I created shared folder `/prepare/` linking to `~/Scripts/egavm/prepare/`. So for
-multiple users in a standalone server, it would be convenient to create a symbolic link
+In Vagrant boxes, I created shared folder `/prepare/` linking to
+`~/Scripts/egavm/prepare/`. So for multiple users in a standalone
+server, it would be convenient to create a symbolic link
 `/prepare/resource/` to `~/Scripts/egavm/prepare/resource/`.
 
 ```bash

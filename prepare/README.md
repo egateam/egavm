@@ -2,10 +2,10 @@
 
 ## Software versions
 
-* Ubuntu:       14.04.5
-* VirtualBox:   5.1.6
-* Vagrant:      1.8.6
-* Packer:       0.10.2
+* Ubuntu: 14.04.5
+* VirtualBox: 5.1.6
+* Vagrant: 1.8.6
+* Packer: 0.10.2
 
 ## Build Ubuntu base box with packer from .iso
 
@@ -27,20 +27,25 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
     * libxml2
     * gtk3
 * CPAN modules from Stratopan.
-    * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
-    * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
-* R and mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
-* Node.js and most of bioinformatics softwares (including blast+) are install by linuxbrew.
+    * `AlignDB::*`, `App::Fasops` and `App::RL` in
+      https://stratopan.com/wangq/ega/master.
+    * All others in https://stratopan.com/wangq/ega/full. (bundled by
+      `Task::EGA`)
+* R and mongodb are installed by apt-get in VM (by linuxbrew in
+  standalone machine).
+* Node.js and most of bioinformatics softwares (including blast+) are
+  install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
-* Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
+* Blast (the old one, not blast+), circos and mysql are installed to
+  `~/share`.
 * All ega related things are placed in `~/Scripts`.
 
 ## VirtualBox VM building steps
 
 This build starts from `mytrusty.box`.
 
-When internet connection is OK and most source files were downloaded previously, 
-the building process costs about 100 minutes.
+When internet connection is OK and most source files were downloaded
+previously, the building process costs about 100 minutes.
 
 * STEPS on host machine
 
@@ -66,8 +71,9 @@ Now you have a GUI desktop.
 
 Username and password are `vagrant` and `vagrant`, respectively.
 
-In GUI desktop, disable auto updates: `System Settings -> Software & updates -> Updates`, set
-`Automatically check for updates:` to `Never`, untick all checkboxes, click close and click close again.
+In GUI desktop, disable auto updates: `System Settings -> Software &
+updates -> Updates`, set `Automatically check for updates:` to `Never`,
+untick all checkboxes, click close and click close again.
 
 `2-unity.sh` removes nautilus bookmarks and disables lock screen.
 
@@ -145,11 +151,11 @@ VBoxManage export egavm -o egavm.ova
 
 `du -hs ~/Scripts/egavm/vm/*`
 
-| name         | size    |
-| :-----       | :-----: |
-| egavm.box    | 1.8 GB  |
-| egavm.ova    | 1.8 GB  |
-| mytrusty.box | 924 MB  |
+| name         |  size  |
+|:-------------|:------:|
+| egavm.box    | 1.8 GB |
+| egavm.ova    | 1.8 GB |
+| mytrusty.box | 924 MB |
 
 ## Useful tips
 
@@ -194,3 +200,4 @@ lsmod | grep vboxguest
 
 sudo reboot
 ```
+
