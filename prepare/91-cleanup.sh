@@ -1,34 +1,22 @@
-#!/bin/bash -eux
+#!/bin/bash
 
 DISK_USAGE_BEFORE_CLEANUP=$(df -h)
 
 echo "==> Cleaning up tmp"
-sudo rm -rf /tmp/*
-
-echo "==> Cleaning apt cache"
-sudo apt-get -y autoremove --purge
-sudo apt-get -y clean
-sudo apt-get -y autoclean
-
-echo "==> Clean caches before release"
-rm -fr $HOME/.cache/
-rm -fr $HOME/.npm/
-rm -fr $HOME/.node-gyp/
-rm -fr $HOME/.cpan/
-rm -fr $HOME/.cpanm/
-rm -fr $HOME/.plenv/cache/
-
-brew cleanup
-
-echo "==> Clean the Bash history"
-cat /dev/null > $HOME/.bash_history
+rm -rf /tmp/*
 
 # Clean up log files
 find /var/log -type f \
     | while read f;
     do
-        sudo echo -ne '' > "${f}";
+        echo -ne '' > "${f}";
     done;
+
+echo "==> Whiteout root"
+count=$(df --sync -kP / | tail -n1  | awk -F ' ' '{print $4}')
+count=$((count - 1))
+dd if=/dev/zero of=/tmp/whitespace bs=1024 count=$count
+rm /tmp/whitespace
 
 # This is for Ubuntu:
 # https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one

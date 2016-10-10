@@ -12,6 +12,8 @@ rm /lib/udev/rules.d/75-persistent-net-generator.rules
 # Add delay to prevent "vagrant reload" from failing
 echo "pre-up sleep 2" >> /etc/network/interfaces
 
+DISK_USAGE_BEFORE_CLEANUP=$(df -h)
+
 echo "==> Cleaning up tmp"
 rm -rf /tmp/*
 
@@ -19,8 +21,6 @@ rm -rf /tmp/*
 apt-get -y autoremove --purge
 apt-get -y clean
 apt-get -y autoclean
-
-DISK_USAGE_BEFORE_CLEANUP=$(df -h)
 
 # Remove Bash history
 unset HISTFILE

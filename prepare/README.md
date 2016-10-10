@@ -113,7 +113,8 @@ bash /prepare/9-pm2.sh
 
 rm $HOME/log*.txt                   # review and delete all logs
 
-bash /prepare/90-cleanup.sh         # Clean the vm
+bash /prepare/90-cleanup-user.sh    # Clean the vm
+sudo bash /prepare/91-cleanup.sh         
 
 exit
 ```
@@ -146,8 +147,8 @@ VBoxManage export egavm -o egavm.ova
 
 | name         | size    |
 | :-----       | :-----: |
-| egavm.box    | 1.9 GB  |
-| egavm.ova    | 1.9 GB  |
+| egavm.box    | 1.8 GB  |
+| egavm.ova    | 1.8 GB  |
 | mytrusty.box | 924 MB  |
 
 ## Useful tips
