@@ -57,4 +57,4 @@ fi
 echo "==> Rehashing..."
 plenv rehash
 
-echo "plenv installation complete!"
+echo "plenv installation complete"
