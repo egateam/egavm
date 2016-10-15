@@ -6,7 +6,8 @@ echo "====> Building Genomics related tools <===="
 
 echo "==> python"
 brew install python
-pip install --upgrade pip setuptools
+pip install --upgrade pip
+pip install --upgrade setuptools
 
 echo "==> other tools"
 brew install cmake
@@ -66,17 +67,3 @@ cd $HOME/share/
 unzip /prepare/resource/picard-tools-1.128.zip
 
 java -jar picard-tools-1.128/picard.jar -h
-
-if [ -e /prepare/resource/MaSuRCA-3.1.3.tar.gz ];
-then
-    echo "==> MaSuRCA"
-
-    cd $HOME/share/
-    tar xvfz /prepare/resource/MaSuRCA-3.1.3.tar.gz
-
-    mv MaSuRCA-* MaSuRCA
-    cd MaSuRCA
-    sh install.sh
-else
-    echo "==> MaSuRCA tarball does not exist"
-fi
