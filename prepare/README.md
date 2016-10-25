@@ -105,8 +105,7 @@ bash /prepare/7-brew.sh | tee log-7-brew.txt
 source $HOME/.bashrc
 bash /prepare/8-node.sh
 
-bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51.
-# bash /prepare/extra/7-mysql-client.sh     # Optional, Linuxbrew mysql51 client, needed by alignDB and building jksrc.
+bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51, needed by alignDB and building jksrc.
 source $HOME/.bashrc                        # After installation, add user alignDB to mysql.
 
 # Build jksrc.zip once and save binary files.
