@@ -15,6 +15,7 @@ brew install samtools bamtools htslib bowtie bowtie2
 brew install tophat cufflinks
 brew install sratoolkit fastqc sickle
 brew install bedtools bedops genometools
+brew install stringtie hisat2 canu kmergenie
 
 echo "==> custom tap"
 brew tap wang-q/tap
