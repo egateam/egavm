@@ -171,7 +171,12 @@ source $HOME/.bashrc
 mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
 
 # start mysql on OSX
-
 launchctl load ~/Library/LaunchAgents/org.mysql.mysqld.plist
+
+# normal startup
+~/share/mysql/bin/mysqld_safe &
+
+# shutdown
+~/share/mysql/bin/mysqladmin shutdown -uroot -p
 
 EOF

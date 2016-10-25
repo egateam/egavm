@@ -100,17 +100,19 @@ bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed b
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
 
-# linuxbrew's pkg-config conflicts with system wide $PKG_CONFIG_PATH, so put them to the tail of job queues.
-bash /prepare/7-brew.sh | tee log-7-brew.txt
-source $HOME/.bashrc
-bash /prepare/8-node.sh
-
-bash /prepare/extra/7-mysql.sh              # Optional, compiling full mysql51, needed by alignDB and building jksrc.
-source $HOME/.bashrc                        # After installation, add user alignDB to mysql.
+bash /prepare/extra/7-mysql.sh      # Optional, compiling full mysql51, needed by alignDB and building jksrc.
+source $HOME/.bashrc                # After installation, add user alignDB to mysql.
 
 # Build jksrc.zip once and save binary files.
 # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
 ### bash /prepare/extra/8-jksrc.sh
+
+# linuxbrew's pkg-config conflicts with system wide $PKG_CONFIG_PATH, 
+# and gcc from linuxbrew might introduce more troubles,
+# so put them to the tail of job queues.
+bash /prepare/7-brew.sh | tee log-7-brew.txt
+source $HOME/.bashrc
+bash /prepare/8-node.sh
 
 bash /prepare/extra/9-ensembl.sh    # Optional, needed by alignDB
 
