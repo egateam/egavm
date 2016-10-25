@@ -3,7 +3,7 @@
 ## Software versions
 
 * Ubuntu: 14.04.5
-* VirtualBox: 5.1.6
+* VirtualBox: 5.1.8
 * Vagrant: 1.8.6
 * Packer: 0.10.2
 
@@ -129,6 +129,7 @@ exit
 
 ```bash
 cd $HOME/Scripts/egavm/prepare/virtualbox
+
 vagrant halt
 vagrant package --output egavm.box
 mv egavm.box $HOME/Scripts/egavm/vm
@@ -138,8 +139,8 @@ mv egavm.box $HOME/Scripts/egavm/vm
 
 ```bash
 cd $HOME/Scripts/egavm/vm
-vagrant destroy -f
 
+vagrant destroy -f
 vagrant box add egavm egavm.box --force
 vagrant up --provider virtualbox
 
@@ -153,9 +154,9 @@ VBoxManage export egavm -o egavm.ova
 
 | name         |  size  |
 |:-------------|:------:|
-| egavm.box    | 1.8 GB |
-| egavm.ova    | 1.8 GB |
-| mytrusty.box | 924 MB |
+| egavm.box    | 2.0 GB |
+| egavm.ova    | 2.0 GB |
+| mytrusty.box | 925 MB |
 
 ## Useful tips
 

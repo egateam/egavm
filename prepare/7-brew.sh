@@ -38,18 +38,9 @@ rm $HOME/.cache/Homebrew/*.incomplete
 
 cp /prepare/resource/ncbi-blast-2.2.31+-src.tar.gz          `brew --cache`/blast-2.2.31.tar.gz
 cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  `brew --cache`/rmblast-2.2.28.tar.gz
+cp /prepare/resource/ncbi-blast-2.4.0+-src.tar.gz           `brew --cache`/blast-2.4.0.tar.gz
 
-cp /prepare/resource/bzip2-1.0.6.tar.gz                     `brew --cache`/bzip2-1.0.6.tar.gz
-cp /prepare/resource/clustalw-2.1.tar.gz                    `brew --cache`/clustal-w-2.1.tar.gz
-cp /prepare/resource/hmmer-3.1b2.tar.gz                     `brew --cache`/hmmer-3.1b2.tar.gz
-cp /prepare/resource/jpegsrc.v8d.tar.gz                     `brew --cache`/jpeg-8d.tar.gz
-cp /prepare/resource/lastz-1.02.00.tar.gz                   `brew --cache`/lastz-1.02.00.tar.gz
-cp /prepare/resource/mafft-7.221-with-extensions-src.tgz    `brew --cache`/mafft-7.221.tgz
-cp /prepare/resource/pcre-8.37.tar.bz2                      `brew --cache`/pcre-8.37.tar.bz2
-cp /prepare/resource/pkg-config-0.29.1.tar.gz               `brew --cache`/pkg-config-0.29.1.tar.gz
-cp /prepare/resource/v8.1.15.tar.gz                         `brew --cache`/raxml-8.1.15.tar.gz
 cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
-cp /prepare/resource/xz-5.2.1.tar.gz                        `brew --cache`/xz-5.2.1.tar.gz
 
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft raxml

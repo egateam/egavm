@@ -15,7 +15,7 @@ fi
 
 echo "==> Get Ubuntu iso"
 wget -N -P $BASE_DIR/prepare/resource http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-amd64.iso
-wget -N -P $BASE_DIR/prepare/resource http://download.virtualbox.org/virtualbox/5.1.6/VBoxGuestAdditions_5.1.6.iso
+wget -N -P $BASE_DIR/prepare/resource http://download.virtualbox.org/virtualbox/5.1.8/VBoxGuestAdditions_5.1.8.iso
 
 echo "==> Build Ubuntu box"
 cd $BASE_DIR/packer
