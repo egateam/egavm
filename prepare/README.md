@@ -97,6 +97,8 @@ source $HOME/.bashrc
 bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
 bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed by alignDB
 
+bash /prepare/extra/5-r-packages.sh | tee log-extra-5-r-packages.txt
+
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
 
