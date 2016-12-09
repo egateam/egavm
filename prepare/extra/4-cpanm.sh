@@ -10,7 +10,7 @@ NO_TEST=--notest
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Test::Class Test::Roo Test::Taint Test::Without::Module
 
 # Moose and Moo
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooX::Options MooseX::Storage MooseX::AttributeHelpers
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooX::Options MooseX::Storage
 
 # Develop
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall App::cpanoutdated CPAN::Mini CPANDB Dist::Milla Module::Path Pod::POM::Web Search::Indexer
