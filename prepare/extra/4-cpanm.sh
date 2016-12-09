@@ -13,7 +13,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Test::Class Test::Roo Test::T
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooX::Options MooseX::Storage MooseX::AttributeHelpers
 
 # Develop
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall CPAN::Mini CPANDB Dist::Milla Module::Path Pod::POM::Web Search::Indexer
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall App::cpanoutdated CPAN::Mini CPANDB Dist::Milla Module::Path Pod::POM::Web Search::Indexer
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into PPI::XS
 
 # Gtk3 stuffs
@@ -32,4 +32,4 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL St
 # AlignDB::*
 cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::DeltaG AlignDB::GC AlignDB::SQL AlignDB::ToXLSX
 
-# DBD::mysql should be installed after `brew install mysql51`
+# DBD::mysql would be installed in `extra/7-mysql.sh`
