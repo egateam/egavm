@@ -41,7 +41,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::XML2JSON PDF::API2 Math:
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Phylo
 
 # others
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural DBD::CSV Path::Class File::HomeDir File::Listing File::Remove File::Rename File::Copy::Recursive List::Flatten String::Compare
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural DBD::CSV Path::Class File::HomeDir File::Listing File::Remove File::Copy::Recursive String::Compare
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https LWP::Protocol::socks
 
 # AlignDB::*

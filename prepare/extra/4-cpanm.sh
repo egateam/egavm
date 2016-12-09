@@ -20,14 +20,14 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Parallel::ForkManager Proc::B
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
 
 # Database and WWW
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DBIx::Class::Helpers DBIx::XHTML_Table DBM::Deep MongoDB Mojolicious IO::All IO::All::LWP
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DBIx::Class::Helpers DBM::Deep MongoDB Mojolicious IO::All IO::All::LWP
 
 # text, rtf and xlsx
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Roman Text::Table Time::Duration RTF::Writer Chart::Math::Axis
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Spreadsheet::XLSX Excel::Writer::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel
 
 # Math and Stat
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Statistics::Lite Statistics::TTest Set::Light Math::GSL Statistics::R
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Math::GSL Statistics::R
 
 # AlignDB::*
 cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::DeltaG AlignDB::GC AlignDB::SQL AlignDB::ToXLSX
