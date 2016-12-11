@@ -7,8 +7,8 @@ NO_TEST=--notest
 #NO_TEST=
 
 # very basic
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule JSON::XS Text::CSV_XS YAML YAML::Syck YAML::XS
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest AnyEvent App::Ack DBI EV MCE Moo Moose Perl::Tidy POE Template WWW::Mechanize
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Archive::Extract Config::Tiny DB_File File::Find::Rule Getopt::Long::Descriptive JSON::XS Text::CSV_XS YAML YAML::Syck
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest AnyEvent App::Ack App::Cmd DBI EV MCE Moo Moose Perl::Tidy POE Template WWW::Mechanize
 
 # linuxbrew's pkg-config (node's dependency) override system pkg-config, and don't inherit system PKG_CONFIG_PATH
 # See also https://github.com/Homebrew/linuxbrew/issues/47
