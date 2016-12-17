@@ -30,6 +30,6 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest Spreadsheet::XLSX Excel::Writ
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Math::GSL Statistics::R
 
 # AlignDB::*
-cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::DeltaG AlignDB::GC AlignDB::SQL AlignDB::ToXLSX
+cpanm --mirror-only --mirror https://stratopan.com/wangq/ega/master $NO_TEST AlignDB::DeltaG AlignDB::GC AlignDB::ToXLSX AlignDB::Window AlignDB::Run
 
 # DBD::mysql would be installed in `extra/7-mysql.sh`
