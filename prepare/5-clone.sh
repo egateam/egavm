@@ -17,7 +17,7 @@ do
     fi
 done
 
-for OP in egaz egas alignDB withncbi
+for OP in egaz alignDB withncbi
 do
     if [ ! -d "$BASE_DIR/$OP/.git" ]
     then
