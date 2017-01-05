@@ -23,8 +23,9 @@ wget -N -P ${DOWNLOADDIR} http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2
 wget -N -P ${DOWNLOADDIR} http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-x64-linux.tar.gz
 
 # 7-brew.sh bioinformatics tools
-wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.4.0/ncbi-blast-2.4.0+-src.tar.gz
+wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.5.0/ncbi-blast-2.5.0+-src.tar.gz
 wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
+wget -N -P ${DOWNLOADDIR} mirrors.ustc.edu.cn/CRAN/src/base/R-3/R-3.3.2.tar.gz
 
 if [ ! -e ${DOWNLOADDIR}/RepeatMasker-open-4-0-5.tar.gz ];
 then
@@ -35,5 +36,5 @@ fi
 wget -N -P ${DOWNLOADDIR} http://mysql.mirrors.pair.com/Downloads/MySQL-5.1/mysql-5.1.73.tar.gz
 
 # 8-node.sh
-wget -N -P ${DOWNLOADDIR} https://nodejs.org/dist/v0.12.12/node-v0.12.13.tar.gz
+wget -N -P ${DOWNLOADDIR} https://nodejs.org/dist/v0.12.17/node-v0.12.17.tar.xz
 wget -N -P ${DOWNLOADDIR} https://registry.npmjs.org/npm/-/npm-2.15.1.tgz
