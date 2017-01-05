@@ -75,8 +75,8 @@ bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed b
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
 
-bash /prepare/extra/7-mysql.sh      # Optional, compiling full mysql51, needed by alignDB and building jksrc.
-source $HOME/.bashrc                # After installation, add user alignDB to mysql.
+bash /prepare/extra/7-mysql.sh  # Optional, compiling full mysql51, needed by alignDB and building jksrc.
+source $HOME/.bashrc            # After installation, add user alignDB to mysql.
 
 # Build jksrc.zip once and save binary files.
 # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
@@ -130,8 +130,8 @@ VBoxManage export egavm -o egavm.ova
 
 | name         |  size  |
 |:-------------|:------:|
-| egavm.box    | 2.0 GB |
-| egavm.ova    | 2.0 GB |
+| egavm.box    | 2.1 GB |
+| egavm.ova    | 2.2 GB |
 | mytrusty.box | 926 MB |
 
 ## VM rules
@@ -149,7 +149,7 @@ VBoxManage export egavm -o egavm.ova
     * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
     * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
 * Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
-* Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
+* Java, Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
 * Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
 * All ega related things are placed in `~/Scripts`.
