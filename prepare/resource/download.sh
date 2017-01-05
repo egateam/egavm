@@ -34,7 +34,3 @@ fi
 
 # extra/7-mysql.sh
 wget -N -P ${DOWNLOADDIR} http://mysql.mirrors.pair.com/Downloads/MySQL-5.1/mysql-5.1.73.tar.gz
-
-# 8-node.sh
-wget -N -P ${DOWNLOADDIR} https://nodejs.org/dist/v0.12.17/node-v0.12.17.tar.xz
-wget -N -P ${DOWNLOADDIR} https://registry.npmjs.org/npm/-/npm-2.15.1.tgz

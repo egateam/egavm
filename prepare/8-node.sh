@@ -2,9 +2,6 @@
 
 BASE_DIR=$HOME/Scripts
 
-cp /prepare/resource/node-v0.12.17.tar.xz   `brew --cache`/﻿node@0.12-0.12.17.tar.xz
-cp /prepare/resource/npm-2.15.1.tgz         `brew --cache`/node@0.12--npm-2.15.1.tgz
-
 echo "==> Install nodejs"
 brew install node@0.12
 
