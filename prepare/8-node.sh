@@ -2,11 +2,11 @@
 
 BASE_DIR=$HOME/Scripts
 
-cp /prepare/resource/node-v0.12.13.tar.gz `brew --cache`/node012-0.12.13.tar.gz
-cp /prepare/resource/npm-2.15.1.tgz      `brew --cache`/node012--npm-2.15.1.tgz
+cp /prepare/resource/node-v0.12.17.tar.xz   `brew --cache`/﻿node@0.12-0.12.17.tar.xz
+cp /prepare/resource/npm-2.15.1.tgz         `brew --cache`/node@0.12--npm-2.15.1.tgz
 
 echo "==> Install nodejs"
-brew install node012
+brew install node@0.12
 
 echo "==> Global node modules"
 # node-gyp need node source for the first time
