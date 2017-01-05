@@ -13,8 +13,9 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Test::Class Test::Roo Test::T
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest MooX::Options MooseX::Storage
 
 # Develop
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall App::cpanoutdated CPAN::Mini CPANDB Dist::Milla Module::Path Pod::POM::Web Search::Indexer
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into PPI::XS
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::pmuninstall App::cpanoutdated CPANDB Minilla Module::Path
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Pod::POM::Web Search::Indexer PPI::XS
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Parallel::ForkManager Proc::Background Devel::CheckLib Import::Into
 
 # Gtk3 stuffs
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
