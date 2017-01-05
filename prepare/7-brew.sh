@@ -39,7 +39,6 @@ rm $HOME/.cache/Homebrew/*.incomplete
 cp /prepare/resource/ncbi-blast-2.2.31+-src.tar.gz          `brew --cache`/blast-2.2.31.tar.gz
 cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  `brew --cache`/rmblast-2.2.28.tar.gz
 cp /prepare/resource/ncbi-blast-2.4.0+-src.tar.gz           `brew --cache`/blast-2.4.0.tar.gz
-
 cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
 
 echo "==> Install bioinfomatics softwares"
@@ -47,6 +46,11 @@ brew install clustal-w hmmer lastz mafft raxml
 brew install blast --without-check # this will not install boost
 brew install rmblast --without-blast
 brew install repeatmasker --without-configure # run config later
+
+echo "==> Install R"
+brew install r
+Rscript -e 'install.packages("getopt", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
+Rscript -e 'install.packages("ape", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
 
 echo "==> Install vcftools"
 brew install vcftools
@@ -56,6 +60,7 @@ cp $HOME/.linuxbrew/lib/perl5/site_perl/VcfStats.pm $(perl -e 'print grep {/site
 
 echo "==> Install wang-q/tap"
 brew install faops multiz sparsemem
+brew install jrunlist jrange
 
 echo "==> Config repeatmasker"
 cd $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec

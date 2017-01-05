@@ -58,9 +58,6 @@ sudo apt-get -y install libgd-dev libxml2-dev
 echo "==> Install gsl"
 sudo apt-get -y install libgsl0ldbl libgsl0-dev
 
-echo "==> Install r"
-sudo apt-get -y install r-base-dev
-
 # Gtk stuff, Need by alignDB
 # install them in a fresh machine to avoid problems
 echo "==> Install gtk3"
