@@ -13,18 +13,15 @@ else
     LB_PATH='export PATH="$HOME/.linuxbrew/bin:$PATH"'
     LB_MAN='export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"'
     LB_INFO='export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"'
-    LB_BOTTLE='export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles'
     echo '# Linuxbrew' >> $HOME/.bashrc
     echo $LB_PATH >> $HOME/.bashrc
     echo $LB_MAN  >> $HOME/.bashrc
     echo $LB_INFO >> $HOME/.bashrc
-    echo $LB_BOTTLE >> $HOME/.bashrc
     echo >> $HOME/.bashrc
 
     eval $LB_PATH
     eval $LB_MAN
     eval $LB_INFO
-    eval $LB_BOTTLE
 fi
 
 #echo "==> Check brew with doctor"
