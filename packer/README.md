@@ -5,6 +5,13 @@
 I'm tired of guessing parameters of other people's boxes. So just copy & paste codes from other
 repos to get my own packer template.
 
+When internet connection is OK, the building process costs about less than 30 minutes.
+
+```bash
+cd ~/Scripts/egavm/packer
+time bash packer.sh
+```
+
 Rules:
 
 * Keep it as simple as possible in `http/preseed.cfg`.
@@ -16,12 +23,15 @@ Rules:
 * `vagrant:vagrant` as username:password.
 * Leave DVD there. Remove it by vagrant later.
 
-When internet connection is OK, the building process costs about less than 30 minutes.
+## Checksum
+
+For `template.json`.
 
 ```bash
-cd ~/Scripts/egavm/packer
-time bash packer.sh
+openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.5-server-amd64.iso
+openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.1.12.iso
 ```
+
 
 ## Other boxes
 
@@ -38,13 +48,3 @@ This build is a mixture of the following builds.
     * `vagrant box add box-cutter/ubuntu1404-desktop --provider virtualbox --box-version 2.0.5`
 * shiguredo
     * https://github.com/shiguredo/packer-templates/tree/develop/ubuntu-14.04
-
-## Checksum
-
-For `template.json`.
-
-```bash
-openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.5-server-amd64.iso
-openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.1.6.iso
-```
-
