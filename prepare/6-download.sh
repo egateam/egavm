@@ -55,22 +55,6 @@ rm -fr circos-tools
 tar xvfz /prepare/resource/circos-tools-0.21.tgz
 mv circos-tools-0.21 circos-tools
 
-echo "==> jvarkit"
-cd /prepare/resource/
-if [ ! -e 1.139.zip ];
-then
-    wget -N https://github.com/samtools/htsjdk/archive/1.139.zip
-fi
-cd $HOME/share/
-rm -fr jvarkit
-git clone "https://github.com/wang-q/jvarkit.git"
-cp /prepare/resource/1.139.zip $HOME/share/jvarkit/
-
-cd jvarkit
-perl -nli -e '/samtools\/htsjdk/ and next; print' Makefile
-make biostar94573
-cp dist*/biostar94573.jar .
-
 echo "==> kent bin"
 cd $HOME/bin/
 if [[ $(uname) == 'Darwin' ]];
