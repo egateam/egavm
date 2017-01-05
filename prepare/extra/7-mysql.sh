@@ -129,38 +129,27 @@ $HOME/share/mysql/bin/mysqld_safe &
 sleep 5
 
 echo "==> Securing mysql service"
-mysql_secure_installation
+if [ "$(whoami)" == 'vagrant' ];
+then
+    cat <<EOF | mysql_secure_installation
+
+Y
+vagrant
+vagrant
+Y
+Y
+Y
+Y
+
+EOF
+else
+    mysql_secure_installation
+fi
 
 # perl Makefile.PL --testuser alignDB --testpassword alignDB
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql
 
 rm -fr $HOME/share/mysql-*
-
-if [[ `uname` == 'Darwin' ]];
-then
-cat <<EOF > $HOME/Library/LaunchAgents/org.mysql.mysqld.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>KeepAlive</key>
-  <true/>
-  <key>Label</key>
-  <string>org.mysql.mysqld</string>
-  <key>Program</key>
-  <string>$HOME/share/mysql/bin/mysqld_safe</string>
-  <key>RunAtLoad</key>
-  <true/>
-  <key>WorkingDirectory</key>
-  <string>$HOME/share/mysql</string>
-  <key>StandardErrorPath</key>
-  <string>$HOME/share/mysql/output.log</string>
-  <key>StandardOutPath</key>
-  <string>$HOME/share/mysql/output.log</string>
-</dict>
-</plist>
-EOF
-fi
 
 # create mysql user
 cat <<EOF
@@ -169,9 +158,6 @@ cat <<EOF
 
 source $HOME/.bashrc
 mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO 'alignDB'@'%' IDENTIFIED BY 'alignDB'"
-
-# start mysql on OSX
-launchctl load ~/Library/LaunchAgents/org.mysql.mysqld.plist
 
 # normal startup
 ~/share/mysql/bin/mysqld_safe &
