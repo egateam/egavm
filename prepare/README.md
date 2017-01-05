@@ -15,26 +15,6 @@ See [`packer/`](../packer/) and [`packer/README.md`](../packer/README.md).
 
 * `prepare/virtualbox/Vagrantfile`
 
-## VM rules
-
-* The building VM's name is `egavm-build` and the user VM's is `egavm`.
-* Perl is managed by plenv, version 5.18.4.
-* Dependant libs of Perl modules are installed by apt-get.
-    * zlib
-    * gsl
-    * BerkeleyDB
-    * GD
-    * libxml2
-    * gtk3
-* CPAN modules from Stratopan.
-    * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
-    * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
-* Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
-* Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
-* Jim Kent's utils are installed to `~/bin`.
-* Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
-* All ega related things are placed in `~/Scripts`.
-
 ## VirtualBox VM building steps
 
 This build starts from `mytrusty.box`.
@@ -153,3 +133,23 @@ VBoxManage export egavm -o egavm.ova
 | egavm.box    | 2.0 GB |
 | egavm.ova    | 2.0 GB |
 | mytrusty.box | 926 MB |
+
+## VM rules
+
+* The building VM's name is `egavm-build` and the user VM's is `egavm`.
+* Perl is managed by plenv, version 5.18.4.
+* Dependant libs of Perl modules are installed by apt-get.
+    * zlib
+    * gsl
+    * BerkeleyDB
+    * GD
+    * libxml2
+    * gtk3
+* CPAN modules from Stratopan.
+    * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
+    * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
+* Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
+* Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
+* Jim Kent's utils are installed to `~/bin`.
+* Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
+* All ega related things are placed in `~/Scripts`.
