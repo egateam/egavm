@@ -3,13 +3,13 @@
 ## Software versions
 
 * Ubuntu: 14.04.5
-* VirtualBox: 5.1.8
-* Vagrant: 1.8.6
-* Packer: 0.10.2
+* VirtualBox: 5.1.12
+* Vagrant: 1.9.1
+* Packer: 0.12.1
 
 ## Build Ubuntu base box with packer from .iso
 
-See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
+See [`packer/`](../packer/) and [`packer/README.md`](../packer/README.md).
 
 ## Vagrantfiles for setting up VM
 
@@ -27,25 +27,20 @@ See [`packer/`](packer/) and [`packer/README.md`](packer/README.md).
     * libxml2
     * gtk3
 * CPAN modules from Stratopan.
-    * `AlignDB::*`, `App::Fasops` and `App::RL` in
-      https://stratopan.com/wangq/ega/master.
-    * All others in https://stratopan.com/wangq/ega/full. (bundled by
-      `Task::EGA`)
-* R and mongodb are installed by apt-get in VM (by linuxbrew in
-  standalone machine).
-* Node.js and most of bioinformatics softwares (including blast+) are
-  install by linuxbrew.
+    * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
+    * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
+* Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
+* Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
-* Blast (the old one, not blast+), circos and mysql are installed to
-  `~/share`.
+* Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
 * All ega related things are placed in `~/Scripts`.
 
 ## VirtualBox VM building steps
 
 This build starts from `mytrusty.box`.
 
-When internet connection is OK and most source files were downloaded
-previously, the building process costs about 100 minutes.
+When internet connection is OK and most source files were downloaded previously, the building
+process costs about 100 minutes.
 
 * STEPS on host machine
 
@@ -71,9 +66,9 @@ Now you have a GUI desktop.
 
 Username and password are `vagrant` and `vagrant`, respectively.
 
-In GUI desktop, disable auto updates: `System Settings -> Software &
-updates -> Updates`, set `Automatically check for updates:` to `Never`,
-untick all checkboxes, click close and click close again.
+In GUI desktop, disable auto updates: `System Settings -> Software & updates -> Updates`, set
+`Automatically check for updates:` to `Never`, untick all checkboxes, click close and click close
+again.
 
 `2-unity.sh` removes nautilus bookmarks and disables lock screen.
 
@@ -96,8 +91,6 @@ source $HOME/.bashrc
 
 bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
 bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed by alignDB
-
-bash /prepare/extra/5-r-packages.sh | tee log-extra-5-r-packages.txt
 
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
@@ -159,49 +152,4 @@ VBoxManage export egavm -o egavm.ova
 |:-------------|:------:|
 | egavm.box    | 2.0 GB |
 | egavm.ova    | 2.0 GB |
-| mytrusty.box | 925 MB |
-
-## Useful tips
-
-* Resize hard driver
-
-```bash
-echo "You may need remove existing disks in VirtualBox catalog first, VirtualBox->File->Virtual Media Manager."
-
-cd $HOME/Scripts/egavm/prepare/virtualbox
-vagrant up
-vagrant halt
-
-echo "==> Resize hard driver"
-DISK_FILE=`VBoxManage showvminfo egavm-build | grep vmdk | perl -n -e '/($ENV{HOME}.+)\(UUID/; $file = $1; print $file'`
-DISK_DIR=`dirname "${DISK_FILE}"`
-echo ${DISK_FILE}
-echo ${DISK_DIR}
-cd "${DISK_DIR}"
-
-VBoxManage clonehd "box-disk1.vmdk" "clone-disk1.vdi" --format vdi
-VBoxManage modifyhd "clone-disk1.vdi" --resize 102400
-VBoxManage showvminfo egavm-build | grep "Storage"
-VBoxManage storageattach egavm-build --storagectl "SATAController" --port 0 --device 0 --type hdd --medium clone-disk1.vdi
-```
-
-* Manually install/upgrade VirtualBox guest additions
-
-```bash
-echo "==> Install VirtualBox guest additions"
-sudo m-a prepare
-
-wget -N -P /prepare/resource http://download.virtualbox.org/virtualbox/5.0.12/VBoxGuestAdditions_5.0.12.iso
-sudo mount /prepare/resource/VBoxGuestAdditions_5.0.12.iso -o loop /mnt
-cd /mnt
-echo "yes" | sudo sh VBoxLinuxAdditions.run --nox11 # type yes
-
-sudo /etc/init.d/vboxadd setup
-sudo update-rc.d vboxadd defaults
-
-echo "==> Check that Guest Editions are installed"
-lsmod | grep vboxguest
-
-sudo reboot
-```
-
+| mytrusty.box | 926 MB |
