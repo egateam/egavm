@@ -13,15 +13,18 @@ else
     LB_PATH='export PATH="$HOME/.linuxbrew/bin:$PATH"'
     LB_MAN='export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"'
     LB_INFO='export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"'
+    LB_BOTTLE='export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles'
     echo '# Linuxbrew' >> $HOME/.bashrc
     echo $LB_PATH >> $HOME/.bashrc
     echo $LB_MAN  >> $HOME/.bashrc
     echo $LB_INFO >> $HOME/.bashrc
+    echo $LB_BOTTLE >> $HOME/.bashrc
     echo >> $HOME/.bashrc
 
     eval $LB_PATH
     eval $LB_MAN
     eval $LB_INFO
+    eval $LB_BOTTLE
 fi
 
 #echo "==> Check brew with doctor"
@@ -29,17 +32,16 @@ fi
 
 echo "==> Add tap science"
 brew tap homebrew/science
-brew tap homebrew/versions
 brew tap wang-q/tap
 
 # Many bioinfomatics hosted on low band server, so don't waste time on downloading them repeatedly.
 mkdir -p $HOME/.cache/Homebrew
 rm $HOME/.cache/Homebrew/*.incomplete
 
-cp /prepare/resource/ncbi-blast-2.2.31+-src.tar.gz          `brew --cache`/blast-2.2.31.tar.gz
+cp /prepare/resource/ncbi-blast-2.5.0+-src.tar.gz           `brew --cache`/blast-2.5.0.tar.gz
 cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  `brew --cache`/rmblast-2.2.28.tar.gz
-cp /prepare/resource/ncbi-blast-2.4.0+-src.tar.gz           `brew --cache`/blast-2.4.0.tar.gz
 cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
+cp /prepare/resource/R-3.3.2.tar.gz                         `brew --cache`/r-3.3.2.tar.gz
 
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft raxml
@@ -51,7 +53,7 @@ echo "==> Install Java"
 brew install jdk ant
 
 echo "==> Install R"
-brew install r
+brew install r --without-tcltk --without-x11
 Rscript -e 'install.packages("getopt", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
 Rscript -e 'install.packages("ape", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
 
