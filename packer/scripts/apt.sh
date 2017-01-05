@@ -55,6 +55,22 @@ autologin-user=vagrant
 
 EOF
 
+echo "==> Disabling screen blanking"
+mkdir -p /etc/xdg/autostart
+tee -a /etc/xdg/autostart/nodpms.desktop <<EOF
+[Desktop Entry]
+Type=Application
+Exec=xset -dpms s off s noblank s 0 0 s noexpose
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=nodpms
+Name=nodpms
+Comment[en_US]=
+Comment=
+
+EOF
+
 echo "==> Restore original sources.list"
 if [ -e /etc/apt/sources.list.bak ];
 then
