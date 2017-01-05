@@ -121,6 +121,8 @@ vagrant box add egavm egavm.box --force
 vagrant up --provider virtualbox
 
 vagrant halt
+
+# rm ~/Scripts/egavm/vm/egavm.ova
 VBoxManage export egavm -o egavm.ova
 ```
 
@@ -130,9 +132,9 @@ VBoxManage export egavm -o egavm.ova
 
 | name         |  size  |
 |:-------------|:------:|
-| egavm.box    | 2.1 GB |
-| egavm.ova    | 2.2 GB |
-| mytrusty.box | 926 MB |
+| egavm.box    | 1.9 GB |
+| egavm.ova    | 1.9 GB |
+| mytrusty.box | 784 MB |
 
 ## VM rules
 
