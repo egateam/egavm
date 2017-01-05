@@ -11,6 +11,7 @@ rm -fr $HOME/.cpanm/
 rm -fr $HOME/.plenv/cache/
 
 brew cleanup
+rm -rf $(brew --cache)
 
 echo "==> Clean the Bash history"
 cat /dev/null > $HOME/.bash_history
