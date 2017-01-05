@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# softwares via apt-get
 echo "====> Install softwares via apt-get <===="
 
 echo "==> Change mirror source"
@@ -47,11 +46,10 @@ sudo apt-get -y install build-essential curl git m4 ruby texinfo
 sudo apt-get -y install libbz2-dev zlib1g-dev
 sudo apt-get -y install libcurl4-openssl-dev libexpat-dev libncurses-dev
 
-echo "==> Install java"
-sudo apt-get -y install openjdk-7-jre openjdk-7-jdk ant
-
-echo "==> Install other softwares"
+echo "==> Install other software"
 sudo apt-get -y install csh parallel vim graphviz screen unzip xsltproc numactl
+
+echo "==> Install other software"
 sudo apt-get -y install libdb-dev libreadline-dev libedit-dev
 sudo apt-get -y install libgd-dev libxml2-dev
 
@@ -70,7 +68,7 @@ sudo apt-get -y install xvfb glade
 echo "==> Install nautilus plugins"
 sudo apt-get -y install nautilus-open-terminal nautilus-actions
 
-# install mongodb and redis by apt.
+# install mongodb and redis by apt
 if [ "$(whoami)" == 'vagrant' ];
 then
     echo "==> Install mongodb"
@@ -80,8 +78,8 @@ fi
 echo "==> Install redis"
 sudo apt-get -y install redis-server
 
-# mysql will be installed separately.
-# remove system provided mysql package to avoid confusing linuxbrew.
+# Mysql will be installed separately.
+# Remove system provided mysql package to avoid confusing linuxbrew.
 echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
 
@@ -92,4 +90,4 @@ then
     sudo mv /etc/apt/sources.list.bak /etc/apt/sources.list
 fi
 
-echo "Basic software installation complete!"
+echo "====> Basic software installation complete! <===="

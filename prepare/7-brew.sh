@@ -47,6 +47,9 @@ brew install blast --without-check # this will not install boost
 brew install rmblast --without-blast
 brew install repeatmasker --without-configure # run config later
 
+echo "==> Install Java"
+brew install jdk ant
+
 echo "==> Install R"
 brew install r
 Rscript -e 'install.packages("getopt", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
