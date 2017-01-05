@@ -1,10 +1,18 @@
 #!/bin/bash -eux
 
+#----------------------------#
+# sshd
+#----------------------------#
+
+echo "UseDNS no" >> /etc/ssh/sshd_config
+
+#----------------------------#
+# vagrant
+#----------------------------#
+
 # base
 sed -i -e '/Defaults\s\+env_reset/a Defaults\texempt_group=sudo' /etc/sudoers
 sed -i -e 's/%sudo  ALL=(ALL:ALL) ALL/%sudo  ALL=NOPASSWD:ALL/g' /etc/sudoers
-
-echo "UseDNS no" >> /etc/ssh/sshd_config
 
 # vagrant user
 date > /etc/vagrant_box_build_time
@@ -21,6 +29,9 @@ if grep -q -E "^mesg n$" /root/.profile && sed -i "s/^mesg n$/tty -s \\&\\& mesg
     echo "==> Fixed stdin not being a tty."
 fi
 
+#----------------------------#
+# virtualbox
+#----------------------------#
 echo "==> Install VirtualBox guest additions"
 #apt-get install -y virtualbox-guest-utils virtualbox-guest-additions-iso
 
@@ -28,7 +39,7 @@ m-a prepare
 
 # Packer will automatically download the proper guest additions.
 cd $HOME
-mount VBoxGuestAdditions.iso -o loop /mnt
+mount -o loop VBoxGuestAdditions.iso /mnt
 echo "yes" | sh /mnt/VBoxLinuxAdditions.run --nox11 # type yes
 
 /etc/init.d/vboxadd setup
