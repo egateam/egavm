@@ -8,6 +8,7 @@ repos to get my own packer template.
 When internet connection is OK, the building process costs about less than 30 minutes.
 
 ```bash
+# rm ~/Scripts/egavm/vm/mytrusty.box
 cd ~/Scripts/egavm/packer
 time bash packer.sh
 ```

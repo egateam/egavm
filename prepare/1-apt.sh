@@ -2,6 +2,9 @@
 
 echo "====> Install softwares via apt-get <===="
 
+echo "==> Disabling the release upgrader"
+sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades
+
 echo "==> Change mirror source"
 
 # https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu

@@ -28,8 +28,11 @@ echo "==> Installing Ubunutu desktop"
 apt-get update -y
 apt-get upgrade -y
 
+# need these after all
+apt-get install -y build-essential module-assistant curl git m4 ruby texinfo
+
 # needed by virtualbox guest additions
-apt-get install -y build-essential module-assistant linux-headers-$(uname -r)
+apt-get install -y linux-headers-$(uname -r)
 
 apt-get install -y --no-install-recommends ubuntu-desktop
 apt-get install -y gnome-terminal firefox xrdp
