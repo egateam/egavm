@@ -12,7 +12,7 @@ To use your local EGA service, following the steps below.
 
 2. Download `egavm.ova` and import it into VirtualBox;
 
-3. Start virtual machine.
+3. Start virtual machine;
 
 4. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit
    `http://localhost:3000`.
