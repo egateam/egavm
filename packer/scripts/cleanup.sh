@@ -1,5 +1,37 @@
 #!/bin/bash -eux
 
+DISK_USAGE_BEFORE_CLEANUP=$(df -h)
+
+#----------------------------#
+# minimize
+#----------------------------#
+
+# Remove some packages to get a minimal install
+echo "==> Removing all linux kernels except the current one"
+dpkg --list | awk '{ print $2 }' | grep -e 'linux-\(headers\|image\)-.*[0-9]\($\|-generic\)' | grep -v "$(uname -r | sed 's/-generic//')" | xargs apt-get -y purge
+echo "==> Removing linux source"
+dpkg --list | awk '{ print $2 }' | grep linux-source | xargs apt-get -y purge
+echo "==> Removing documentation"
+dpkg --list | awk '{ print $2 }' | grep -- '-doc$' | xargs apt-get -y purge
+
+# Cleanup apt cache
+apt-get -y autoremove --purge
+apt-get -y clean
+apt-get -y autoclean
+
+echo "==> Cleaning up tmp"
+rm -rf /tmp/*
+
+echo "==> Removing APT files"
+find /var/lib/apt -type f | xargs rm -f
+
+echo "==> Removing caches"
+find /var/cache -type f -exec rm -rf {} \;
+
+#----------------------------#
+# cleanup
+#----------------------------#
+
 echo "==> Cleaning up dhcp leases"
 if [ -d "/var/lib/dhcp" ]; then
     rm /var/lib/dhcp/*
@@ -11,16 +43,6 @@ rm /lib/udev/rules.d/75-persistent-net-generator.rules
 
 # Add delay to prevent "vagrant reload" from failing
 echo "pre-up sleep 2" >> /etc/network/interfaces
-
-DISK_USAGE_BEFORE_CLEANUP=$(df -h)
-
-echo "==> Cleaning up tmp"
-rm -rf /tmp/*
-
-# Cleanup apt cache
-apt-get -y autoremove --purge
-apt-get -y clean
-apt-get -y autoclean
 
 # Remove Bash history
 unset HISTFILE
