@@ -7,31 +7,28 @@
 To use your local EGA service, following the steps below.
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads);
-    + Current version is 5.1.6.
-    + Optionally, install the extension pack.
+    * Current version is 5.1.12.
+    * Optionally, install the extension pack.
 
 2. Download `egavm.ova` and import it into VirtualBox;
 
 3. Start virtual machine.
 
-4. Open your browser and visit `http://localhost:30080`. Or inside VM
-   GUI, open browser and visit `http://localhost:3000`.
+4. Open your browser and visit `http://localhost:30080`. Or inside VM GUI, open browser and visit
+   `http://localhost:3000`.
 
 ## Setting up with vagrant
 
  1. Same as step 1 in previous section;
 
  2. Install [Vagrant](https://www.vagrantup.com/downloads.html);
-    + Current version is 1.8.6
+    * Current version is 1.9.1
 
- 3. Get configuration file [`Vagrantfile`](vm/Vagrantfile) and putting
-    it in a clean directory;
+ 3. Get configuration file [`Vagrantfile`](vm/Vagrantfile) and putting it in a clean directory;
 
- 4. Download `egavm.box` and put it in the same directory of the
-    configuration file;
+ 4. Download `egavm.box` and put it in the same directory of the configuration file;
 
- 5. `cd` into the previous directory and run `vagrant box add egavm
-    egavm.box`.
+ 5. `cd` into the previous directory and run `vagrant box add egavm egavm.box`.
 
  6. Start virtual machine, `vagrant up`.
 
@@ -39,7 +36,7 @@ To use your local EGA service, following the steps below.
 
 ## Directory Organization
 
-* [`packer/`](packer/): Scirpts for building Ubuntu base box.
+* [`packer/`](packer/): Scirpts for building an Ubuntu base box.
 
 * [`prepare/`](prepare/): Scirpts for using vagrant to build VMs.
 
@@ -48,8 +45,7 @@ To use your local EGA service, following the steps below.
 
 ## Instructions for building scripts
 
-Normal users should not build EGA VMs themselves. If you insist to DIY,
-check `README.md` and other scripts in [`packer/`](packer/) and
-[`prepare/`](prepare/).
+Normal users should not build EGA VMs themselves. If you insist to DIY, check `README.md` and other
+scripts in [`packer/`](packer/) and [`prepare/`](prepare/).
 
 Be cautious, all settings for building are optimised for China.

@@ -7,12 +7,12 @@ wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubu
 wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-desktop-amd64.iso
 
 # virtualbox
-wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.8/VirtualBox-5.1.8-111374-OSX.dmg
-wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.8/VirtualBox-5.1.8-111374-Win.exe
-wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.8/Oracle_VM_VirtualBox_Extension_Pack-5.1.8-111374.vbox-extpack
+wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.12/VirtualBox-5.1.12-112440-OSX.dmg
+wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.12/VirtualBox-5.1.12-112440-Win.exe
+wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.12/Oracle_VM_VirtualBox_Extension_Pack-5.1.12-112440.vbox-extpack
 
 # virtualbox additions
-wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.8/VBoxGuestAdditions_5.1.8.iso
+wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.12/VBoxGuestAdditions_5.1.12.iso
 
 # perl
 wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.bz2
