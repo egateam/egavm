@@ -17,24 +17,6 @@ fi
 mkdir -p $HOME/bin
 mkdir -p $HOME/share/
 
-echo "==> blast"
-cd /prepare/resource/
-if [[ $(uname) == 'Darwin' ]];
-then
-    wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-universal-macosx.tar.gz
-else
-    wget -N http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26//blast-2.2.26-x64-linux.tar.gz
-fi
-cd $HOME/share/
-rm -fr blast
-if [[ $(uname) == 'Darwin' ]];
-then
-    tar xvfz /prepare/resource/blast-2.2.26-universal-macosx.tar.gz
-else
-    tar xvfz /prepare/resource/blast-2.2.26-x64-linux.tar.gz
-fi
-mv blast-2.2.26 blast
-
 echo "==> circos"
 cd /prepare/resource/
 wget -N http://science-annex.org/pub/circos/circos-0.67-7.tgz

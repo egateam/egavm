@@ -153,5 +153,5 @@ VBoxManage export egavm -o egavm.ova
 * Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
 * Java, Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
-* Blast (the old one, not blast+), circos and mysql are installed to `~/share`.
+* Mysql and circos are installed to `~/share`.
 * All ega related things are placed in `~/Scripts`.

@@ -18,10 +18,6 @@ wget -N -P ${DOWNLOADDIR} http://download.virtualbox.org/virtualbox/5.1.12/VBoxG
 wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.bz2
 wget -N -P ${DOWNLOADDIR} http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.gz
 
-# 6-download.sh
-wget -N -P ${DOWNLOADDIR} http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-universal-macosx.tar.gz
-wget -N -P ${DOWNLOADDIR} http://ftp.ncbi.nlm.nih.gov/blast/executables/legacy/2.2.26/blast-2.2.26-x64-linux.tar.gz
-
 # 7-brew.sh bioinformatics tools
 wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.5.0/ncbi-blast-2.5.0+-src.tar.gz
 wget -N -P ${DOWNLOADDIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
