@@ -3,7 +3,7 @@
 BASE_DIR=$HOME/Scripts
 
 echo "==> Install nodejs"
-brew install node@0.12
+brew install node@6
 
 echo "==> Global node modules"
 # node-gyp need node source for the first time

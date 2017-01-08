@@ -15,7 +15,7 @@ else
 fi
 
 mkdir -p $HOME/bin
-mkdir -p $HOME/share/
+mkdir -p $HOME/share
 
 echo "==> circos"
 cd /prepare/resource/
