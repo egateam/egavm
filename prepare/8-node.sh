@@ -5,23 +5,30 @@ BASE_DIR=$HOME/Scripts
 echo "==> Install nodejs"
 brew install node@6
 
+echo "==> Set npm mirrors"
+npm config set registry https://registry.npm.taobao.org
+echo "    Npm set to " $(npm config get registry)
+
 echo "==> Global node modules"
 # node-gyp need node source for the first time
-npm --registry=http://registry.npm.taobao.org --disturl=http://npm.taobao.org/mirrors/node -g --verbose install microtime
-npm -g --verbose install bower
+npm --registry=http://registry.npm.taobao.org --disturl=http://npm.taobao.org/mirrors/node -g install microtime
+npm -g install bower
 
 # npm -g install nodemon express-generator
 
-echo "==> Node modules"
+echo "==> Local Node modules"
 cd $BASE_DIR/ega
-npm --verbose install
+npm install
 
 echo "==> bower modules"
 cd $BASE_DIR/ega
 bower --config.analytics=false install
 
 # settings.js
-cp $BASE_DIR/ega/settings.js.example $BASE_DIR/ega/settings.js
+if [ ! -e $BASE_DIR/ega/settings.js ]
+then
+    cp $BASE_DIR/ega/settings.js.example $BASE_DIR/ega/settings.js
+fi
 
 # in a VM
 if [[ $(whoami) == 'vagrant' ]];
