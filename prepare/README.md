@@ -139,6 +139,7 @@ VBoxManage export egavm -o egavm.ova
 ## VM rules
 
 * The building VM's name is `egavm-build` and the user VM's is `egavm`.
+* Java, Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
 * Perl is managed by plenv, version 5.18.4.
 * Dependant libs of Perl modules are installed by apt-get.
     * zlib
@@ -151,7 +152,6 @@ VBoxManage export egavm -o egavm.ova
     * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
     * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
 * Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
-* Java, Node.js, R and most of bioinformatics softwares (including blast+) are install by linuxbrew.
 * Jim Kent's utils are installed to `~/bin`.
 * Mysql and circos are installed to `~/share`.
 * All ega related things are placed in `~/Scripts`.
