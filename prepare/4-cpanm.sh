@@ -45,5 +45,5 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural DBD
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https LWP::Protocol::socks
 
 # AlignDB::*
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST AlignDB::IntSpan AlignDB::IntSpanXS AlignDB::Stopwatch AlignDB::Codon AlignDB::SQL
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST AlignDB::IntSpan AlignDB::IntSpanXS AlignDB::Stopwatch AlignDB::Codon AlignDB::SQL AlignDB::Window
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::Fasops App::RL App::Rangeops
