@@ -44,6 +44,14 @@ cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Phylo
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST DateTime::Format::Natural DBD::CSV Path::Class File::HomeDir File::Listing File::Remove File::Copy::Recursive String::Compare
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest LWP::Online LWP::Protocol::https LWP::Protocol::socks
 
+# Database and WWW
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST MongoDB Mojolicious IO::All IO::All::LWP
+
+# text, rtf and xlsx
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Roman Text::Table Time::Duration RTF::Writer Chart::Math::Axis
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Excel::Writer::XLSX Spreadsheet::XLSX Spreadsheet::ParseExcel Spreadsheet::WriteExcel
+
 # AlignDB::*
-cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST AlignDB::IntSpan AlignDB::IntSpanXS AlignDB::Stopwatch AlignDB::Codon AlignDB::SQL AlignDB::Window
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST AlignDB::IntSpan AlignDB::IntSpanXS AlignDB::Stopwatch
+cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST AlignDB::Codon AlignDB::DeltaG AlignDB::GC AlignDB::SQL AlignDB::Window AlignDB::ToXLSX AlignDB::Run
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST App::Fasops App::RL App::Rangeops
