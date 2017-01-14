@@ -48,7 +48,7 @@ storage:
         enabled: false
 net:
     bindIp: 127.0.0.1
-    port: 27030
+    port: 27017
     http:
         enabled: true
         RESTInterfaceEnabled: true
