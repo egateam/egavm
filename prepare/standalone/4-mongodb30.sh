@@ -26,7 +26,7 @@ else
     echo "==> untar"
     cd $HOME/share/
     tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-3.0.14.tgz
-    cp -R -n mongodb-linux*/ mongodb30
+    cp -R -n mongodb-linux*/bin mongodb30
 
     rm -fr mongodb-linux*/
 fi
