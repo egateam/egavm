@@ -148,9 +148,9 @@ VBoxManage export egavm -o egavm.ova
     * GD
     * libxml2
     * gtk3
-* CPAN modules from Stratopan.
-    * `AlignDB::*`, `App::Fasops` and `App::RL` in https://stratopan.com/wangq/ega/master.
-    * All others in https://stratopan.com/wangq/ega/full. (bundled by `Task::EGA`)
+* Non-CPAN modules from github.
+    * `cpanm --verbose https://github.com/wang-q/Task-EGA/archive/0.2.2.tar.gz`
+    * `Task::EGA` is a module bundler.
 * Mongodb are installed by apt-get in VM (by linuxbrew in standalone machine).
 * Jim Kent's utils are installed to `~/bin`.
 * Mysql and circos are installed to `~/share`.
