@@ -42,8 +42,16 @@ cd $HOME/bin/
 if [[ $(uname) == 'Darwin' ]];
 then
     JKBIN_TAR_GZ=/prepare/resource/jkbin-darwin-2011.tar.gz
+    if [ ! -e ${JKBIN_TAR_GZ} ];
+    then
+        wget -N https://github.com/egateam/egavm/releases/download/20170907/jkbin-darwin-2011.tar.gz
+    fi
 else
     JKBIN_TAR_GZ=/prepare/resource/jkbin-ubuntu-1404-2011.tar.gz
+    if [ ! -e ${JKBIN_TAR_GZ} ];
+    then
+        wget -N https://github.com/egateam/egavm/releases/download/20170907/jkbin-ubuntu-1404-2011.tar.gz
+    fi
 fi
 echo "==> untar from ${JKBIN_TAR_GZ}"
 tar xvfz ${JKBIN_TAR_GZ} x86_64/axtChain

@@ -3,6 +3,10 @@
 # kent userApps v308 generates much different result for maf* stuffs that looks very wrong. So don’t use it.
 cd /prepare/resource/
 rm -fr /prepare/resource/kent
+if [ ! -e jksrc.zip ];
+then
+    wget -N https://github.com/egateam/egavm/releases/download/20170907/jksrc.zip
+fi
 unzip jksrc.zip # download in 2011
 cd kent/src
 
