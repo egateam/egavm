@@ -1,0 +1,6 @@
+# Ignore everything in this directory
+download.sh
+# Except this file
+!.gitignore
+
+!download.sh
