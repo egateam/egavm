@@ -3,8 +3,11 @@
 BASE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # ubuntu
-wget -N -P ${BASE_DIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-amd64.iso
-wget -N -P ${BASE_DIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-desktop-amd64.iso
+if [ ! -e ${BASE_DIR}/ubuntu-14.04.5-*.iso ];
+then
+    wget -N -P ${BASE_DIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-amd64.iso
+#    wget -N -P ${BASE_DIR} http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-desktop-amd64.iso
+fi
 
 # virtualbox
 wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-OSX.dmg

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BASE_DIR=$HOME/Scripts/egavm
+BASE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 if [[ `uname` == 'Darwin' ]];
 then
@@ -13,18 +13,14 @@ then
     fi
 fi
 
-echo "==> Get Ubuntu iso"
-wget -N -P $BASE_DIR/prepare/resource http://mirrors.ustc.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-amd64.iso
-wget -N -P $BASE_DIR/prepare/resource http://download.virtualbox.org/virtualbox/5.1.12/VBoxGuestAdditions_5.1.12.iso
-
 echo "==> Build Ubuntu box"
-cd $BASE_DIR/packer
+cd ${BASE_DIR}
 
-if [ ! -e $BASE_DIR/vm/mytrusty.box ];
+if [ ! -e ${BASE_DIR}/../vm/mytrusty.box ];
 then
     packer build template.json
-    mv mytrusty.box $BASE_DIR/vm
+    mv mytrusty.box ${BASE_DIR}/../vm
 fi
 
 echo "==> Add base box"
-vagrant box add mytrusty $BASE_DIR/vm/mytrusty.box --force
+vagrant box add mytrusty ${BASE_DIR}/../vm/mytrusty.box --force

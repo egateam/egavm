@@ -9,8 +9,11 @@ When internet connection is OK, the building process costs about less than 30 mi
 
 ```bash
 # rm ~/Scripts/egavm/vm/mytrusty.box
-cd ~/Scripts/egavm/packer
-time bash packer.sh
+
+#real	25m14.287s
+#user	0m36.443s
+#sys	0m15.740s
+time bash ~/Scripts/egavm/packer/packer.sh
 ```
 
 Rules:
@@ -30,9 +33,8 @@ For `template.json`.
 
 ```bash
 openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.5-server-amd64.iso
-openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.1.12.iso
+openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.1.26.iso
 ```
-
 
 ## Other boxes
 
