@@ -35,10 +35,8 @@ brew tap wang-q/tap
 mkdir -p $HOME/.cache/Homebrew
 rm $HOME/.cache/Homebrew/*.incomplete
 
-cp /prepare/resource/ncbi-blast-2.5.0+-src.tar.gz           `brew --cache`/blast-2.5.0.tar.gz
 cp /prepare/resource/ncbi-rmblastn-2.2.28-x64-linux.tar.gz  `brew --cache`/rmblast-2.2.28.tar.gz
-cp /prepare/resource/RepeatMasker-open-4-0-5.tar.gz         `brew --cache`/repeatmasker-4.0.5.tar.gz
-cp /prepare/resource/R-3.3.2.tar.gz                         `brew --cache`/r-3.3.2.tar.gz
+cp /prepare/resource/RepeatMasker-open-4-0-7.tar.gz         `brew --cache`/repeatmasker-4.0.7.tar.gz
 
 echo "==> Install bioinfomatics softwares"
 brew install clustal-w hmmer lastz mafft raxml
@@ -50,9 +48,11 @@ echo "==> Install Java"
 brew install jdk ant
 
 echo "==> Install R"
-brew install r --without-tcltk --without-x11
+brew install r --without-x11
 Rscript -e 'install.packages("getopt", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
 Rscript -e 'install.packages("ape", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
+
+cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest Statistics::R
 
 echo "==> Install vcftools"
 brew install vcftools
@@ -65,11 +65,11 @@ brew install faops multiz sparsemem
 brew install jrunlist jrange
 
 echo "==> Config repeatmasker"
-cd $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec
+cd $(brew --prefix)/Cellar/$(brew list --versions repeatmasker | sed 's/ /\//')/libexec
 tar zxvf /prepare/resource/repeatmaskerlibraries-20140131.tar.gz
 sed -i".bak" 's/\/usr\/bin\/perl/env/' config.txt
 ./configure < config.txt
 
 rm $(brew --prefix)/bin/rmOutToGFF3.pl
-sed -i".bak" 's/::Bin/::RealBin/' $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl
-ln -s $(brew --prefix)/Cellar/repeatmasker/4.0.5/libexec/util/rmOutToGFF3.pl $(brew --prefix)/bin/rmOutToGFF3.pl
+sed -i".bak" 's/::Bin/::RealBin/' $(brew --prefix)/Cellar/$(brew list --versions repeatmasker | sed 's/ /\//')/libexec/util/rmOutToGFF3.pl
+ln -s $(brew --prefix)/Cellar/$(brew list --versions repeatmasker | sed 's/ /\//')/libexec/util/rmOutToGFF3.pl $(brew --prefix)/bin/rmOutToGFF3.pl
