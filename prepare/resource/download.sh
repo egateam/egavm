@@ -25,9 +25,9 @@ wget -N -P ${BASE_DIR} http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl
 # 7-brew.sh bioinformatics tools
 wget -N -P ${BASE_DIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
 
-if [ ! -e ${BASE_DIR}/RepeatMasker-open-4-0-5.tar.gz ];
+if [ ! -e ${BASE_DIR}/RepeatMasker-open-4-0-7.tar.gz ];
 then
-    wget -N -P ${BASE_DIR} http://www.repeatmasker.org/RepeatMasker-open-4-0-5.tar.gz
+    wget -N -P ${BASE_DIR} http://www.repeatmasker.org/RepeatMasker-open-4-0-7.tar.gz
 fi
 
 # extra/7-mysql.sh
