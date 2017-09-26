@@ -20,7 +20,8 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Parallel::ForkManager Proc::B
 # Gtk3 stuffs
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Glib Cairo Cairo::GObject Glib::Object::Introspection Gtk3
 
-# Math and Stat
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Math::GSL Statistics::R
+# Math
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Math::Random::MT::Auto PDL Math::GSL
 
+# Statistics::R would be installed in `7-brew.sh`
 # DBD::mysql would be installed in `extra/7-mysql.sh`
