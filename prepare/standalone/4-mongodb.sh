@@ -10,22 +10,22 @@ if [[ `uname` == 'Darwin' ]];
 then
     echo "==> download"
     cd /prepare/resource/
-    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.4.1.tgz
+    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.4.9.tgz
 
     echo "==> untar"
     cd $HOME/share/
-    tar xvfz /prepare/resource/mongodb-osx-x86_64-3.4.1.tgz
+    tar xvfz /prepare/resource/mongodb-osx-x86_64-3.4.9.tgz
     cp -R -n mongodb-osx*/ mongodb
 
     rm -fr mongodb-osx*/
 else
     echo "==> download"
     cd /prepare/resource/
-    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.4.1.tgz
+    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.4.9.tgz
 
     echo "==> untar"
     cd $HOME/share/
-    tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-3.4.1.tgz
+    tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-3.4.9.tgz
     cp -R -n mongodb-linux*/bin mongodb
 
     rm -fr mongodb-linux*/
