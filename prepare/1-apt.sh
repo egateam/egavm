@@ -50,7 +50,7 @@ sudo apt-get -y install libbz2-dev zlib1g-dev
 sudo apt-get -y install libcurl4-openssl-dev libexpat-dev libncurses-dev
 
 echo "==> Install other software"
-sudo apt-get -y install csh parallel vim graphviz screen unzip xsltproc numactl
+sudo apt-get -y install gawk csh parallel vim graphviz screen unzip xsltproc numactl
 
 echo "==> Install other software"
 sudo apt-get -y install libdb-dev libreadline-dev libedit-dev

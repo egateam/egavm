@@ -45,7 +45,7 @@ brew install rmblast --without-blast
 brew install repeatmasker --without-configure # run config later
 
 echo "==> Install Java"
-brew install jdk ant
+brew install jdk ant maven
 
 echo "==> Install R"
 brew install r --without-x11
