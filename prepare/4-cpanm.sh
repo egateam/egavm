@@ -28,7 +28,7 @@ cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST HTML::Entities HTML::HeadPars
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST XML::DOM XML::DOM::XPath XML::LibXML XML::SAX::Writer XML::Simple XML::Twig XML::Writer GraphViz SVG::Graph
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Convert::Binary::C IO::Scalar
 
-cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Seq # BioPerl
+cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Perl # BioPerl
 cpanm --mirror-only --mirror $CPAN_MIRROR $NO_TEST Bio::ASN1::EntrezGene Bio::DB::EUtilities Bio::Graphics
 cpanm --mirror-only --mirror $CPAN_MIRROR --notest Bio::Tools::Run::Alignment::Clustalw # BioPerl-Run
 
