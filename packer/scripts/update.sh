@@ -1,20 +1,25 @@
 #!/usr/bin/env bash
 
-echo "==> Switch to ustc mirror"
+echo "==> Switch to the USTC mirror"
 
 # https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu
 cat <<EOF > list.tmp
-# USTC_MIRRORS
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
-deb http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
-deb-src http://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+# USTC MIRRORS
+deb https://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ trusty main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ trusty-security main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ trusty-updates main restricted universe multiverse
+
+deb https://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+deb-src https://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted universe multiverse
+
+## Not recommended
+# deb https://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ trusty-proposed main restricted universe multiverse
 
 EOF
 

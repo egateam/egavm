@@ -33,7 +33,7 @@ For `template.json`.
 
 ```bash
 openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.5-server-amd64.iso
-openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.1.26.iso
+openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.2.8.iso
 ```
 
 ## Other boxes
