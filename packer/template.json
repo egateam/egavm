@@ -2,6 +2,7 @@
   "provisioners": [
     {
       "type": "shell",
+      "expect_disconnect": "true",
       "execute_command": "echo 'vagrant' | sudo -S sh '{{.Path}}'",
       "override": {
         "virtualbox-iso": {
@@ -59,8 +60,8 @@
       "iso_checksum": "dd54dc8cfc2a655053d19813c2f9aa9f",
       "iso_checksum_type": "md5",
       "iso_url": "../prepare/resource/ubuntu-14.04.5-server-amd64.iso",
-      "guest_additions_url": "../prepare/resource/VBoxGuestAdditions_5.1.26.iso",
-      "guest_additions_sha256": "6df8c8ab6e7ac3a70a5e29116f8a5dcdb7dfbd0b226ef849a5cd9502e956b06f",
+      "guest_additions_url": "../prepare/resource/VBoxGuestAdditions_5.2.8.iso",
+      "guest_additions_sha256": "80b6b4a6c6789fd5957d07562dd2bdd89dd2abd99cb588e15b784ed89b680813",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
