@@ -10,13 +10,13 @@ then
 fi
 
 # virtualbox
-wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-OSX.dmg
-wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.1.26/VirtualBox-5.1.26-117224-Win.exe
+wget -N -P ${BASE_DIR} https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2.8-121009-OSX.dmg
+wget -N -P ${BASE_DIR} https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2.8-121009-Win.exe
 
-wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.1.26/Oracle_VM_VirtualBox_Extension_Pack-5.1.26-117224.vbox-extpack
+wget -N -P ${BASE_DIR} https://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
 
 # virtualbox additions
-wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.1.26/VBoxGuestAdditions_5.1.26.iso
+wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.2.8/VBoxGuestAdditions_5.2.8.iso
 
 # perl
 wget -N -P ${BASE_DIR} http://mirrors.ustc.edu.cn/CPAN/authors/id/R/RJ/RJBS/perl-5.18.4.tar.bz2

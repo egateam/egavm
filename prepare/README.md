@@ -3,9 +3,9 @@
 ## Software versions
 
 * Ubuntu: 14.04.5
-* VirtualBox: 5.1.26
+* VirtualBox: 5.2.8
 * Vagrant: 1.9.1
-* Packer: v1.0.4
+* Packer: v1.2.1
 
 ## Build Ubuntu base box with packer from .iso
 
