@@ -28,16 +28,14 @@ deb-src https://mirrors.ustc.edu.cn/ubuntu/ trusty-backports main restricted uni
 
 EOF
 
-if [ ! -e /etc/apt/sources.list.bak ];
-then
+if [ ! -e /etc/apt/sources.list.bak ]; then
     sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 fi
 sudo mv list.tmp /etc/apt/sources.list
 
 # Virtual machines needn't this and I want life easier.
 # https://help.ubuntu.com/lts/serverguide/apparmor.html
-if [ "$(whoami)" == 'vagrant' ];
-then
+if [ "$(whoami)" == 'vagrant' ]; then
     echo "==> Disable AppArmor"
     sudo service apparmor stop
     sudo update-rc.d -f apparmor remove
@@ -77,8 +75,7 @@ echo "==> Install nautilus plugins"
 sudo apt-get -y install nautilus-open-terminal nautilus-actions
 
 # install mongodb and redis by apt
-if [ "$(whoami)" == 'vagrant' ];
-then
+if [ "$(whoami)" == 'vagrant' ]; then
     echo "==> Install mongodb"
     sudo apt-get -y install mongodb
 fi
@@ -92,8 +89,7 @@ echo "==> Remove system provided mysql"
 sudo apt-get -y purge mysql-common
 
 echo "==> Restore original sources.list"
-if [ -e /etc/apt/sources.list.bak ];
-then
+if [ -e /etc/apt/sources.list.bak ]; then
     sudo rm /etc/apt/sources.list
     sudo mv /etc/apt/sources.list.bak /etc/apt/sources.list
 fi
