@@ -3,7 +3,7 @@
 echo "====> Install softwares via apt-get <===="
 
 echo "==> Disabling the release upgrader"
-sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades
+sudo sed -i.bak 's/^Prompt=.*$/Prompt=never/' /etc/update-manager/release-upgrades
 
 echo "==> Switch to the USTC mirror"
 
