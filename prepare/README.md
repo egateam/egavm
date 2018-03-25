@@ -4,10 +4,10 @@
 
 * Ubuntu: 14.04.5
 * VirtualBox: 5.2.8
-* Vagrant: 1.9.1
+* Vagrant: 2.0.3
 * Packer: v1.2.1
 
-## Build Ubuntu base box with packer from .iso
+## Build Ubuntu base box `mytrusty.box` with packer from .iso
 
 See [`packer/`](../packer/) and [`packer/README.md`](../packer/README.md).
 
