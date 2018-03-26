@@ -20,7 +20,7 @@ else
     export CXX=gcc
 fi
 
-CFLAGS="-O3" CXXFLAGS="-O3 -felide-constructors -fno-exceptions -fno-rtti" \
+CFLAGS="-O3 -fPIC" CXXFLAGS="-O3 -fPIC -felide-constructors -fno-exceptions -fno-rtti" \
     ./configure \
     --prefix=${MYSQL_DIR} \
     --with-extra-charsets=complex \
@@ -146,7 +146,8 @@ else
     mysql_secure_installation
 fi
 
-# perl Makefile.PL --testuser alignDB --testpassword alignDB
+# mkdir -p /tmp/mysql-static && cp $HOME/share/mysql/lib/mysql/*.a /tmp/mysql-static
+# perl Makefile.PL --testuser alignDB --testpassword alignDB --cflags="-I/home/wangq/share/mysql/include/mysql -fPIC -DUNIV_LINUX -DUNIV_LINUX" --libs="-L/tmp/mysql-static -lmysqlclient -lz -lcrypt -lnsl -lm"
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest DBD::mysql
 
 rm -fr $HOME/share/mysql-*
