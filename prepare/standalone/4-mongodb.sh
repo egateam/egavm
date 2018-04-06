@@ -6,26 +6,25 @@ echo "====> Install MongoDB <===="
 
 mkdir -p $HOME/share/mongodb
 
-if [[ `uname` == 'Darwin' ]];
-then
+if [[ `uname` == 'Darwin' ]]; then
     echo "==> download"
     cd /prepare/resource/
-    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.4.9.tgz
+    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-3.6.3.tgz
 
     echo "==> untar"
     cd $HOME/share/
-    tar xvfz /prepare/resource/mongodb-osx-x86_64-3.4.9.tgz
+    tar xvfz /prepare/resource/mongodb-osx-ssl-x86_64-3.6.3.tgz
     cp -R -n mongodb-osx*/ mongodb
 
     rm -fr mongodb-osx*/
 else
     echo "==> download"
     cd /prepare/resource/
-    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.4.9.tgz
+    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-3.6.3.tgz
 
     echo "==> untar"
     cd $HOME/share/
-    tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-3.4.9.tgz
+    tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-3.6.3.tgz
     cp -R -n mongodb-linux*/bin mongodb
 
     rm -fr mongodb-linux*/
@@ -49,9 +48,6 @@ storage:
 net:
     bindIp: 127.0.0.1
     port: 27017
-    http:
-        enabled: true
-        RESTInterfaceEnabled: true
 
 EOF
 
