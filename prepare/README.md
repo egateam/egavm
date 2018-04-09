@@ -64,10 +64,7 @@ echo '==> Or `Ctrl+Alt+T` to start a GUI terminal'
 bash /prepare/2-unity.sh
 
 echo '==> Return host machine and `vagrant reload && vagrant ssh`'
-exit
-
-bash /prepare/3-plenv.sh
-source $HOME/.bashrc
+#exit
 
 echo "==> Clone latest linuxbrew"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
