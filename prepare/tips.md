@@ -56,3 +56,21 @@ lsmod | grep vboxguest
 
 sudo reboot
 ```
+
+## pkg-config
+
+Linuxbrew's pkg-config (node's dependency) override system pkg-config, and don't inherit system PKG_CONFIG_PATH
+See also https://github.com/Homebrew/linuxbrew/issues/47
+
+```text
+$ /usr/bin/pkg-config --variable pc_path pkg-config
+/usr/local/lib/x86_64-linux-gnu/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/share/pkgconfig:/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
+$ pkg-config --variable pc_path pkg-config
+/home/vagrant/.linuxbrew/lib/pkgconfig:/home/vagrant/.linuxbrew/share/pkgconfig:/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/home/vagrant/.linuxbrew/Library/ENV/pkgconfig/0
+```
+
+In my current preference, I tend to use apt to install various development packages.
+
+```bash
+export PKG_CONFIG_PATH=/usr/share/pkgconfig/:/usr/lib/x86_64-linux-gnu/pkgconfig/:$PKG_CONFIG_PATH
+```
