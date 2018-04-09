@@ -69,14 +69,17 @@ exit
 bash /prepare/3-plenv.sh
 source $HOME/.bashrc
 
-bash /prepare/4-cpanm.sh | tee log-4-cpanm.txt
-bash /prepare/extra/4-cpanm.sh | tee log-extra-4-cpanm.txt  # Optional, needed by alignDB
+echo "==> Clone latest linuxbrew"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
+bash /prepare/3-brew.sh | tee log-3-brew.txt
 
 bash /prepare/extra/7-mysql.sh  # Optional, compiling full mysql51, needed by alignDB and building jksrc.
 source $HOME/.bashrc            # After installation, add user alignDB to mysql.
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/perl/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/python/install.sh)"
 
 # Build jksrc.zip once and save binary files.
 # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
