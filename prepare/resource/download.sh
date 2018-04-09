@@ -21,6 +21,7 @@ wget -N -P ${BASE_DIR} http://download.virtualbox.org/virtualbox/5.2.8/VBoxGuest
 wget -N -P ${BASE_DIR} https://linuxbrew.bintray.com/bottles/jdk-9.0.1+11.x86_64_linux.bottle.tar.gz
 wget -N -P ${BASE_DIR} https://linuxbrew.bintray.com/bottles/blast-2.7.1.x86_64_linux.bottle.tar.gz
 wget -N -P ${BASE_DIR} https://linuxbrew.bintray.com/bottles/r-3.4.4.x86_64_linux.bottle.tar.gz
+wget -N -P ${BASE_DIR} https://linuxbrew.bintray.com/bottles/mysql-5.7.21.x86_64_linux.bottle.tar.gz
 
 # 7-brew.sh bioinformatics tools
 wget -N -P ${BASE_DIR} ftp://ftp.ncbi.nlm.nih.gov/blast/executables/rmblast/LATEST/ncbi-rmblastn-2.2.28-x64-linux.tar.gz
