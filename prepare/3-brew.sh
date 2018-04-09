@@ -82,19 +82,22 @@ fi
 
 pip install --upgrade pip setuptools
 
-echo "==> Install Java"
-pushd $(brew --prefix)/Cellar
-tar xf /prepare/resource/jdk-*bottle*tar.gz && brew link jdk
-popd
-#brew install jdk
-brew install ant maven
-
 echo "==> Install R"
 brew install r
 Rscript -e 'install.packages("getopt", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
 Rscript -e 'install.packages("ape", repos="https://mirrors.tuna.tsinghua.edu.cn/CRAN")'
 
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest Statistics::R
+
+echo "==> Install Java"
+if [ -e /prepare/resource/jdk-9.0.1+11.x86_64_linux.bottle.tar.gz ]; then
+    pushd $(brew --prefix)/Cellar
+    tar xf /prepare/resource/jdk-*bottle*tar.gz && brew link jdk
+    popd
+else
+    brew install jdk
+fi
+brew install ant maven
 
 #echo "==> Install mysql"
 #cp /prepare/resource/mysql-*bottle*tar.gz $(brew --cache)/
