@@ -69,12 +69,8 @@ echo '==> Return host machine and `vagrant reload && vagrant ssh`'
 echo "==> Clone latest linuxbrew"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
-bash /prepare/5-clone.sh
-bash /prepare/6-download.sh
 bash /prepare/3-brew.sh | tee log-3-brew.txt
 
-bash /prepare/extra/7-mysql.sh  # Optional, compiling full mysql51, needed by alignDB and building jksrc.
-source $HOME/.bashrc            # After installation, add user alignDB to mysql.
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/perl/install.sh)"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/python/install.sh)"
 
@@ -85,13 +81,13 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/p
 # linuxbrew's pkg-config conflicts with system wide $PKG_CONFIG_PATH, 
 # and gcc from linuxbrew might introduce more troubles,
 # so put them to the tail of job queues.
-bash /prepare/7-brew.sh | tee log-7-brew.txt
-source $HOME/.bashrc
-bash /prepare/8-node.sh
+#bash /prepare/7-brew.sh | tee log-7-brew.txt
+#source $HOME/.bashrc
+#bash /prepare/8-node.sh
 
 bash /prepare/extra/9-ensembl.sh    # Optional, needed by alignDB
 
-bash /prepare/9-pm2.sh
+#bash /prepare/9-pm2.sh
 
 rm $HOME/log*.txt                   # review and delete all logs
 
