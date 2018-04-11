@@ -68,11 +68,33 @@ echo '==> Return host machine and `vagrant reload && vagrant ssh`'
 
 echo "==> Clone latest linuxbrew"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+
+if grep -q -i linuxbrew $HOME/.bashrc; then
+    echo "==> .bashrc already contains linuxbrew"
+else
+    echo "==> Update .bashrc"
+
+    echo >> $HOME/.bashrc
+    echo '# Linuxbrew' >> $HOME/.bashrc
+    echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >> $HOME/.bashrc
+    echo "export MANPATH='$(brew --prefix)/share/man'":'"$MANPATH"' >> $HOME/.bashrc
+    echo "export INFOPATH='$(brew --prefix)/share/info'":'"$INFOPATH"' >> $HOME/.bashrc
+    echo "export HOMEBREW_NO_ANALYTICS=1" >> $HOME/.bashrc
+    echo >> $HOME/.bashrc
+fi
+
+source $HOME/.bashrc
 
 bash /prepare/3-brew.sh | tee log-3-brew.txt
+source $HOME/.bashrc
 
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/perl/install.sh)"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/python/install.sh)"
+
+bash /prepare/5-clone.sh
+bash /prepare/6-download.sh
 
 # Build jksrc.zip once and save binary files.
 # Don't do this if jkbin-ubuntu-1404-2011.tar.gz exists.
@@ -94,7 +116,7 @@ rm $HOME/log*.txt                   # review and delete all logs
 bash /prepare/90-cleanup-user.sh    # Clean the vm
 sudo bash /prepare/91-cleanup.sh         
 
-exit
+#exit
 ```
 
 * Pack VM up

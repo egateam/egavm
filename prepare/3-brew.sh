@@ -2,33 +2,10 @@
 
 echo "====> Linuxbrew environment  <===="
 
-if grep -q -i linuxbrew $HOME/.bashrc; then
-    echo "==> .bashrc already contains linuxbrew"
-else
-    echo "==> Update .bashrc"
-
-    LB_PATH='export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"'
-    LB_MAN='export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"'
-    LB_INFO='export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"'
-    LB_NO_ANALYTICS="export HOMEBREW_NO_ANALYTICS=1"
-
-    echo '# Linuxbrew' >> $HOME/.bashrc
-    echo $LB_PATH >> $HOME/.bashrc
-    echo $LB_MAN  >> $HOME/.bashrc
-    echo $LB_INFO >> $HOME/.bashrc
-    echo $LB_NO_ANALYTICS >> $HOME/.bashrc
-    echo >> $HOME/.bashrc
-
-    eval $LB_PATH
-    eval $LB_MAN
-    eval $LB_INFO
-    eval $LB_NO_ANALYTICS
-fi
-
 brew install hello
 
 mkdir -p $HOME/.cache/Homebrew
-rm $HOME/.cache/Homebrew/*.incomplete
+rm -f $HOME/.cache/Homebrew/*.incomplete
 
 # taps
 echo "==> Add brew taps"
