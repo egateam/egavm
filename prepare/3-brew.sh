@@ -67,10 +67,13 @@ Rscript -e 'install.packages("ape", repos="https://mirrors.tuna.tsinghua.edu.cn/
 cpanm --mirror-only --mirror http://mirrors.ustc.edu.cn/CPAN/ --notest Statistics::R
 
 echo "==> Install Java"
+
 if [ -e /prepare/resource/jdk-9.0.1+11.x86_64_linux.bottle.tar.gz ]; then
-    pushd $(brew --prefix)/Cellar
-    tar xf /prepare/resource/jdk-*bottle*tar.gz && brew link jdk
-    popd
+    hash java 2>/dev/null || {
+        pushd $(brew --prefix)/Cellar
+        tar xf /prepare/resource/jdk-*bottle*tar.gz && brew link jdk
+        popd
+    }
 else
     brew install jdk
 fi
