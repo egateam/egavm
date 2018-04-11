@@ -126,13 +126,14 @@ pushd $(brew --prefix)/opt/repeatmasker/libexec
 rm -fr lib/perl5/x86_64-linux-thread-multi/
 rm Libraries/RepeatMasker.lib*
 rm Libraries/DfamConsensus.embl
+popd
+pushd $(brew --prefix)/Cellar/$(brew list --versions repeatmasker | sed 's/ /\//')/libexec
 tar zxvf /prepare/resource/repeatmaskerlibraries-20140131.tar.gz
 sed -i".bak" 's/\/usr\/bin\/perl/env/' config.txt
 ./configure < config.txt
+popd
 
 # TODO: remove these
 rm $(brew --prefix)/bin/rmOutToGFF3.pl
 sed -i".bak" 's/::Bin/::RealBin/' $(brew --prefix)/Cellar/$(brew list --versions repeatmasker | sed 's/ /\//')/libexec/util/rmOutToGFF3.pl
 ln -s $(brew --prefix)/Cellar/$(brew list --versions repeatmasker | sed 's/ /\//')/libexec/util/rmOutToGFF3.pl $(brew --prefix)/bin/rmOutToGFF3.pl
-
-popd
