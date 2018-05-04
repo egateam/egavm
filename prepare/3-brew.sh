@@ -16,6 +16,10 @@ brew tap wang-q/tap
 echo "==> Install basic dependencies"
 brew install gdbm berkeley-db expat libedit readline sqlite openssl
 
+# only keep the latest version
+# `brew list --versions` may list multiple versions
+brew cleanup --force
+
 # perl
 echo "==> Install Perl 5.26"
 brew install perl
@@ -57,7 +61,7 @@ else
     eval $PYTHON_3_PATH
 fi
 
-pip install --upgrade pip setuptools
+pip3 install --upgrade pip setuptools
 
 echo "==> Install R"
 brew install r
