@@ -82,6 +82,7 @@ else
     echo "export MANPATH='$(brew --prefix)/share/man'":'"$MANPATH"' >> $HOME/.bashrc
     echo "export INFOPATH='$(brew --prefix)/share/info'":'"$INFOPATH"' >> $HOME/.bashrc
     echo "export HOMEBREW_NO_ANALYTICS=1" >> $HOME/.bashrc
+    echo "export HOMEBREW_NO_AUTO_UPDATE=1" >> $HOME/.bashrc
     echo >> $HOME/.bashrc
 fi
 
