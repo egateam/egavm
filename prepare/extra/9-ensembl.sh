@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export ENSEMBL_VERSION='82'
+export ENSEMBL_VERSION='94'
 
 cd /prepare/resource
 
