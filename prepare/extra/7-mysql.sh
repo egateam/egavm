@@ -50,10 +50,10 @@ else
 
     LB_PATH='export PATH="$HOME/share/mysql/bin:$PATH"'
     echo '# mysqlbin' >> $HOME/.bashrc
-    echo $LB_PATH >> $HOME/.bashrc
+    echo ${LB_PATH} >> $HOME/.bashrc
     echo >> $HOME/.bashrc
 
-    eval $LB_PATH
+    eval ${LB_PATH}
 fi
 
 cat <<EOF > ${MYSQL_DIR}/my.cnf
