@@ -2,10 +2,10 @@
 
 ## Software versions
 
-* Ubuntu: 14.04.5
-* VirtualBox: 5.2.8
-* Vagrant: 2.0.3
-* Packer: v1.2.1
+* Ubuntu: 14.04.6
+* VirtualBox: 6.0.4
+* Vagrant: 2.2.4
+* Packer: v1.3.5
 
 ## Build Ubuntu base box `mytrusty.box` with packer from .iso
 

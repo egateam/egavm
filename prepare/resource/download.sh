@@ -3,19 +3,19 @@
 BASE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # ubuntu
-if [[ ! -e ${BASE_DIR}/ubuntu-14.04.5-server&&md64.iso ]]; then
-    wget -N -P ${BASE_DIR} https://mirrors.nju.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-server-amd64.iso
-    wget -N -P ${BASE_DIR} https://mirrors.nju.edu.cn/ubuntu-releases/14.04.5/ubuntu-14.04.5-desktop-amd64.iso
+if [[ ! -e ${BASE_DIR}/ubuntu-14.04.6-server-amd64.iso ]]; then
+    wget -N -P ${BASE_DIR} https://mirrors.nju.edu.cn/ubuntu-releases/14.04.6/ubuntu-14.04.6-server-amd64.iso
+    wget -N -P ${BASE_DIR} https://mirrors.nju.edu.cn/ubuntu-releases/14.04.6/ubuntu-14.04.6-desktop-amd64.iso
 fi
 
 # virtualbox
-wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/5.2.22/VirtualBox-5.2.22-126460-OSX.dmg
-wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe
+wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/6.0.4/VirtualBox-6.0.4-128413-OSX.dmg
+wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/6.0.4/VirtualBox-6.0.4-128413-Win.exe
 
-wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/5.2.22/Oracle_VM_VirtualBox_Extension_Pack-5.2.22.vbox-extpack
+wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/6.0.4/Oracle_VM_VirtualBox_Extension_Pack-6.0.4.vbox-extpack
 
 # virtualbox additions
-wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/5.2.22/VBoxGuestAdditions_5.2.22.iso
+wget -N -P ${BASE_DIR} https://mirrors.tuna.tsinghua.edu.cn/virtualbox/6.0.4/VBoxGuestAdditions_6.0.4.iso
 
 # large bottles
 wget -N -P ${BASE_DIR} https://linuxbrew.bintray.com/bottles/jdk-9.0.1+11.x86_64_linux.bottle.tar.gz

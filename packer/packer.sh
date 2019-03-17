@@ -2,10 +2,8 @@
 
 BASE_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-if [[ `uname` == 'Darwin' ]];
-then
-    if [ hash packer 2>/dev/null ];
-    then
+if [[ `uname` == 'Darwin' ]]; then
+    if [ hash packer 2> /dev/null ]; then
         echo "==> Install packer via brew"
         brew install packer
     else
@@ -16,8 +14,7 @@ fi
 echo "==> Build Ubuntu box"
 cd ${BASE_DIR}
 
-if [ ! -e ${BASE_DIR}/../vm/mytrusty.box ];
-then
+if [[ ! -e ${BASE_DIR}/../vm/mytrusty.box ]]; then
     packer build template.json
     mv mytrusty.box ${BASE_DIR}/../vm
 fi

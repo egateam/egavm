@@ -32,8 +32,8 @@ Rules:
 For `template.json`.
 
 ```bash
-openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.5-server-amd64.iso
-openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_5.2.8.iso
+openssl md5 ~/Scripts/egavm/prepare/resource/ubuntu-14.04.6-server-amd64.iso
+openssl sha256 ~/Scripts/egavm/prepare/resource/VBoxGuestAdditions_6.0.4.iso
 ```
 
 ## Other boxes
