@@ -88,11 +88,29 @@ fi
 
 source $HOME/.bashrc
 
-bash /prepare/3-brew.sh | tee log-3-brew.txt
+echo "==> clone or pull"
+mkdir -p $HOME/Scripts/
+
+for OP in dotfiles alignDB withncbi; do
+    if [[ ! -d "$HOME/Scripts/$OP/.git" ]]; then
+        if [[ ! -d "$HOME/Scripts/$OP" ]]; then
+            echo "==> Clone $OP"
+            git clone https://github.com/wang-q/${OP}.git "$HOME/Scripts/$OP"
+        else
+            echo "==> $OP exists"
+        fi
+    else
+        echo "==> Pull $OP"
+        cd "$HOME/Scripts/$OP"
+        git pull
+    fi
+done
+
+bash $HOME/Scripts/dotfiles/brew.sh
 source $HOME/.bashrc
 
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/perl/install.sh)"
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/wang-q/dotfiles/master/python/install.sh)"
+bash $HOME/Scripts/dotfiles/perl/install.sh
+bash $HOME/Scripts/dotfiles/python/install.sh
 
 bash /prepare/5-clone.sh
 bash /prepare/6-download.sh
