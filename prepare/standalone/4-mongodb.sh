@@ -9,22 +9,22 @@ mkdir -p $HOME/share/mongodb
 if [[ `uname` == 'Darwin' ]]; then
     echo "==> download"
     cd /prepare/resource/
-    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.1.tgz
+    wget -N https://fastdl.mongodb.org/osx/mongodb-osx-ssl-x86_64-4.0.10.tgz
 
     echo "==> untar"
     cd $HOME/share/
-    tar xvfz /prepare/resource/mongodb-osx-ssl-x86_64-4.0.1.tgz
+    tar xvfz /prepare/resource/mongodb-osx-ssl-x86_64-4.0.10.tgz
     cp -R -n mongodb-osx*/ mongodb
 
     rm -fr mongodb-osx*/
 else
     echo "==> download"
     cd /prepare/resource/
-    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-4.0.1.tgz
+    wget -N https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1404-4.0.9.tgz
 
     echo "==> untar"
     cd $HOME/share/
-    tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-4.0.1.tgz
+    tar xvfz /prepare/resource/mongodb-linux-x86_64-ubuntu1404-4.0.9.tgz
     cp -R -n mongodb-linux*/bin mongodb
 
     rm -fr mongodb-linux*/
